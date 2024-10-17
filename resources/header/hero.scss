@@ -1,0 +1,33 @@
+main {
+  section.banner {
+    color: $color-white;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      background-color: $background-color-dark;
+      opacity: 0.8;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hide-mob {
+    display: none;
+  }
+}
