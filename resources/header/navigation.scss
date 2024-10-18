@@ -1,14 +1,24 @@
+@use "sass:math";
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-$padding-large: 128px;
-$padding-medium: 64px;
-$padding-small: 32px;
-$hamburger-width: 35px;
-$hamburger-bar-height: 5px;
+$padding-large: rem(128);
+$padding-medium: rem(64);
+$padding-small: rem(32);
+$hamburger-width: rem(35);
+$hamburger-bar-height: rem(5);
 $transition-duration: .6s;
 $timing: cubic-bezier(0.5, 0, 0.5, 1);
 $background-color-dark: #12002F;
@@ -51,12 +61,13 @@ $color-gray: #313131;
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: rem(900)) {
     display: none;
   }
 }
 
 header {
+  z-index: 100;
   .container {
     position: fixed;
     z-index: 100;
@@ -69,9 +80,9 @@ header {
     margin: 0 auto;
 
     img {
-      max-width: 50px;
-      height: 40px;
-      margin: 5px 5px 5px;
+      max-width: rem(50);
+      height: rem(40);
+      margin: rem(5) rem(5) rem(5);
 
     }
 
@@ -79,13 +90,13 @@ header {
       top: 50%;
       color: inherit;
       text-transform: uppercase;
-      font-size: 32px;
+      font-size: rem(32);
       font-weight: 900;
     }
     ul > li:has(ul) > a::after {
       content: url('../resources/images/right.svg');
       filter: brightness(0) invert(1);
-      padding-left: 10px;
+      padding-left: rem(10);
       z-index: 1000;
       color: greenyellow;
     }
@@ -95,17 +106,25 @@ header {
       left: -100%;
       width: 100%;
       min-height: 100vh;
+      min-height: 100svh;
       display: block;
       z-index: 40;
       background-color: $background-color-dark;
-      margin-top: 50px;
-      padding-top: 20px;
+      margin-top: rem(50);
+      padding-top: rem(20);
       transition: $transition-duration;
       transition-timing-function: $timing;
 
       &.is-active {
         left: 0;
+
+        @media (min-width: rem(900)) {
+          z-index: -5;
+          top: 60px;
+          left: -50%;
+        }
       }
+
       a {
       text-decoration: none;
         color: $color-white;
@@ -122,19 +141,19 @@ header {
         a {
           display: block;
           width: fit-content;
-          max-width: 200px;
-          padding: 12px 16px;
+          max-width: rem(200);
+          padding: rem(12) rem(16);
           color: $color-white;
           text-decoration: none;
         }
 
         ul {
-          width: fit-content + 60px;
+          width: fit-content + rem(60);
           transition: $transition-duration;
           transition-timing-function: $timing;
           li:first-child {
             z-index: 900;
-            font-size: 18px;
+            font-size: rem(18);
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -142,7 +161,7 @@ header {
             a::before {
               content: url('../resources/images/left.svg');
               filter: brightness(0) invert(1);
-              padding-right: 10px;
+              padding-right: rem(10);
               z-index: 1000;
             }
           }
@@ -151,8 +170,8 @@ header {
             a {
               display: block;
               width: 100%;
-              max-width: 200px;
-              padding: 12px 16px;
+              max-width: rem(200);
+              padding: rem(12) rem(16);
               color: $color-white;
               text-decoration: none;
             }
@@ -162,11 +181,11 @@ header {
     }
   }
 }
-@media (min-width: 768px) {
+@media (min-width: rem(900)) {
   header {
     .container {
       position: fixed;
-      display: flex;
+      display: inline-flex;
       flex-direction: row;
       align-items: center;
       width: 100%;
@@ -184,7 +203,7 @@ header {
         top: 50%;
         color: inherit;
         text-transform: uppercase;
-        font-size: 45px;
+        font-size: rem(32);
         font-weight: 900;
         margin-right: 32px;
       }
@@ -236,11 +255,6 @@ header {
             width: fit-content;
             height: fit-content;
             background-color: $background-color-dark;
-
-            &.is-active {
-              top: 60px;
-              left: -50%;
-            }
 
             li:first-child {
               display: none;
