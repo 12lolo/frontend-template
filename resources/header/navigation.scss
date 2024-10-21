@@ -21,7 +21,8 @@ $hamburger-width: rem(35);
 $hamburger-bar-height: rem(5);
 $transition-duration: .6s;
 $timing: cubic-bezier(0.5, 0, 0.5, 1);
-$background-color-dark: #12002F;
+$background-color-dark: #170044;
+$background-color-dark-hover: #260069;
 $color-white: #FFF;
 $color-gray: #313131;
 
@@ -65,115 +66,112 @@ $color-gray: #313131;
     display: none;
   }
 }
-
-header {
-  z-index: 100;
-  .container {
-    position: fixed;
+@media (max-width: rem(900)) {
+  header {
     z-index: 100;
-    background-color: $background-color-dark;
-    color: $color-white;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
 
-    img {
-      max-width: rem(50);
-      height: rem(40);
-      margin: rem(5) rem(5) rem(5);
-
-    }
-
-    h2 {
-      top: 50%;
-      color: inherit;
-      text-transform: uppercase;
-      font-size: rem(32);
-      font-weight: 900;
-    }
-    ul > li:has(ul) > a::after {
-      content: url('../resources/images/right.svg');
-      filter: brightness(0) invert(1);
-      padding-left: rem(10);
-      z-index: 1000;
-      color: greenyellow;
-    }
-    ul {
+    .container {
       position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      min-height: 100vh;
-      min-height: 100svh;
-      display: block;
-      z-index: 40;
+      z-index: 100;
       background-color: $background-color-dark;
-      margin-top: rem(50);
-      padding-top: rem(20);
-      transition: $transition-duration;
-      transition-timing-function: $timing;
+      color: $color-white;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
 
-      &.is-active {
-        left: 0;
+      img {
+        max-width: rem(50);
+        height: rem(40);
+        margin: rem(5) rem(5) rem(5);
 
-        @media (min-width: rem(900)) {
-          z-index: -5;
-          top: 60px;
-          left: -50%;
+      }
+
+      h2 {
+        top: 50%;
+        color: inherit;
+        text-transform: uppercase;
+        font-size: rem(32);
+        font-weight: 900;
+      }
+
+      ul > li:has(ul) > a::after {
+        content: url('../resources/images/right.svg');
+        filter: brightness(0) invert(1);
+        padding-left: rem(10);
+        z-index: 1000;
+        color: greenyellow;
+      }
+
+      ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: block;
+        z-index: 40;
+        background-color: $background-color-dark;
+        margin-top: rem(50);
+        padding-top: rem(20);
+        transition: $transition-duration;
+        transition-timing-function: $timing;
+
+        &.is-active {
+          left: 0;
         }
-      }
-
-      a {
-      text-decoration: none;
-        color: $color-white;
-      }
-
-
-      li {
-        display: flex;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-
 
         a {
-          display: block;
-          width: fit-content;
-          max-width: rem(200);
-          padding: rem(12) rem(16);
-          color: $color-white;
           text-decoration: none;
+          color: $color-white;
         }
 
-        ul {
-          width: fit-content + rem(60);
-          transition: $transition-duration;
-          transition-timing-function: $timing;
-          li:first-child {
-            z-index: 900;
-            font-size: rem(18);
-            font-weight: bold;
-            display: flex;
-            align-items: center;
+        li {
+          display: flex;
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
 
-            a::before {
-              content: url('../resources/images/left.svg');
-              filter: brightness(0) invert(1);
-              padding-right: rem(10);
-              z-index: 1000;
-            }
+          a {
+            display: block;
+            width: fit-content;
+            max-width: rem(200);
+            padding: rem(12) rem(16);
+            color: $color-white;
+            text-decoration: none;
           }
 
-          li {
-            a {
-              display: block;
-              width: 100%;
-              max-width: rem(200);
-              padding: rem(12) rem(16);
-              color: $color-white;
-              text-decoration: none;
+          ul {
+            width: fit-content + rem(60);
+            transition: $transition-duration;
+            transition-timing-function: $timing;
+
+            li:first-child {
+              z-index: 900;
+              font-size: rem(18);
+              font-weight: bold;
+              display: flex;
+              align-items: center;
+
+              a::before {
+                content: url('../resources/images/left.svg');
+                filter: brightness(0) invert(1);
+                padding-right: rem(10);
+                z-index: 1000;
+              }
+            }
+
+            li {
+              a {
+                display: block;
+                width: 100%;
+                max-width: rem(200);
+                padding: rem(12) rem(16);
+                color: $color-white;
+                text-decoration: none;
+              }
             }
           }
         }
@@ -183,85 +181,111 @@ header {
 }
 @media (min-width: rem(900)) {
   header {
+    z-index: 10;
+    height: rem(70);
+
     .container {
-      position: fixed;
-      display: inline-flex;
-      flex-direction: row;
-      align-items: center;
-      width: 100%;
+      display: flex;
+      z-index: 20;
+      background-color: $background-color-dark;
+      color: $color-white;
       max-width: 100%;
-      height: 60px;
+      align-items: center;
+      padding: rem(10) rem(20);
+      height: rem(70);
 
       img {
-        max-width: 50px;
-        height: 40px;
-        margin: 5px 5px 5px;
+        max-width: rem(50);
+        height: rem(40);
+        margin: rem(5) rem(5) rem(5);
       }
 
       h2 {
-        width: fit-content;
         top: 50%;
         color: inherit;
         text-transform: uppercase;
         font-size: rem(32);
         font-weight: 900;
-        margin-right: 32px;
+        margin-left: rem(10);
       }
-      ul > li:has(ul) > a::after {
-        content: url('../resources/images/down.svg');
-        filter: brightness(0) invert(1);
-        padding-left: 10px;
-        z-index: 1000;
-        color: greenyellow;
-      }
-      ul {
-        background-color: transparent;
-        position: relative;
-        top: 20%;
-        left: 0;
-        width: fit-content;
-        min-height: fit-content;
-        display: flex;
-        margin-top: 0;
-        padding-top: 0;
-        height: 60px;
 
-        a {
-          text-decoration: none;
-          color: $color-white;
-        }
+      ul {
+        top: 50%;
+        list-style: none;
+        padding: 0;
+        margin-left: rem(10);
+        display: flex;
 
         li {
           position: relative;
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
 
           a {
-            display: block;
-            width: fit-content;
-            max-width: 200px;
-            padding: 12px 16px;
             color: $color-white;
             text-decoration: none;
+            padding: rem(15) rem(20);
+            display: block;
 
-
+            &:hover {
+              background-color: $background-color-dark-hover;
+            }
           }
 
+          // Dropdown styles
           ul {
-            padding-left: 0;
-            position: absolute;
-            z-index: -5;
-            top: -500%;
-            left: -50%;
-            display: block;
             width: fit-content;
-            height: fit-content;
-            background-color: $background-color-dark;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: $background-color-dark-hover;
+            z-index: 50;
+            opacity: 0;
+            margin: 0;
+            animation-duration: $transition-duration;
 
             li:first-child {
               display: none;
             }
+
+            // Show dropdown on hover
+            li:hover > ul {
+              display: block;
+              opacity: 1;
+              animation-duration: $transition-duration;
+            }
+          }
+
+          // Keep background color active when hovering over the child elements
+          &:hover {
+            > a {
+              background-color: $background-color-dark-hover; // Apply background color to the anchor
+            }
+
+            // Show the child ul when hovering over the parent li
+            > ul {
+              display: block;
+              opacity: 1;
+            }
+
+            // Ensure the parent li remains highlighted when hovering over its child ul
+            > ul:hover {
+              display: block; // Keep the dropdown visible
+              opacity: 1;
+
+              // Apply background color to the parent li
+              ~ a {
+                background-color: $background-color-dark-hover;
+              }
+            }
+          }
+
+          // Arrow indicator for dropdowns
+          &:has(ul) > a::after {
+            content: url('../resources/images/down.svg');
+            filter: brightness(0) invert(1);
+            padding-left: rem(10);
+            z-index: 1000;
+            color: greenyellow;
           }
         }
       }
