@@ -11879,11 +11879,6 @@ textarea.form-control-lg {
 .hamburger.is-active .bar {
   opacity: 0;
 }
-@media (min-width: 56.25rem) {
-  .hamburger {
-    display: none;
-  }
-}
 
 @media (max-width: 56.25rem) {
   header {
@@ -12003,7 +11998,6 @@ textarea.form-control-lg {
     margin: 0.3125rem 0.3125rem 0.3125rem;
   }
   header .container h2, header .container .h2 {
-    top: 50%;
     color: inherit;
     text-transform: uppercase;
     font-size: 2rem;
@@ -12011,6 +12005,7 @@ textarea.form-control-lg {
     margin-left: 0.625rem;
   }
   header .container ul {
+    height: 4.375rem;
     top: 50%;
     list-style: none;
     padding: 0;
@@ -12018,6 +12013,8 @@ textarea.form-control-lg {
     display: flex;
   }
   header .container ul li {
+    display: flex;
+    align-items: flex-end;
     position: relative;
   }
   header .container ul li a {
@@ -12063,12 +12060,23 @@ textarea.form-control-lg {
   header .container ul li:hover > ul:hover ~ a {
     background-color: #260069;
   }
+  header .container ul li:has(ul) > a {
+    position: relative;
+  }
   header .container ul li:has(ul) > a::after {
     content: url("../resources/images/down.svg");
     filter: brightness(0) invert(1);
-    padding-left: 0.625rem;
-    z-index: 1000;
-    color: greenyellow;
+    display: block;
+    width: 20px;
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+  }
+  header .hamburger {
+    display: none;
   }
 }
 main section.banner {

@@ -61,10 +61,6 @@ $color-gray: #313131;
       opacity: 0;
     }
   }
-
-  @media (min-width: rem(900)) {
-    display: none;
-  }
 }
 @media (max-width: rem(900)) {
   header {
@@ -194,14 +190,15 @@ $color-gray: #313131;
       padding: rem(10) rem(20);
       height: rem(70);
 
+      //Logo
       img {
         max-width: rem(50);
         height: rem(40);
         margin: rem(5) rem(5) rem(5);
       }
 
+      //Title
       h2 {
-        top: 50%;
         color: inherit;
         text-transform: uppercase;
         font-size: rem(32);
@@ -210,6 +207,7 @@ $color-gray: #313131;
       }
 
       ul {
+        height: rem(70);
         top: 50%;
         list-style: none;
         padding: 0;
@@ -217,6 +215,8 @@ $color-gray: #313131;
         display: flex;
 
         li {
+          display: flex;
+          align-items: flex-end;
           position: relative;
 
           a {
@@ -258,7 +258,7 @@ $color-gray: #313131;
           // Keep background color active when hovering over the child elements
           &:hover {
             > a {
-              background-color: $background-color-dark-hover; // Apply background color to the anchor
+              background-color: $background-color-dark-hover;
             }
 
             // Show the child ul when hovering over the parent li
@@ -269,7 +269,7 @@ $color-gray: #313131;
 
             // Ensure the parent li remains highlighted when hovering over its child ul
             > ul:hover {
-              display: block; // Keep the dropdown visible
+              display: block;
               opacity: 1;
 
               // Apply background color to the parent li
@@ -280,15 +280,28 @@ $color-gray: #313131;
           }
 
           // Arrow indicator for dropdowns
-          &:has(ul) > a::after {
-            content: url('../resources/images/down.svg');
-            filter: brightness(0) invert(1);
-            padding-left: rem(10);
-            z-index: 1000;
-            color: greenyellow;
+          // Arrow indicator for dropdowns
+          &:has(ul) > a {
+            position: relative; // Set position to relative to position the arrow absolutely
+
+            &::after {
+              content: url('../resources/images/down.svg'); // Use the SVG image as content
+              filter: brightness(0) invert(1); // Adjust the color of the SVG if needed
+              display: block; // Make it a block element
+              width: 20px; // Set a specific width for the SVG (adjust as needed)
+              height: auto; // Maintain aspect ratio
+              margin: 0 auto; // Center the SVG
+              position: absolute; // Position it absolutely
+              left: 50%; // Center it horizontally
+              top: 70%; // Position it below the text
+              transform: translateX(-50%); // Adjust for centering
+            }
           }
         }
       }
+    }
+    .hamburger {
+      display: none;
     }
   }
 }
