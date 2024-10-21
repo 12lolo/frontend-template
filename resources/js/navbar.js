@@ -4,7 +4,14 @@ const subnavs = document.querySelectorAll('.subnav');
 
 let clickCount = 0;
 
+// Function to check if the viewport width is less than or equal to 900px
+function isMobile() {
+    return window.matchMedia("(max-width: 900px)").matches;
+}
+
 hamburger.addEventListener('click', () => {
+    if (!isMobile()) return; // Exit if not in mobile view
+
     clickCount++;
 
     if (clickCount === 1) {
@@ -30,6 +37,8 @@ hamburger.addEventListener('click', () => {
 // Function to toggle the 'is-active' class on subnavs
 document.querySelectorAll('li > a').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
+        if (!isMobile()) return; // Exit if not in mobile view
+
         const parentLi = event.target.closest('li');
         const subnav = parentLi.querySelector('.subnav');
 
@@ -51,6 +60,8 @@ document.querySelectorAll('li > a').forEach((anchor) => {
 // Function to close subnav when clicking on the first child (back button)
 document.querySelectorAll('.subnav > li:first-child').forEach((firstLi) => {
     firstLi.addEventListener('click', (event) => {
+        if (!isMobile()) return; // Exit if not in mobile view
+
         const parentSubnav = firstLi.closest('.subnav');
         parentSubnav.classList.remove('is-active');
         event.stopPropagation();
