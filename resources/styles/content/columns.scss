@@ -1,0 +1,53 @@
+@use "sass:math";
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+
+$margin: rem(16);
+$column-width: rem(250);
+$max-width: rem(1300);
+
+section {
+  padding: rem(20);
+  background-color: slategray;
+
+  div.columns {
+    width: 100%;
+    margin: 0 auto;
+    columns: 4 $column-width;
+    column-gap: $margin;
+
+    div {
+      position: relative;
+
+      img {
+        border-radius: rem(15);
+        display: block;
+        margin-bottom: $margin;
+        width: 100%;
+      }
+
+      span {
+        z-index: 1;
+        position: absolute;
+        height: 20%;
+        inset: auto 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+        color: white;
+        font-size: rem(16);
+        font-weight: bold;
+        border-radius: 0 0 rem(10) rem(10);
+      }
+
+    }
+  }
+}

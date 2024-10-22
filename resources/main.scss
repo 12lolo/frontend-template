@@ -1,5 +1,6 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
-@import 'header/navigation';
-@import "header/hero";
-@import 'content/body';
+
+@import 'styles/header/navigation';
+@import "styles/header/hero";
+@import "styles/content/columns";

@@ -11887,7 +11887,7 @@ textarea.form-control-lg {
   header .container {
     position: fixed;
     z-index: 100;
-    background-color: #170044;
+    background-color: rgba(0, 0, 0, 0.4);
     color: #FFF;
     display: flex;
     align-items: center;
@@ -11923,7 +11923,7 @@ textarea.form-control-lg {
     min-height: 100svh;
     display: block;
     z-index: 40;
-    background-color: #170044;
+    background-color: rgba(0, 0, 0, 0.4);
     margin-top: 3.125rem;
     padding-top: 1.25rem;
     transition: 0.6s;
@@ -11956,6 +11956,7 @@ textarea.form-control-lg {
     transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
   }
   header .container ul li ul li:first-child {
+    cursor: pointer;
     z-index: 900;
     font-size: 1.125rem;
     font-weight: bold;
@@ -11978,19 +11979,17 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 56.25rem) {
-  header {
-    z-index: 10;
-    height: 4.375rem;
-  }
   header .container {
+    position: fixed;
     display: flex;
     z-index: 20;
-    background-color: #170044;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
     color: #FFF;
     max-width: 100%;
     align-items: center;
     padding: 0.625rem 1.25rem;
-    height: 4.375rem;
+    height: 3.75rem;
   }
   header .container img {
     max-width: 3.125rem;
@@ -12002,14 +12001,14 @@ textarea.form-control-lg {
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 900;
-    margin-left: 0.625rem;
+    margin: 0 0 0 0.625rem;
   }
   header .container ul {
-    height: 4.375rem;
+    height: 3.75rem;
     top: 50%;
     list-style: none;
     padding: 0;
-    margin-left: 0.625rem;
+    margin: 0 0 0 0.625rem;
     display: flex;
   }
   header .container ul li {
@@ -12024,19 +12023,20 @@ textarea.form-control-lg {
     display: block;
   }
   header .container ul li a:hover {
-    background-color: #260069;
+    background-color: rgba(0, 0, 0, 0.6);
   }
   header .container ul li ul {
-    width: fit-content;
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #260069;
     z-index: 50;
-    opacity: 0;
     margin: 0;
-    animation-duration: 0.6s;
+    backdrop-filter: blur(5px);
+  }
+  header .container ul li ul li {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
   }
   header .container ul li ul li:first-child {
     display: none;
@@ -12044,21 +12044,14 @@ textarea.form-control-lg {
   header .container ul li ul li:hover > ul {
     display: block;
     opacity: 1;
-    animation-duration: 0.6s;
   }
   header .container ul li:hover > a {
-    background-color: #260069;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
   }
   header .container ul li:hover > ul {
     display: block;
     opacity: 1;
-  }
-  header .container ul li:hover > ul:hover {
-    display: block;
-    opacity: 1;
-  }
-  header .container ul li:hover > ul:hover ~ a {
-    background-color: #260069;
   }
   header .container ul li:has(ul) > a {
     position: relative;
@@ -12082,7 +12075,7 @@ textarea.form-control-lg {
 main section.banner {
   color: #FFF;
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
 }
@@ -12095,22 +12088,49 @@ main section.banner:after {
   right: 0;
   bottom: 0;
   z-index: 0;
-  background-color: #170044;
-  opacity: 0.8;
+  background-image: url("../resources/placeholders/ph38.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
 }
 main section.banner .container {
   position: relative;
   z-index: 1;
 }
 
-@media (max-width: 767px) {
-  .hide-mob {
-    display: none;
-  }
+section {
+  padding: 1.25rem;
+  background-color: slategray;
 }
-#body h1, #body .h1 {
-  font-size: 10rem;
-  color: pink;
+section div.columns {
+  width: 100%;
+  margin: 0 auto;
+  columns: 4 15.625rem;
+  column-gap: 1rem;
+}
+section div.columns div {
+  position: relative;
+}
+section div.columns div img {
+  border-radius: 0.9375rem;
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+section div.columns div span {
+  z-index: 1;
+  position: absolute;
+  height: 20%;
+  inset: auto 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 0 0 0.625rem 0.625rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -2,7 +2,7 @@ main {
   section.banner {
     color: $color-white;
     position: relative;
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
 
@@ -15,19 +15,15 @@ main {
       right: 0;
       bottom: 0;
       z-index: 0;
-      background-color: $background-color-dark;
-      opacity: 0.8;
+      background-image: url('../resources/placeholders/ph38.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 1;
     }
 
     .container {
       position: relative;
       z-index: 1;
     }
-  }
-}
-
-@media (max-width: 767px) {
-  .hide-mob {
-    display: none;
   }
 }

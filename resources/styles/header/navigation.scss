@@ -21,8 +21,11 @@ $hamburger-width: rem(35);
 $hamburger-bar-height: rem(5);
 $transition-duration: .6s;
 $timing: cubic-bezier(0.5, 0, 0.5, 1);
-$background-color-dark: #170044;
-$background-color-dark-hover: #260069;
+//$background-color-dark: #170044;
+$background-color-dark: rgba(0, 0, 0, 0.4);
+$blur: blur(5px);
+//$background-color-dark-hover: #260069;
+$background-color-dark-hover: rgba(0, 0, 0, 0.6);
 $color-white: #FFF;
 $color-gray: #313131;
 
@@ -145,6 +148,7 @@ $color-gray: #313131;
             transition-timing-function: $timing;
 
             li:first-child {
+              cursor: pointer;
               z-index: 900;
               font-size: rem(18);
               font-weight: bold;
@@ -177,18 +181,18 @@ $color-gray: #313131;
 }
 @media (min-width: rem(900)) {
   header {
-    z-index: 10;
-    height: rem(70);
 
     .container {
+      position: fixed;
       display: flex;
       z-index: 20;
       background-color: $background-color-dark;
+      backdrop-filter: $blur;
       color: $color-white;
       max-width: 100%;
       align-items: center;
       padding: rem(10) rem(20);
-      height: rem(70);
+      height: rem(60);
 
       //Logo
       img {
@@ -203,15 +207,15 @@ $color-gray: #313131;
         text-transform: uppercase;
         font-size: rem(32);
         font-weight: 900;
-        margin-left: rem(10);
+        margin: 0 0 0 rem(10);
       }
 
       ul {
-        height: rem(70);
+        height: rem(60);
         top: 50%;
         list-style: none;
         padding: 0;
-        margin-left: rem(10);
+        margin: 0 0 0 rem(10);
         display: flex;
 
         li {
@@ -232,17 +236,19 @@ $color-gray: #313131;
 
           // Dropdown styles
           ul {
-            width: fit-content;
+            
             display: none;
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: $background-color-dark-hover;
             z-index: 50;
-            opacity: 0;
             margin: 0;
-            animation-duration: $transition-duration;
+            backdrop-filter: $blur;
 
+            li {
+              background-color: $background-color-dark-hover;
+              backdrop-filter: $blur;
+            }
             li:first-child {
               display: none;
             }
@@ -251,7 +257,6 @@ $color-gray: #313131;
             li:hover > ul {
               display: block;
               opacity: 1;
-              animation-duration: $transition-duration;
             }
           }
 
@@ -259,6 +264,7 @@ $color-gray: #313131;
           &:hover {
             > a {
               background-color: $background-color-dark-hover;
+              backdrop-filter: $blur;
             }
 
             // Show the child ul when hovering over the parent li
@@ -266,35 +272,23 @@ $color-gray: #313131;
               display: block;
               opacity: 1;
             }
-
-            // Ensure the parent li remains highlighted when hovering over its child ul
-            > ul:hover {
-              display: block;
-              opacity: 1;
-
-              // Apply background color to the parent li
-              ~ a {
-                background-color: $background-color-dark-hover;
-              }
-            }
           }
 
           // Arrow indicator for dropdowns
-          // Arrow indicator for dropdowns
           &:has(ul) > a {
-            position: relative; // Set position to relative to position the arrow absolutely
+            position: relative;
 
             &::after {
-              content: url('../resources/images/down.svg'); // Use the SVG image as content
-              filter: brightness(0) invert(1); // Adjust the color of the SVG if needed
-              display: block; // Make it a block element
-              width: 20px; // Set a specific width for the SVG (adjust as needed)
-              height: auto; // Maintain aspect ratio
-              margin: 0 auto; // Center the SVG
-              position: absolute; // Position it absolutely
-              left: 50%; // Center it horizontally
-              top: 70%; // Position it below the text
-              transform: translateX(-50%); // Adjust for centering
+              content: url('../resources/images/down.svg');
+              filter: brightness(0) invert(1);
+              display: block;
+              width: 20px;
+              height: auto;
+              margin: 0 auto;
+              position: absolute;
+              left: 50%;
+              top: 70%;
+              transform: translateX(-50%);
             }
           }
         }
