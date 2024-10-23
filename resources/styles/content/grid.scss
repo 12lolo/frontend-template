@@ -1,0 +1,63 @@
+section.grid {
+  padding: rem(20);
+  background-color: slategray;
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+
+    div {
+      flex: 1;
+      background-color: #ccc;
+      min-width: rem(300);
+      position: relative;
+      border-radius: rem(10);
+      flex-basis: calc(100% / 3);
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      h3 {
+        font-size: rem(40);
+      }
+      span {
+        font-size: rem(20);
+      }
+
+      // Add styles for image containers
+      &:has(img) {
+        padding: 0;
+        flex: 0 0 25%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: rem(10);
+        }
+
+        p {
+          z-index: 1;
+          position: absolute;
+          height: 20%;
+          inset: auto 0 0 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(5px);
+          color: white;
+          font-size: rem(16);
+          font-weight: bold;
+          border-radius: 0 0 rem(10) rem(10);
+        }
+      }
+    }
+  }
+}

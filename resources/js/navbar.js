@@ -25,10 +25,8 @@ hamburger.addEventListener('click', () => {
         // Remove 'is-active' class from subnavs immediately
         subnavs.forEach(subnav => subnav.classList.remove('is-active'));
 
-        // Remove 'is-active' class from main nav after a 0.5second delay
-        setTimeout(() => {
-            nav.classList.remove('is-active');
-        }, 350);
+        // Remove 'is-active' class from main nav immediately
+        nav.classList.remove('is-active');
 
         clickCount = 0;
     }
@@ -51,7 +49,15 @@ document.querySelectorAll('li > a').forEach((anchor) => {
             });
 
             // Toggle the clicked subnav
-            subnav.classList.toggle('is-active');
+            const isSubnavActive = subnav.classList.toggle('is-active');
+
+            // Add or remove 'is-active' class from main nav based on subnav state
+            if (isSubnavActive) {
+                nav.classList.remove('is-active'); // Close main nav if subnav is opened
+            } else {
+                nav.classList.add('is-active'); // Reopen main nav if subnav is closed
+            }
+
             event.preventDefault();
         }
     });
@@ -64,6 +70,10 @@ document.querySelectorAll('.subnav > li:first-child').forEach((firstLi) => {
 
         const parentSubnav = firstLi.closest('.subnav');
         parentSubnav.classList.remove('is-active');
+
+        // Add 'is-active' class back to main nav
+        nav.classList.add('is-active');
+
         event.stopPropagation();
     });
 });

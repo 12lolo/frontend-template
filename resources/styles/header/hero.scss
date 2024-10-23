@@ -1,8 +1,18 @@
+@use "sass:math";
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+
 main {
   section.banner {
     color: $color-white;
     position: relative;
-    min-height: 100svh;
+    min-height: 100.1svh;
     display: flex;
     align-items: center;
 
@@ -25,5 +35,71 @@ main {
       position: relative;
       z-index: 1;
     }
+  }
+}
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: rem(30);
+  font-weight: 600;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  animation: bounce 1.5s infinite; // Keep the bounce animation
+
+  &::after {
+    content: url('../resources/images/single-down.svg');
+    filter: brightness(0) invert(1);
+    position: absolute;
+    left: 52%;
+    top: 100%;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+
+  // Hover state
+  &:hover {
+    animation: none;
+    transform: translateX(-50%) scale(1.2);
+    &::after {
+      content: url('../resources/images/single-down-big.svg');
+      top: 70%;
+      animation: bounce 1.5s infinite;
+    }
+  }
+}
+
+// Keyframe animation for bouncing effect
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px) scale(1.5);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px) scale(1.2);
+  }
+}
+
+.banner {
+  text-align: center;
+  font-size: rem(36);
+  font-weight: bold;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, #333, #555); // dark gradient background
+  background-size: 100% rem(300);
+  background-position: center;
+  color: #fff; // white text color
+  border-bottom: rem(1) solid #ccc;
+  box-shadow: 0 0 rem(10) rgba(0, 0, 0, 0.2); // add some depth
+
+  h1 {
+    margin: 0;
+    padding: 0;
   }
 }

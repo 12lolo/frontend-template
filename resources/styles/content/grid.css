@@ -1,0 +1,21 @@
+section.grid .grid-container {
+  display: grid;
+  grid-template-columns: 1fr 0.3fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+}
+section.grid .grid-container .grid-item {
+  background-color: #ccc;
+  padding: 20px;
+}
+section.grid .grid-container .grid-item.img-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.grid .grid-container .grid-item.img-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=grid.css.map */

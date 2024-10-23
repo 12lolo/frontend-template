@@ -279,15 +279,15 @@ $color-gray: #313131;
             position: relative;
 
             &::after {
-              content: url('../resources/images/down.svg');
+              content: url('../resources/images/single-down.svg');
               filter: brightness(0) invert(1);
               display: block;
               width: 20px;
               height: auto;
               margin: 0 auto;
               position: absolute;
-              left: 50%;
-              top: 70%;
+              left: 45%;
+              top: 55%;
               transform: translateX(-50%);
             }
           }
