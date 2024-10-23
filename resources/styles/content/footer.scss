@@ -1,9 +1,59 @@
+@use "sass:math";
+
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Don\'t use units when using the rem() function; only numbers.';
+  }
+}
+.facebook {
+  background-color: red; /* Temporary background to debug visibility */
+  display: block; /* Ensure display property is set correctly */
+  visibility: visible; /* Ensure visibility property is set correctly */
+  opacity: 1; /* Ensure opacity property is set correctly */
+  z-index: 1; /* Ensure z-index property is set correctly */
+  position: relative; /* Ensure position property is set correctly */
+}
+
+.twitter {
+  &::before {
+    content: url("");
+    background-image: url("./resources/images/twitter.svg");
+    background-size: cover;
+    display: block;
+    height: rem(40);
+    width: rem(40);
+  }
+}
+
+.instagram {
+  &::before {
+    content: "";
+    background-image: url("./resources/images/instagram.svg");
+    background-size: cover;
+    display: block;
+    height: rem(40);
+    width: rem(40);
+  }
+}
+
+.linkedin {
+  &::before {
+    content: "";
+    background-image: url("./resources/images/linkedin.svg");
+    background-size: cover;
+    display: block;
+    height: rem(40);
+    width: rem(40);
+  }
+}
 footer {
   background-color: #24262b;
-  padding: 70px 0;
+  padding: rem(70) 0;
 
-  .container {
-    max-width: 1170px;
+  .footer {
+    max-width: rem(1170);
     margin: auto;
 
     .row {
@@ -12,13 +62,15 @@ footer {
 
       .footer-col {
         width: 25%;
-        padding: 0 15px;
+        padding: 0 rem(15);
+
 
         h4 {
-          font-size: 18px;
+          font-size: rem(18);
           color: #ffffff;
           text-transform: capitalize;
-          margin-bottom: 35px;
+          margin-left: rem(10);
+          margin-bottom: rem(35);
           font-weight: 500;
           position: relative;
 
@@ -26,24 +78,26 @@ footer {
             content: '';
             position: absolute;
             left: 0;
-            bottom: -10px;
+            bottom: rem(-10);
             background-color: #e91e63;
-            height: 2px;
+            height: rem(2);
             box-sizing: border-box;
-            width: 50px;
+            width: rem(50);
           }
         }
 
         ul {
+          margin-left: rem(-22);
           list-style: none;
 
           li {
             &:not(:last-child) {
-              margin-bottom: 10px;
+              margin-bottom: rem(10);
             }
 
             a {
-              font-size: 16px;
+              position: relative;
+              font-size: rem(16);
               text-transform: capitalize;
               color: #ffffff;
               text-decoration: none;
@@ -54,7 +108,7 @@ footer {
 
               &:hover {
                 color: #ffffff;
-                padding-left: 8px;
+                padding-left: rem(8);
               }
             }
           }
@@ -62,20 +116,54 @@ footer {
 
         .social-links {
           a {
-            display: inline-block;
-            height: 40px;
-            width: 40px;
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: rem(40);
+            width: rem(40);
             background-color: rgba(255, 255, 255, 0.2);
-            margin: 0 10px 10px 0;
-            text-align: center;
-            line-height: 40px;
+            margin: 0 rem(10) rem(10) 0;
             border-radius: 50%;
-            color: #ffffff;
+            overflow: hidden;
             transition: all 0.5s ease;
 
             &:hover {
               color: #24262b;
               background-color: #ffffff;
+              .social-icon {
+                filter: brightness(0) invert(0.4);
+              }
+            }
+
+            .social-icon {
+              width: 70%;
+              height: auto;
+              object-fit: contain;
+              filter: brightness(0) invert(1);
+            }
+
+            // Tooltip styling
+            .tooltip {
+              visibility: hidden;
+              width: rem(120);
+              background-color: #333;
+              color: #fff;
+              text-align: center;
+              border-radius: 5px;
+              padding: 5px;
+              position: absolute;
+              bottom: 125%;
+              left: 50%;
+              transform: translateX(-50%);
+              opacity: 0;
+              transition: opacity 0.3s;
+              z-index: 1;
+            }
+
+            &:hover .tooltip {
+              visibility: visible; // Show on hover
+              opacity: 1; // Fade in
             }
           }
         }
@@ -84,16 +172,16 @@ footer {
   }
 
   /*responsive*/
-  @media (max-width: 767px) {
+  @media (max-width: rem(767)) {
     .footer-col {
-      width: 50%;
-      margin-bottom: 30px;
+      width: 50% !important;
+      margin-bottom: rem(30);
     }
   }
 
-  @media (max-width: 574px) {
+  @media (max-width: rem(574)) {
     .footer-col {
-      width: 100%;
+      width: 100% !important;
     }
   }
 }
