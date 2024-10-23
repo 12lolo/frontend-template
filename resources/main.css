@@ -12250,42 +12250,6 @@ section.columns div.columns div span {
   border-radius: 0 0 0.625rem 0.625rem;
 }
 
-.facebook {
-  background-color: red; /* Temporary background to debug visibility */
-  display: block; /* Ensure display property is set correctly */
-  visibility: visible; /* Ensure visibility property is set correctly */
-  opacity: 1; /* Ensure opacity property is set correctly */
-  z-index: 1; /* Ensure z-index property is set correctly */
-  position: relative; /* Ensure position property is set correctly */
-}
-
-.twitter::before {
-  content: url("");
-  background-image: url("./resources/images/twitter.svg");
-  background-size: cover;
-  display: block;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
-.instagram::before {
-  content: "";
-  background-image: url("./resources/images/instagram.svg");
-  background-size: cover;
-  display: block;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
-.linkedin::before {
-  content: "";
-  background-image: url("./resources/images/linkedin.svg");
-  background-size: cover;
-  display: block;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
 footer {
   background-color: #24262b;
   padding: 4.375rem 0;
@@ -12352,7 +12316,7 @@ footer .footer .row .footer-col .social-links a {
   height: 2.5rem;
   width: 2.5rem;
   background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 0.625rem 0.625rem 0;
+  margin: 0.625rem 0.625rem 0.625rem;
   border-radius: 50%;
   overflow: hidden;
   transition: all 0.5s ease;
