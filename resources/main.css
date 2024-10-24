@@ -11851,9 +11851,9 @@ textarea.form-control-lg {
 }
 
 .hamburger {
+  width: 2.1875rem;
   position: relative;
   display: block;
-  width: 2.1875rem;
   cursor: pointer;
   appearance: none;
   background: none;
@@ -11880,151 +11880,160 @@ textarea.form-control-lg {
   opacity: 0;
 }
 
-@media (max-width: 56.25rem) {
-  header {
-    z-index: 100;
-  }
-  header .container {
-    position: fixed;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  header .container img {
-    max-width: 3.125rem;
-    height: 2.5rem;
-    margin: 0.3125rem 0.3125rem 0.3125rem;
-  }
-  header .container h2, header .container .h2 {
-    top: 50%;
-    color: inherit;
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: 900;
-  }
-  header .container ul > li:has(ul) > a::after {
-    content: url("../resources/images/right.svg");
-    filter: brightness(0) invert(1);
-    padding-left: 0.625rem;
-    z-index: 1000;
-  }
-  header .container ul {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100svh;
-    display: block;
-    z-index: 40;
-    background-color: rgba(0, 0, 0, 0.4);
-    margin-top: 3.125rem;
-    padding-top: 1.25rem;
-    transition: 0.6s;
-    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  header .container ul.is-active {
-    left: 0;
-  }
-  header .container ul a {
-    text-decoration: none;
-    color: #FFF;
-  }
-  header .container ul li {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  header .container ul li a {
-    display: block;
-    width: fit-content;
-    max-width: 12.5rem;
-    padding: 0.75rem 1rem;
-    color: #FFF;
-    text-decoration: none;
-  }
-  header .container ul li ul {
-    width: fit-content3.75rem;
-    transition: 0.6s;
-    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  header .container ul li ul li:first-child {
-    cursor: pointer;
-    z-index: 900;
-    font-size: 1.125rem;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-  }
-  header .container ul li ul li:first-child a::before {
-    content: url("../resources/images/left.svg");
-    filter: brightness(0) invert(1);
-    padding-right: 0.625rem;
-    z-index: 1000;
-  }
-  header .container ul li ul li a {
-    display: block;
-    width: 100%;
-    max-width: 12.5rem;
-    padding: 0.75rem 1rem;
-    color: #FFF;
-    text-decoration: none;
-  }
+header #navigation {
+  position: fixed;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
-@media (min-width: 56.25rem) {
-  header .container {
+header #navigation img {
+  max-width: 3.125rem;
+  height: 2.5rem;
+  margin: 0.3125rem 0.3125rem 0.3125rem;
+}
+header #navigation h2, header #navigation .h2 {
+  top: 50%;
+  color: inherit;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 900;
+  width: fit-content;
+}
+header #navigation nav ul > li:has(ul) > a::after {
+  content: url("../resources/images/right.svg");
+  filter: brightness(0) invert(1);
+  padding-left: 0.625rem;
+  z-index: 1000;
+}
+header #navigation nav ul {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: block;
+  z-index: 40;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-top: 3.125rem;
+  padding-top: 1.25rem;
+  transition: 0.6s;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+}
+header #navigation nav ul.is-active {
+  left: 0;
+}
+header #navigation nav ul a {
+  text-decoration: none;
+  color: #FFF;
+}
+header #navigation nav ul li {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+header #navigation nav ul li a {
+  display: block;
+  width: fit-content;
+  max-width: 12.5rem;
+  padding: 0.75rem 1rem;
+  color: #FFF;
+  text-decoration: none;
+}
+header #navigation nav ul li ul {
+  width: fit-content3.75rem;
+  transition: 0.6s;
+  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+}
+header #navigation nav ul li ul li:first-child {
+  cursor: pointer;
+  z-index: 900;
+  font-size: 1.125rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+header #navigation nav ul li ul li:first-child a::before {
+  content: url("../resources/images/left.svg");
+  filter: brightness(0) invert(1);
+  padding-right: 0.625rem;
+  z-index: 1000;
+}
+header #navigation nav ul li ul li a {
+  display: block;
+  width: 100%;
+  max-width: 12.5rem;
+  padding: 0.75rem 1rem;
+  color: #FFF;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  header #navigation {
     position: fixed;
-    display: flex;
     z-index: 20;
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
     color: #FFF;
-    max-width: 100%;
+    display: flex;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    backdrop-filter: blur(5px);
     padding: 0.625rem 1.25rem;
     height: 3.75rem;
+    margin-top: 0;
   }
-  header .container img {
+  header #navigation img {
     max-width: 3.125rem;
     height: 2.5rem;
     margin: 0.3125rem 0.3125rem 0.3125rem;
   }
-  header .container h2, header .container .h2 {
+  header #navigation h2, header #navigation .h2 {
+    width: fit-content;
     color: inherit;
     text-transform: uppercase;
     font-size: 2rem;
     font-weight: 900;
     margin: 0 0 0 0.625rem;
   }
-  header .container ul {
-    height: 3.75rem;
+  header #navigation nav ul {
+    position: static;
     top: 50%;
-    list-style: none;
-    padding: 0;
-    margin: 0 0 0 0.625rem;
+    left: 0;
+    width: 100%;
+    min-height: fit-content;
     display: flex;
+    z-index: auto;
+    background-color: transparent;
+    margin: 0 0 0 0.625rem;
+    padding: 0;
+    height: 3.75rem;
+    list-style: none;
   }
-  header .container ul li {
+  header #navigation nav ul li {
+    width: fit-content;
     display: flex;
     align-items: flex-end;
     position: relative;
   }
-  header .container ul li a {
+  header #navigation nav ul li a {
+    flex-wrap: nowrap;
+    width: fit-content;
     color: #FFF;
     text-decoration: none;
     padding: 0.9375rem 1.25rem;
-    display: block;
+    display: flex;
   }
-  header .container ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.6);
+  header #navigation nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  header .container ul li ul {
+  header #navigation nav ul li ul {
     display: none;
     position: absolute;
     top: 100%;
@@ -12033,39 +12042,41 @@ textarea.form-control-lg {
     margin: 0;
     backdrop-filter: blur(5px);
   }
-  header .container ul li ul li {
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+  header #navigation nav ul li ul li {
+    background-color: rgba(0, 0, 0, 0.5);
   }
-  header .container ul li ul li:first-child {
+  header #navigation nav ul li ul li:first-child {
     display: none;
   }
-  header .container ul li ul li:hover > ul {
+  header #navigation nav ul li ul li:hover > ul {
     display: block;
     opacity: 1;
   }
-  header .container ul li:hover > a {
-    background-color: rgba(0, 0, 0, 0.6);
+  header #navigation nav ul li a {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  header #navigation nav ul li:hover > a {
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
   }
-  header .container ul li:hover > ul {
+  header #navigation nav ul li:hover > ul {
     display: block;
     opacity: 1;
   }
-  header .container ul li:has(ul) > a {
+  header #navigation nav ul li:has(ul) > a {
     position: relative;
   }
-  header .container ul li:has(ul) > a::after {
+  header #navigation nav ul li:has(ul) > a::after {
     content: url("../resources/images/single-down.svg");
     filter: brightness(0) invert(1);
+    padding-right: 0;
     display: block;
-    width: 20px;
-    height: auto;
-    margin: 0 auto;
+    width: 1.25rem;
     position: absolute;
-    left: 45%;
-    top: 55%;
-    transform: translateX(-50%);
+    top: 90%; /* keeps it vertically centered as you have it */
+    left: 50%; /* this will set the left edge of the SVG to the center of the parent */
+    transform: translate(-50%, -50%); /* this will move it back by half its width and height */
   }
   header .hamburger {
     display: none;
@@ -12179,10 +12190,13 @@ section.grid .flex-container div {
   flex-grow: 1;
   flex-shrink: 1;
 }
-section.grid .flex-container div h3, section.grid .flex-container div .h3 {
+section.grid .flex-container div:has(span) {
+  padding: 1.25rem;
+}
+section.grid .flex-container div:has(span) h3, section.grid .flex-container div:has(span) .h3 {
   font-size: 2.5rem;
 }
-section.grid .flex-container div span {
+section.grid .flex-container div:has(span) span {
   font-size: 1.25rem;
 }
 section.grid .flex-container div:has(img) {

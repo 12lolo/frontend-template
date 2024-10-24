@@ -19,12 +19,18 @@ section.grid {
       flex-grow: 1;
       flex-shrink: 1;
 
-      h3 {
-        font-size: rem(40);
+      &:has(span) {
+        padding: rem(20);
+
+        h3 {
+          font-size: rem(40);
+        }
+
+        span {
+          font-size: rem(20);
+        }
       }
-      span {
-        font-size: rem(20);
-      }
+
 
       // Add styles for image containers
       &:has(img) {

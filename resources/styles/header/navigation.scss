@@ -9,15 +9,16 @@
 }
 
 * {
+  //width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  //border: solid 1px greenyellow;
 }
 
 $padding-large: rem(128);
 $padding-medium: rem(64);
 $padding-small: rem(32);
-$hamburger-width: rem(35);
 $hamburger-bar-height: rem(5);
 $transition-duration: .6s;
 $timing: cubic-bezier(0.5, 0, 0.5, 1);
@@ -25,20 +26,21 @@ $timing: cubic-bezier(0.5, 0, 0.5, 1);
 $background-color-dark: rgba(0, 0, 0, 0.4);
 $blur: blur(5px);
 //$background-color-dark-hover: #260069;
-$background-color-dark-hover: rgba(0, 0, 0, 0.6);
+$background-color-dark-hover: rgba(0, 0, 0, 0.5);
 $color-white: #FFF;
 $color-gray: #313131;
 
 
 .hamburger {
+  width: rem(35);
   position: relative;
   display: block;
-  width: $hamburger-width;
   cursor: pointer;
   appearance: none;
   background: none;
   outline: none;
   border: none;
+  //margin-right: 5%;
   margin-left: auto;
 
   .bar, &:after, &:before {
@@ -65,35 +67,36 @@ $color-gray: #313131;
     }
   }
 }
-@media (max-width: rem(900)) {
-  header {
+
+header {
+  #navigation {
+    position: fixed;
     z-index: 100;
+    background-color: $background-color-dark;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 
-    .container {
-      position: fixed;
-      z-index: 100;
-      background-color: $background-color-dark;
-      color: $color-white;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
+    img {
+      max-width: rem(50);
+      height: rem(40);
+      margin: rem(5) rem(5) rem(5);
 
-      img {
-        max-width: rem(50);
-        height: rem(40);
-        margin: rem(5) rem(5) rem(5);
+    }
 
-      }
+    h2 {
+      top: 50%;
+      color: inherit;
+      text-transform: uppercase;
+      font-size: rem(32);
+      font-weight: 900;
+      width: fit-content;
+    }
 
-      h2 {
-        top: 50%;
-        color: inherit;
-        text-transform: uppercase;
-        font-size: rem(32);
-        font-weight: 900;
-      }
+    nav {
 
       ul > li:has(ul) > a::after {
         content: url('../resources/images/right.svg');
@@ -178,30 +181,31 @@ $color-gray: #313131;
     }
   }
 }
-@media (min-width: rem(900)) {
-  header {
 
-    .container {
+@include media-breakpoint-up(md) {
+  header {
+    #navigation {
       position: fixed;
-      display: flex;
       z-index: 20;
       background-color: $background-color-dark;
-      backdrop-filter: $blur;
       color: $color-white;
-      max-width: 100%;
+      display: flex;
       align-items: center;
+      width: 100%;
+      max-width: 100%;
+      backdrop-filter: $blur;
       padding: rem(10) rem(20);
       height: rem(60);
+      margin-top: 0;
 
-      //Logo
       img {
         max-width: rem(50);
         height: rem(40);
         margin: rem(5) rem(5) rem(5);
       }
 
-      //Title
       h2 {
+        width: fit-content;
         color: inherit;
         text-transform: uppercase;
         font-size: rem(32);
@@ -209,85 +213,93 @@ $color-gray: #313131;
         margin: 0 0 0 rem(10);
       }
 
-      ul {
-        height: rem(60);
-        top: 50%;
-        list-style: none;
-        padding: 0;
-        margin: 0 0 0 rem(10);
-        display: flex;
-
-        li {
+      nav {
+        ul {
+          position: static;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          min-height: fit-content;
           display: flex;
-          align-items: flex-end;
-          position: relative;
+          z-index: auto;
+          background-color: transparent;
+          margin: 0 0 0 rem(10);
+          padding: 0;
+          height: rem(60);
+          list-style: none;
 
-          a {
-            color: $color-white;
-            text-decoration: none;
-            padding: rem(15) rem(20);
-            display: block;
-
-            &:hover {
-              background-color: $background-color-dark-hover;
-            }
-          }
-
-          // Dropdown styles
-          ul {
-
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 50;
-            margin: 0;
-            backdrop-filter: $blur;
-
-            li {
-              background-color: $background-color-dark-hover;
-              backdrop-filter: $blur;
-            }
-            li:first-child {
-              display: none;
-            }
-
-            // Show dropdown on hover
-            li:hover > ul {
-              display: block;
-              opacity: 1;
-            }
-          }
-
-          // Keep background color active when hovering over the child elements
-          &:hover {
-            > a {
-              background-color: $background-color-dark-hover;
-              backdrop-filter: $blur;
-            }
-
-            // Show the child ul when hovering over the parent li
-            > ul {
-              display: block;
-              opacity: 1;
-            }
-          }
-
-          // Arrow indicator for dropdowns
-          &:has(ul) > a {
+          li {
+            width: fit-content;
+            display: flex;
+            align-items: flex-end;
             position: relative;
 
-            &::after {
-              content: url('../resources/images/single-down.svg');
-              filter: brightness(0) invert(1);
-              display: block;
-              width: 20px;
-              height: auto;
-              margin: 0 auto;
+            a {
+              flex-wrap: nowrap;
+              width: fit-content;
+              color: $color-white;
+              text-decoration: none;
+              padding: rem(15) rem(20);
+              display: flex;
+
+              &:hover {
+                background-color: $background-color-dark-hover;
+              }
+            }
+
+            ul {
+              display: none;
               position: absolute;
-              left: 45%;
-              top: 55%;
-              transform: translateX(-50%);
+              top: 100%;
+              left: 0;
+              z-index: 50;
+              margin: 0;
+              backdrop-filter: $blur;
+
+              li {
+                background-color: $background-color-dark-hover;
+              }
+
+              li:first-child {
+                display: none;
+              }
+
+              li:hover > ul {
+                display: block;
+                opacity: 1;
+              }
+            }
+
+            a {
+              display: flex;
+              flex-wrap: nowrap;
+            }
+            &:hover {
+              > a {
+                background-color: $background-color-dark-hover;
+                backdrop-filter: $blur;
+              }
+
+              > ul {
+                display: block;
+                opacity: 1;
+              }
+            }
+
+            &:has(ul) > a {
+              position: relative;
+
+              &::after {
+                content: url('../resources/images/single-down.svg');
+                filter: brightness(0) invert(1);
+                padding-right: 0;
+                display: block;
+                width: rem(20);
+                position: absolute;
+                top: 90%; /* keeps it vertically centered as you have it */
+                left: 50%; /* this will set the left edge of the SVG to the center of the parent */
+                transform: translate(-50%, -50%); /* this will move it back by half its width and height */
+              }
             }
           }
         }

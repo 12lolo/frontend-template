@@ -1,5 +1,5 @@
 const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('header > div > ul');
+const nav = document.querySelector('#navigation > nav > ul'); // Updated selector
 const subnavs = document.querySelectorAll('.subnav');
 
 let clickCount = 0;
