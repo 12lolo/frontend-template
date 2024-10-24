@@ -1,79 +1,61 @@
+// DOM Elements
 const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('#navigation > nav > ul'); // Updated selector
+const mainNav = document.querySelector('#navigation > nav > ul');
 const subnavs = document.querySelectorAll('.subnav');
+const navLinks = document.querySelectorAll('li > a');
+const backButtons = document.querySelectorAll('.subnav > li:first-child');
 
-let clickCount = 0;
+// State
+let isMenuOpen = false;
 
-// Function to check if the viewport width is less than or equal to 900px
-function isMobile() {
-    return window.matchMedia("(max-width: 900px)").matches;
+// Utility Functions
+function toggleElement(element, force) {
+    if (force === undefined) {
+        element.classList.toggle('is-active');
+        return element.classList.contains('is-active');
+    }
+
+    element.classList[force ? 'add' : 'remove']('is-active');
+    return force;
 }
 
-hamburger.addEventListener('click', () => {
-    if (!isMobile()) return; // Exit if not in mobile view
+// Navigation Functions
+function toggleMainMenu() {
+    isMenuOpen = !isMenuOpen;
+    toggleElement(hamburger, isMenuOpen);
+    toggleElement(mainNav, isMenuOpen);
 
-    clickCount++;
-
-    if (clickCount === 1) {
-        // First interaction
-        hamburger.classList.add('is-active');
-        nav.classList.add('is-active');
-    } else if (clickCount === 2) {
-        // Second interaction
-        hamburger.classList.remove('is-active');
-
-        // Remove 'is-active' class from subnavs immediately
-        subnavs.forEach(subnav => subnav.classList.remove('is-active'));
-
-        // Remove 'is-active' class from main nav immediately
-        nav.classList.remove('is-active');
-
-        clickCount = 0;
+    if (!isMenuOpen) {
+        closeAllSubnavs();
     }
-});
+}
 
-// Function to toggle the 'is-active' class on subnavs
-document.querySelectorAll('li > a').forEach((anchor) => {
-    anchor.addEventListener('click', (event) => {
-        if (!isMobile()) return; // Exit if not in mobile view
+function closeAllSubnavs() {
+    subnavs.forEach(subnav => toggleElement(subnav, false));
+}
 
-        const parentLi = event.target.closest('li');
-        const subnav = parentLi.querySelector('.subnav');
+function handleSubnavClick(event) {
+    const parentLi = event.target.closest('li');
+    const subnav = parentLi?.querySelector('.subnav');
 
-        if (subnav) {
-            // Close all other parent subnavs
-            document.querySelectorAll('ul.subnav').forEach(otherSubnav => {
-                if (otherSubnav !== subnav) {
-                    otherSubnav.classList.remove('is-active');
-                }
-            });
+    if (!subnav) return;
 
-            // Toggle the clicked subnav
-            const isSubnavActive = subnav.classList.toggle('is-active');
+    event.preventDefault();
+    closeAllSubnavs();
 
-            // Add or remove 'is-active' class from main nav based on subnav state
-            if (isSubnavActive) {
-                nav.classList.remove('is-active'); // Close main nav if subnav is opened
-            } else {
-                nav.classList.add('is-active'); // Reopen main nav if subnav is closed
-            }
+    const isSubnavOpen = toggleElement(subnav);
+    toggleElement(mainNav, !isSubnavOpen);
+}
 
-            event.preventDefault();
-        }
-    });
-});
+function handleBackButtonClick(event) {
+    const parentSubnav = event.target.closest('.subnav');
+    toggleElement(parentSubnav, false);
+    toggleElement(mainNav, true);
 
-// Function to close subnav when clicking on the first child (back button)
-document.querySelectorAll('.subnav > li:first-child').forEach((firstLi) => {
-    firstLi.addEventListener('click', (event) => {
-        if (!isMobile()) return; // Exit if not in mobile view
+    event.stopPropagation();
+}
 
-        const parentSubnav = firstLi.closest('.subnav');
-        parentSubnav.classList.remove('is-active');
-
-        // Add 'is-active' class back to main nav
-        nav.classList.add('is-active');
-
-        event.stopPropagation();
-    });
-});
+// Event Listeners
+hamburger.addEventListener('click', toggleMainMenu);
+navLinks.forEach(link => link.addEventListener('click', handleSubnavClick));
+backButtons.forEach(button => button.addEventListener('click', handleBackButtonClick));

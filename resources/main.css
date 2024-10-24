@@ -12082,30 +12082,51 @@ header #navigation nav ul li ul li a {
     display: none;
   }
 }
-main section.banner {
-  color: #FFF;
+main .hero-banner {
   position: relative;
   min-height: 100.1svh;
   display: flex;
   align-items: center;
+  color: #FFF;
+  overflow: hidden;
 }
-main section.banner:after {
+main .hero-banner::after {
   content: "";
-  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   z-index: 0;
   background-image: url("../resources/placeholders/ph38.jpg");
   background-size: cover;
   background-position: center;
   opacity: 1;
+  transition: transform 0.3s ease-out;
 }
-main section.banner .container {
+main .hero-banner:hover::after {
+  transform: scale(1.05);
+}
+main .hero-banner .container {
   position: relative;
   z-index: 1;
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  text-align: center;
+}
+main .hero-banner .container h1, main .hero-banner .container .h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+main .hero-banner .container .hero-subtitle {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s 0.2s forwards;
 }
 
 .scroll-button {
@@ -12152,21 +12173,32 @@ main section.banner .container {
     transform: translateX(-50%) translateY(-5px) scale(1.2);
   }
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .banner {
+  position: relative;
   text-align: center;
-  font-size: 2.25rem;
-  font-weight: bold;
-  padding: 20px;
-  background-image: linear-gradient(to bottom, #333, #555);
-  background-size: 100% 18.75rem;
-  background-position: center;
-  color: #fff;
+  padding: 2.5rem 1.25rem;
+  background: linear-gradient(to bottom, #333, #555);
+  color: #FFF;
   border-bottom: 0.0625rem solid #ccc;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
 }
-.banner h1, .banner .h1 {
+.banner h2, .banner .h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
   margin: 0;
-  padding: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
 }
 
 section.grid {

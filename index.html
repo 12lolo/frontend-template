@@ -45,15 +45,20 @@
 
 <script src="resources/js/navbar.js"></script>
 
-<main>
-    <section class="banner">
+<main role="main">
+    <section class="hero-banner" aria-label="Welcome">
         <div class="container">
-            <h1>hero of the page I guess</h1>
-            <h3>extra info adding to the hero of this page</h3>
+            <h1>Main Page Heading</h1>
+            <p class="hero-subtitle">Supporting information about the page</p>
+            <div class="hero-cta">
+                <a href="#target-section" class="scroll-button" id="scrollButton" aria-label="View our site content">
+                    View Site
+                </a>
+            </div>
         </div>
     </section>
 </main>
-<button class="scroll-button" id="scrollButton">View Site</button>
+
 <div class="banner" id="target-section">
     <h1>Grid</h1>
 </div>
