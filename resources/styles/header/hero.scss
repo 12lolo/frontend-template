@@ -29,12 +29,6 @@ main {
         position: center;
       }
       opacity: 1;
-      transition: transform 0.3s ease-out;
-    }
-
-    // Subtle zoom effect on hover
-    &:hover::after {
-      transform: scale(1.05);
     }
 
     .container {
@@ -80,7 +74,7 @@ main {
   border: none;
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
-  animation: bounce 1.5s infinite;
+  animation: bounce 1.7s infinite;
 
   &::after {
     content: url('../resources/images/single-down.svg');
@@ -98,7 +92,7 @@ main {
     &::after {
       content: url('../resources/images/single-down-big.svg');
       top: 70%;
-      animation: bounce 1.5s infinite;
+      animation: bounce 1.7s infinite;
     }
   }
 }
@@ -135,7 +129,6 @@ main {
   padding: rem(40) rem(20);
   background: linear-gradient(to bottom, #333, #555);
   color: $color-white;
-  border-bottom: rem(1) solid #ccc;
   box-shadow: 0 0 rem(10) rgba(0, 0, 0, 0.2);
 
   h2 {

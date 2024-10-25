@@ -228,52 +228,45 @@ header {
           height: rem(60);
           list-style: none;
 
+          // {
+          //  border: 1px solid greenyellow;
+          //}
+
           li {
             width: fit-content;
             display: flex;
             align-items: flex-end;
             position: relative;
 
+
             a {
-              flex-wrap: nowrap;
+              white-space: nowrap;
               width: fit-content;
               color: $color-white;
               text-decoration: none;
               padding: rem(15) rem(20);
-              display: flex;
-
               &:hover {
                 background-color: $background-color-dark-hover;
               }
             }
 
             ul {
+              width: fit-content;
+              height: fit-content;
               display: none;
               position: absolute;
               top: 100%;
               left: 0;
               z-index: 50;
               margin: 0;
+              background-color: $background-color-dark-hover;
               backdrop-filter: $blur;
-
-              li {
-                background-color: $background-color-dark-hover;
-              }
 
               li:first-child {
                 display: none;
               }
-
-              li:hover > ul {
-                display: block;
-                opacity: 1;
-              }
             }
 
-            a {
-              display: flex;
-              flex-wrap: nowrap;
-            }
             &:hover {
               > a {
                 background-color: $background-color-dark-hover;
@@ -294,11 +287,10 @@ header {
                 filter: brightness(0) invert(1);
                 padding-right: 0;
                 display: block;
-                width: rem(20);
                 position: absolute;
-                top: 90%; /* keeps it vertically centered as you have it */
-                left: 50%; /* this will set the left edge of the SVG to the center of the parent */
-                transform: translate(-50%, -50%); /* this will move it back by half its width and height */
+                top: 90%;
+                left: 50%;
+                transform: translate(-50%, -50%);
               }
             }
           }

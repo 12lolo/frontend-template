@@ -12023,38 +12023,29 @@ header #navigation nav ul li ul li a {
     position: relative;
   }
   header #navigation nav ul li a {
-    flex-wrap: nowrap;
+    white-space: nowrap;
     width: fit-content;
     color: #FFF;
     text-decoration: none;
     padding: 0.9375rem 1.25rem;
-    display: flex;
   }
   header #navigation nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.5);
   }
   header #navigation nav ul li ul {
+    width: fit-content;
+    height: fit-content;
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 50;
     margin: 0;
-    backdrop-filter: blur(5px);
-  }
-  header #navigation nav ul li ul li {
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
   }
   header #navigation nav ul li ul li:first-child {
     display: none;
-  }
-  header #navigation nav ul li ul li:hover > ul {
-    display: block;
-    opacity: 1;
-  }
-  header #navigation nav ul li a {
-    display: flex;
-    flex-wrap: nowrap;
   }
   header #navigation nav ul li:hover > a {
     background-color: rgba(0, 0, 0, 0.5);
@@ -12072,11 +12063,10 @@ header #navigation nav ul li ul li a {
     filter: brightness(0) invert(1);
     padding-right: 0;
     display: block;
-    width: 1.25rem;
     position: absolute;
-    top: 90%; /* keeps it vertically centered as you have it */
-    left: 50%; /* this will set the left edge of the SVG to the center of the parent */
-    transform: translate(-50%, -50%); /* this will move it back by half its width and height */
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   header .hamburger {
     display: none;
@@ -12099,10 +12089,6 @@ main .hero-banner::after {
   background-size: cover;
   background-position: center;
   opacity: 1;
-  transition: transform 0.3s ease-out;
-}
-main .hero-banner:hover::after {
-  transform: scale(1.05);
 }
 main .hero-banner .container {
   position: relative;
@@ -12142,7 +12128,7 @@ main .hero-banner .container .hero-subtitle {
   border: none;
   cursor: pointer;
   transition: transform 0.3s, background-color 0.3s;
-  animation: bounce 1.5s infinite;
+  animation: bounce 1.7s infinite;
 }
 .scroll-button::after {
   content: url("../resources/images/single-down.svg");
@@ -12159,7 +12145,7 @@ main .hero-banner .container .hero-subtitle {
 .scroll-button:hover::after {
   content: url("../resources/images/single-down-big.svg");
   top: 70%;
-  animation: bounce 1.5s infinite;
+  animation: bounce 1.7s infinite;
 }
 
 @keyframes bounce {
@@ -12189,7 +12175,6 @@ main .hero-banner .container .hero-subtitle {
   padding: 2.5rem 1.25rem;
   background: linear-gradient(to bottom, #333, #555);
   color: #FFF;
-  border-bottom: 0.0625rem solid #ccc;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
 }
 .banner h2, .banner .h2 {
