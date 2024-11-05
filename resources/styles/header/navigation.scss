@@ -40,7 +40,7 @@ $color-gray: #313131;
   background: none;
   outline: none;
   border: none;
-  //margin-right: 5%;
+  margin-right: 5%;
   margin-left: auto;
 
   .bar, &:after, &:before {
@@ -78,7 +78,8 @@ header {
     align-items: center;
     width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 !important;
+    padding: 0;
 
     img {
       max-width: rem(50);
@@ -196,7 +197,7 @@ header {
       backdrop-filter: $blur;
       padding: rem(10) rem(20);
       height: rem(60);
-      margin-top: 0;
+      margin: rem(10) rem(10);
 
       img {
         max-width: rem(50);
@@ -210,7 +211,8 @@ header {
         text-transform: uppercase;
         font-size: rem(32);
         font-weight: 900;
-        margin: 0 0 0 rem(10);
+        //margin: 0 0 0 rem(20);
+        margin-left: 10px !important;
       }
 
       nav {
@@ -237,7 +239,6 @@ header {
             display: flex;
             align-items: flex-end;
             position: relative;
-
 
             a {
               white-space: nowrap;

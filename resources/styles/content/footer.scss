@@ -11,7 +11,9 @@
 footer {
   background-color: #24262b;
   padding: rem(70) 0;
-
+*{
+  border: solid 1px greenyellow;
+}
   .footer {
     max-width: rem(1170);
     margin: auto;
@@ -19,13 +21,17 @@ footer {
     .row {
       display: flex;
       flex-wrap: wrap;
-
+      margin: 0;
+      *{
+        border: solid 1px lightblue;
+      }
       .footer-col {
         width: 25%;
         padding: 0 rem(15);
 
 
         h4 {
+          width: fit-content;
           font-size: rem(18);
           color: #ffffff;
           text-transform: capitalize;
@@ -47,8 +53,9 @@ footer {
         }
 
         ul {
-          margin-left: rem(-22);
+          width: fit-content;
           list-style: none;
+          padding: 0;
 
           li {
             &:not(:last-child) {
@@ -75,6 +82,7 @@ footer {
         }
 
         .social-links {
+          width: fit-content;
           a {
             position: relative;
             display: inline-flex;
