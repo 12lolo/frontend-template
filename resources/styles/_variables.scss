@@ -1,0 +1,42 @@
+// nav.variables.scss
+$padding-large: rem(128);
+$padding-medium: rem(64);
+$padding-small: rem(32);
+$hamburger-bar-height: rem(5);
+$transition-duration: .6s;
+$timing: cubic-bezier(0.5, 0, 0.5, 1);
+$background-color-dark: rgba(0, 0, 0, 0.4);
+$blur: blur(5px);
+$background-color-dark-hover: rgba(0, 0, 0, 0.5);
+$color-white: #FFF;
+$color-gray: #313131;
+$nav-height: rem(60);
+
+$nav-padding: rem(10) rem(20);
+$link-padding: rem(15) rem(20);
+$transition: $transition-duration $timing;
+
+$transitions: (
+        all: all $transition,
+        transform: transform $transition
+);
+
+@mixin transition($type: all) {
+  transition: map-get($transitions, $type);
+}
+
+//footer.variables.scss
+
+// Variables
+$footer-bg-color: #24262b;
+$footer-text-color: #ffffff;
+$footer-link-color: #bbbbbb;
+$accent-color: #e91e63;
+$footer-max-width: rem(1170);
+$footer-padding: rem(70) 0;
+$column-padding: 0 rem(15);
+$transition-duration: 0.3s;
+
+// Breakpoints
+$breakpoint-medium: rem(767);
+$breakpoint-small: rem(574);

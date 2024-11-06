@@ -11844,12 +11844,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .hamburger {
   width: 2.1875rem;
   position: relative;
@@ -11869,7 +11863,7 @@ textarea.form-control-lg {
   height: 0.3125rem;
   background-color: #FFF;
   margin: 6px;
-  transition: 0.6s;
+  transition: all 0.6s cubic-bezier(0.5, 0, 0.5, 1);
 }
 .hamburger.is-active:before {
   transform: rotate(-45deg) translate(-8px, 6px);
@@ -11882,29 +11876,30 @@ textarea.form-control-lg {
 }
 
 header #navigation {
-  position: fixed;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #FFF;
   display: flex;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  position: fixed;
   width: 100%;
   max-width: 100%;
   margin: 0 !important;
   padding: 0;
+  color: #FFF;
+  z-index: 100;
 }
 header #navigation img {
   max-width: 3.125rem;
   height: 2.5rem;
-  margin: 0.3125rem 0.3125rem 0.3125rem;
+  margin: 0.3125rem;
 }
 header #navigation h2, header #navigation .h2 {
-  top: 50%;
   color: inherit;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 2.625rem;
   font-weight: 900;
   width: fit-content;
+  top: 50%;
 }
 header #navigation nav ul > li:has(ul) > a::after {
   content: url("../resources/images/right.svg");
@@ -11924,7 +11919,7 @@ header #navigation nav ul {
   background-color: rgba(0, 0, 0, 0.4);
   margin-top: 3.125rem;
   padding-top: 1.25rem;
-  transition: 0.6s;
+  transition: 0.3s;
   transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
 }
 header #navigation nav ul.is-active {
@@ -11950,7 +11945,7 @@ header #navigation nav ul li a {
 }
 header #navigation nav ul li ul {
   width: fit-content3.75rem;
-  transition: 0.6s;
+  transition: 0.3s;
   transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
 }
 header #navigation nav ul li ul li:first-child {
@@ -11967,55 +11962,33 @@ header #navigation nav ul li ul li:first-child a::before {
   padding-right: 0.625rem;
   z-index: 1000;
 }
-header #navigation nav ul li ul li a {
-  display: block;
-  width: 100%;
-  max-width: 12.5rem;
-  padding: 0.75rem 1rem;
-  color: #FFF;
-  text-decoration: none;
-}
 
 @media (min-width: 768px) {
+  header .hamburger {
+    display: none;
+  }
   header #navigation {
-    position: fixed;
     z-index: 20;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: #FFF;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    backdrop-filter: blur(5px);
     padding: 0.625rem 1.25rem;
     height: 3.75rem;
-    margin: 0.625rem 0.625rem;
-  }
-  header #navigation img {
-    max-width: 3.125rem;
-    height: 2.5rem;
-    margin: 0.3125rem 0.3125rem 0.3125rem;
+    margin: 0.625rem;
   }
   header #navigation h2, header #navigation .h2 {
-    width: fit-content;
-    color: inherit;
-    text-transform: uppercase;
-    font-size: 2rem;
-    font-weight: 900;
-    margin-left: 10px !important;
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 0.625rem;
+  }
+  header #navigation nav {
+    height: 3.75rem;
   }
   header #navigation nav ul {
+    height: 3.75rem;
     position: static;
-    top: 50%;
-    left: 0;
-    width: 100%;
     min-height: fit-content;
     display: flex;
-    z-index: auto;
     background-color: transparent;
     margin: 0 0 0 0.625rem;
     padding: 0;
-    height: 3.75rem;
     list-style: none;
   }
   header #navigation nav ul li {
@@ -12025,10 +11998,10 @@ header #navigation nav ul li ul li a {
     position: relative;
   }
   header #navigation nav ul li a {
+    font-size: 1.25rem;
+    height: 3.75rem;
     white-space: nowrap;
     width: fit-content;
-    color: #FFF;
-    text-decoration: none;
     padding: 0.9375rem 1.25rem;
   }
   header #navigation nav ul li a:hover {
@@ -12063,15 +12036,12 @@ header #navigation nav ul li ul li a {
   header #navigation nav ul li:has(ul) > a::after {
     content: url("../resources/images/single-down.svg");
     filter: brightness(0) invert(1);
-    padding-right: 0;
+    padding: 0;
     display: block;
     position: absolute;
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  header .hamburger {
-    display: none;
   }
 }
 main .hero-banner {
@@ -12286,29 +12256,21 @@ section.columns div.columns div span {
 footer {
   background-color: #24262b;
   padding: 4.375rem 0;
-  /*responsive*/
-}
-footer * {
-  border: solid 1px greenyellow;
 }
 footer .footer {
   max-width: 73.125rem;
   margin: auto;
 }
-footer .footer .row {
+footer .footer nav {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
 }
-footer .footer .row * {
-  border: solid 1px lightblue;
-}
-footer .footer .row .footer-col {
+footer .footer nav .footer-col {
   width: 25%;
   padding: 0 0.9375rem;
 }
-footer .footer .row .footer-col h4, footer .footer .row .footer-col .h4 {
-  width: fit-content;
+footer .footer nav .footer-col h4, footer .footer nav .footer-col .h4 {
   font-size: 1.125rem;
   color: #ffffff;
   text-transform: capitalize;
@@ -12317,73 +12279,67 @@ footer .footer .row .footer-col h4, footer .footer .row .footer-col .h4 {
   font-weight: 500;
   position: relative;
 }
-footer .footer .row .footer-col h4::before, footer .footer .row .footer-col .h4::before {
+footer .footer nav .footer-col h4::before, footer .footer nav .footer-col .h4::before {
   content: "";
   position: absolute;
   left: 0;
   bottom: -0.625rem;
   background-color: #e91e63;
   height: 0.125rem;
-  box-sizing: border-box;
   width: 3.125rem;
+  box-sizing: border-box;
 }
-footer .footer .row .footer-col ul {
-  width: fit-content;
+footer .footer nav .footer-col ul {
   list-style: none;
   padding: 0;
 }
-footer .footer .row .footer-col ul li:not(:last-child) {
+footer .footer nav .footer-col ul li:not(:last-child) {
   margin-bottom: 0.625rem;
 }
-footer .footer .row .footer-col ul li a {
-  position: relative;
+footer .footer nav .footer-col ul a {
+  width: fit-content;
   font-size: 1rem;
   text-transform: capitalize;
-  color: #ffffff;
+  color: #bbbbbb;
   text-decoration: none;
   font-weight: 300;
-  color: #bbbbbb;
   display: block;
   transition: all 0.3s ease;
 }
-footer .footer .row .footer-col ul li a:hover {
+footer .footer nav .footer-col ul a:hover {
   color: #ffffff;
   padding-left: 0.5rem;
 }
-footer .footer .row .footer-col .social-links {
-  width: fit-content;
-}
-footer .footer .row .footer-col .social-links a {
-  position: relative;
+footer .footer nav .footer-col .social-links a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   height: 2.5rem;
   width: 2.5rem;
   background-color: rgba(255, 255, 255, 0.2);
-  margin: 0.625rem 0.625rem 0.625rem;
+  margin: 0.625rem 1.25rem 0.625rem 0;
   border-radius: 50%;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
-footer .footer .row .footer-col .social-links a:hover {
+footer .footer nav .footer-col .social-links a:hover {
   color: #24262b;
   background-color: #ffffff;
 }
-footer .footer .row .footer-col .social-links a:hover .social-icon {
+footer .footer nav .footer-col .social-links a:hover .social-icon {
   filter: brightness(0) invert(0.4);
 }
-footer .footer .row .footer-col .social-links a .social-icon {
+footer .footer nav .footer-col .social-links a .social-icon {
   width: 70%;
   height: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
-footer .footer .row .footer-col .social-links a .tooltip {
+footer .footer nav .footer-col .social-links a .tooltip {
   visibility: hidden;
   width: 7.5rem;
   background-color: #333;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   border-radius: 5px;
   padding: 5px;
@@ -12395,7 +12351,7 @@ footer .footer .row .footer-col .social-links a .tooltip {
   transition: opacity 0.3s;
   z-index: 1;
 }
-footer .footer .row .footer-col .social-links a:hover .tooltip {
+footer .footer nav .footer-col .social-links a:hover .tooltip {
   visibility: visible;
   opacity: 1;
 }

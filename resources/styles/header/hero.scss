@@ -1,12 +1,5 @@
-@use "sass:math";
-
-@function rem($pixel) {
-  @if math.is-unitless($pixel) {
-    @return math.div($pixel, 16) + rem;
-  } @else {
-    @error 'Don\'t use units when using the rem() function; only numbers.';
-  }
-}
+@import '../utilities';
+@import '../variables';
 
 main {
   .hero-banner {

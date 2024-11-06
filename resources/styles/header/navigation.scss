@@ -1,35 +1,5 @@
-@use "sass:math";
-
-@function rem($pixel) {
-  @if math.is-unitless($pixel) {
-    @return math.div($pixel, 16) + rem;
-  } @else {
-    @error 'Don\'t use units when using the rem() function; only numbers.';
-  }
-}
-
-* {
-  //width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  //border: solid 1px greenyellow;
-}
-
-$padding-large: rem(128);
-$padding-medium: rem(64);
-$padding-small: rem(32);
-$hamburger-bar-height: rem(5);
-$transition-duration: .6s;
-$timing: cubic-bezier(0.5, 0, 0.5, 1);
-//$background-color-dark: #170044;
-$background-color-dark: rgba(0, 0, 0, 0.4);
-$blur: blur(5px);
-//$background-color-dark-hover: #260069;
-$background-color-dark-hover: rgba(0, 0, 0, 0.5);
-$color-white: #FFF;
-$color-gray: #313131;
-
+@import '../utilities';
+@import '../variables';
 
 .hamburger {
   width: rem(35);
@@ -50,7 +20,7 @@ $color-gray: #313131;
     height: $hamburger-bar-height;
     background-color: $color-white;
     margin: 6px;
-    transition: $transition-duration;
+    @include transition(all);
   }
 
   &.is-active {
@@ -70,35 +40,32 @@ $color-gray: #313131;
 
 header {
   #navigation {
+    @include flex-center;
+    @include background-blur;
     position: fixed;
-    z-index: 100;
-    background-color: $background-color-dark;
-    color: $color-white;
-    display: flex;
-    align-items: center;
     width: 100%;
     max-width: 100%;
     margin: 0 !important;
     padding: 0;
+    color: $color-white;
+    z-index: 100;
 
     img {
       max-width: rem(50);
       height: rem(40);
-      margin: rem(5) rem(5) rem(5);
-
+      margin: rem(5);
     }
 
     h2 {
-      top: 50%;
       color: inherit;
       text-transform: uppercase;
-      font-size: rem(32);
+      font-size: rem(42);
       font-weight: 900;
       width: fit-content;
+      top: 50%;
     }
 
     nav {
-
       ul > li:has(ul) > a::after {
         content: url('../resources/images/right.svg');
         filter: brightness(0) invert(1);
@@ -155,25 +122,13 @@ header {
               z-index: 900;
               font-size: rem(18);
               font-weight: bold;
-              display: flex;
-              align-items: center;
+              @include flex-center;
 
               a::before {
                 content: url('../resources/images/left.svg');
                 filter: brightness(0) invert(1);
                 padding-right: rem(10);
                 z-index: 1000;
-              }
-            }
-
-            li {
-              a {
-                display: block;
-                width: 100%;
-                max-width: rem(200);
-                padding: rem(12) rem(16);
-                color: $color-white;
-                text-decoration: none;
               }
             }
           }
@@ -185,54 +140,33 @@ header {
 
 @include media-breakpoint-up(md) {
   header {
-    #navigation {
-      position: fixed;
-      z-index: 20;
-      background-color: $background-color-dark;
-      color: $color-white;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      max-width: 100%;
-      backdrop-filter: $blur;
-      padding: rem(10) rem(20);
-      height: rem(60);
-      margin: rem(10) rem(10);
+    .hamburger {
+      display: none;
+    }
 
-      img {
-        max-width: rem(50);
-        height: rem(40);
-        margin: rem(5) rem(5) rem(5);
-      }
+    #navigation {
+      z-index: 20;
+      padding: rem(10) rem(20);
+      height: $nav-height;
+      margin: rem(10);
 
       h2 {
-        width: fit-content;
-        color: inherit;
-        text-transform: uppercase;
-        font-size: rem(32);
-        font-weight: 900;
-        //margin: 0 0 0 rem(20);
-        margin-left: 10px !important;
+        @include flex-center;
+        margin: 0 0 0 rem(10);
       }
 
       nav {
+        height: $nav-height;
+
         ul {
+          height: $nav-height;
           position: static;
-          top: 50%;
-          left: 0;
-          width: 100%;
           min-height: fit-content;
           display: flex;
-          z-index: auto;
           background-color: transparent;
           margin: 0 0 0 rem(10);
           padding: 0;
-          height: rem(60);
           list-style: none;
-
-          // {
-          //  border: 1px solid greenyellow;
-          //}
 
           li {
             width: fit-content;
@@ -241,11 +175,12 @@ header {
             position: relative;
 
             a {
+              font-size: rem(20);
+              height: $nav-height;
               white-space: nowrap;
               width: fit-content;
-              color: $color-white;
-              text-decoration: none;
               padding: rem(15) rem(20);
+
               &:hover {
                 background-color: $background-color-dark-hover;
               }
@@ -286,7 +221,7 @@ header {
               &::after {
                 content: url('../resources/images/single-down.svg');
                 filter: brightness(0) invert(1);
-                padding-right: 0;
+                padding: 0;
                 display: block;
                 position: absolute;
                 top: 90%;
@@ -297,9 +232,6 @@ header {
           }
         }
       }
-    }
-    .hamburger {
-      display: none;
     }
   }
 }

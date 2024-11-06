@@ -1,39 +1,26 @@
-@use "sass:math";
+@import '../utilities';
+@import '../variables';
 
-@function rem($pixel) {
-  @if math.is-unitless($pixel) {
-    @return math.div($pixel, 16) + rem;
-  } @else {
-    @error 'Don\'t use units when using the rem() function; only numbers.';
-  }
-}
-
+// Footer Styles
 footer {
-  background-color: #24262b;
-  padding: rem(70) 0;
-*{
-  border: solid 1px greenyellow;
-}
+  background-color: $footer-bg-color;
+  padding: $footer-padding;
+
   .footer {
-    max-width: rem(1170);
+    max-width: $footer-max-width;
     margin: auto;
 
-    .row {
-      display: flex;
-      flex-wrap: wrap;
+    nav {
+      @include flex-container;
       margin: 0;
-      *{
-        border: solid 1px lightblue;
-      }
+
       .footer-col {
         width: 25%;
-        padding: 0 rem(15);
-
+        padding: $column-padding;
 
         h4 {
-          width: fit-content;
           font-size: rem(18);
-          color: #ffffff;
+          color: $footer-text-color;
           text-transform: capitalize;
           margin-left: rem(10);
           margin-bottom: rem(35);
@@ -41,64 +28,43 @@ footer {
           position: relative;
 
           &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: rem(-10);
-            background-color: #e91e63;
-            height: rem(2);
-            box-sizing: border-box;
-            width: rem(50);
+            @include underline-pseudo-element;
           }
         }
 
         ul {
-          width: fit-content;
           list-style: none;
           padding: 0;
 
-          li {
-            &:not(:last-child) {
-              margin-bottom: rem(10);
-            }
+          li:not(:last-child) {
+            margin-bottom: rem(10);
+          }
 
-            a {
-              position: relative;
-              font-size: rem(16);
-              text-transform: capitalize;
-              color: #ffffff;
-              text-decoration: none;
-              font-weight: 300;
-              color: #bbbbbb;
-              display: block;
-              transition: all 0.3s ease;
+          a {
+            width: fit-content;
+            font-size: rem(16);
+            text-transform: capitalize;
+            color: $footer-link-color;
+            text-decoration: none;
+            font-weight: 300;
+            display: block;
+            transition: all $transition-duration ease;
 
-              &:hover {
-                color: #ffffff;
-                padding-left: rem(8);
-              }
+            &:hover {
+              color: $footer-text-color;
+              padding-left: rem(8);
             }
           }
         }
 
         .social-links {
-          width: fit-content;
           a {
-            position: relative;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            height: rem(40);
-            width: rem(40);
-            background-color: rgba(255, 255, 255, 0.2);
-            margin: rem(10) rem(10) rem(10);
-            border-radius: 50%;
-            overflow: hidden;
-            transition: all 0.5s ease;
+            @include social-icon;
 
             &:hover {
-              color: #24262b;
-              background-color: #ffffff;
+              color: $footer-bg-color;
+              background-color: $footer-text-color;
+
               .social-icon {
                 filter: brightness(0) invert(0.4);
               }
@@ -111,12 +77,11 @@ footer {
               filter: brightness(0) invert(1);
             }
 
-            // Tooltip styling
             .tooltip {
               visibility: hidden;
               width: rem(120);
               background-color: #333;
-              color: #fff;
+              color: $footer-text-color;
               text-align: center;
               border-radius: 5px;
               padding: 5px;
@@ -125,13 +90,13 @@ footer {
               left: 50%;
               transform: translateX(-50%);
               opacity: 0;
-              transition: opacity 0.3s;
+              transition: opacity $transition-duration;
               z-index: 1;
             }
 
             &:hover .tooltip {
-              visibility: visible; // Show on hover
-              opacity: 1; // Fade in
+              visibility: visible;
+              opacity: 1;
             }
           }
         }
@@ -139,15 +104,15 @@ footer {
     }
   }
 
-  /*responsive*/
-  @media (max-width: rem(767)) {
+  // Responsive styles
+  @media (max-width: $breakpoint-medium) {
     .footer-col {
       width: 50% !important;
       margin-bottom: rem(30);
     }
   }
 
-  @media (max-width: rem(574)) {
+  @media (max-width: $breakpoint-small) {
     .footer-col {
       width: 100% !important;
     }
