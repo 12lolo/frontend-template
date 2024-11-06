@@ -1,5 +1,4 @@
 // _utilities.scss
-@use "sass:math";
 
 @function rem($pixel) {
   @if math.is-unitless($pixel) {
@@ -9,31 +8,62 @@
   }
 }
 
+@mixin hamburger {
+  width: rem(45);
+  position: relative;
+  display: block;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+  margin-right: 5%;
+  margin-left: auto;
+
+  .bar, &:after, &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: rem(5);
+    background-color: white;
+    margin: 6px;
+    transition: 0.5s;
+  }
+
+  &.is-active {
+    &:before {
+      transform: rotate(-45deg) translate(-8px, 6px);
+    }
+
+    &:after {
+      transform: rotate(45deg) translate(-9px, -8px);
+    }
+
+    .bar {
+      opacity: 0;
+    }
+  }
+}
+
 @mixin flex-center {
   display: flex;
   align-items: center;
 }
 
 @mixin background-blur {
-  background-color: $background-color-dark;
-  backdrop-filter: $blur;
+  background-color: $nav-background-color-dark;
+  backdrop-filter: $nav-blur;
 }
 
 @mixin background-hover-blur {
-  background-color: $background-color-dark;
-  backdrop-filter: $blur;
+  background-color: $nav-background-color-dark;
+  backdrop-filter: $nav-blur;
 }
 
 @mixin hover-effect {
   &:hover {
-    background-color: $background-color-dark-hover;
-    backdrop-filter: $blur;
-  }
-}
-
-@mixin breakpoint($point) {
-  @if $point == md {
-    @media (min-width: 768px) { @content; }
+    background-color: $nav-background-color-dark-hover;
+    backdrop-filter: $nav-blur;
   }
 }
 
@@ -48,7 +78,7 @@
   position: absolute;
   left: 0;
   bottom: rem(-10);
-  background-color: $accent-color;
+  background-color: $footer-accent-color;
   height: rem(2);
   width: rem(50);
   box-sizing: border-box;
@@ -64,5 +94,5 @@
   margin: rem(10) rem(20) rem(10) 0;
   border-radius: 50%;
   overflow: hidden;
-  transition: all $transition-duration ease;
+  transition: all $footer-transition-duration ease;
 }

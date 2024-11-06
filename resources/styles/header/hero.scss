@@ -1,13 +1,9 @@
-@import '../utilities';
-@import '../variables';
-
 main {
   section {
     position: relative;
-    min-height: 100.1svh;
-    display: flex;
-    align-items: center;
-    color: $color-white;
+    min-height: 100svh;
+    @include flex-center;
+    color: $hero-text-color;
     overflow: hidden;
 
     // Background overlay
@@ -17,7 +13,7 @@ main {
       inset: 0;
       z-index: 0;
       background: {
-        image: url('../resources/placeholders/ph38.jpg');
+        image: $hero-background-image;
         size: cover;
         position: center;
       }
@@ -33,21 +29,18 @@ main {
       text-align: center;
 
       h1 {
-        font-size: rem(65);
-        font-weight: 700;
+        @include title-font;
         margin-bottom: rem(20);
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(rem(20));
         animation: fadeInUp 0.8s forwards;
       }
 
       p {
-        font-size: rem(30);
-        font-weight: 350;
-        line-height: 1.5;
+        @include subtitle-font;
         margin-bottom: rem(40);
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(rem(20));
         animation: fadeInUp 0.8s 0.2s forwards;
       }
     }
@@ -60,7 +53,7 @@ main {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
+  padding: rem(10) rem(20);
   font-size: rem(30);
   font-weight: 600;
   background-color: transparent;
@@ -122,7 +115,7 @@ main {
   text-align: center;
   padding: rem(40) rem(20);
   background: linear-gradient(to bottom, #333, #555);
-  color: $color-white;
+  color: $nav-color-white;
   box-shadow: 0 0 rem(10) rgba(0, 0, 0, 0.2);
 
   h2 {

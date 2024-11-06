@@ -11845,7 +11845,7 @@ textarea.form-control-lg {
   }
 }
 .hamburger {
-  width: 2.1875rem;
+  width: 2.8125rem;
   position: relative;
   display: block;
   cursor: pointer;
@@ -11861,9 +11861,9 @@ textarea.form-control-lg {
   display: block;
   width: 100%;
   height: 0.3125rem;
-  background-color: #FFF;
+  background-color: white;
   margin: 6px;
-  transition: all 0.6s cubic-bezier(0.5, 0, 0.5, 1);
+  transition: 0.5s;
 }
 .hamburger.is-active:before {
   transform: rotate(-45deg) translate(-8px, 6px);
@@ -11919,7 +11919,7 @@ header #navigation nav ul {
   background-color: rgba(0, 0, 0, 0.4);
   margin-top: 3.125rem;
   padding-top: 1.25rem;
-  transition: 0.3s;
+  transition: 0.6s;
   transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
 }
 header #navigation nav ul.is-active {
@@ -11945,7 +11945,7 @@ header #navigation nav ul li a {
 }
 header #navigation nav ul li ul {
   width: fit-content3.75rem;
-  transition: 0.3s;
+  transition: 0.6s;
   transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
 }
 header #navigation nav ul li ul li:first-child {
@@ -11963,7 +11963,7 @@ header #navigation nav ul li ul li:first-child a::before {
   z-index: 1000;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   header .hamburger {
     display: none;
   }
@@ -11976,7 +11976,6 @@ header #navigation nav ul li ul li:first-child a::before {
   header #navigation h2, header #navigation .h2 {
     display: flex;
     align-items: center;
-    margin: 0 0 0 0.625rem;
   }
   header #navigation nav {
     height: 3.75rem;
@@ -12004,8 +12003,9 @@ header #navigation nav ul li ul li:first-child a::before {
     width: fit-content;
     padding: 0.9375rem 1.25rem;
   }
-  header #navigation nav ul li a:hover {
+  header #navigation nav ul li a:hover:hover {
     background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
   }
   header #navigation nav ul li ul {
     width: fit-content;
@@ -12016,14 +12016,14 @@ header #navigation nav ul li ul li:first-child a::before {
     left: 0;
     z-index: 50;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
   }
   header #navigation nav ul li ul li:first-child {
     display: none;
   }
   header #navigation nav ul li:hover > a {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
   }
   header #navigation nav ul li:hover > ul {
@@ -12047,10 +12047,10 @@ header #navigation nav ul li ul li:first-child a::before {
 }
 main section {
   position: relative;
-  min-height: 100.1svh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
-  color: #FFF;
+  color: #ffffff;
   overflow: hidden;
 }
 main section::after {
@@ -12076,7 +12076,7 @@ main section div h1, main section div .h1 {
   font-weight: 700;
   margin-bottom: 1.25rem;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(1.25rem);
   animation: fadeInUp 0.8s forwards;
 }
 main section div p {
@@ -12085,7 +12085,7 @@ main section div p {
   line-height: 1.5;
   margin-bottom: 2.5rem;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(1.25rem);
   animation: fadeInUp 0.8s 0.2s forwards;
 }
 
@@ -12094,7 +12094,7 @@ main section div p {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   font-size: 1.875rem;
   font-weight: 600;
   background-color: transparent;

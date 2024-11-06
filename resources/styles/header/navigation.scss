@@ -1,41 +1,5 @@
-@import '../utilities';
-@import '../variables';
-
 .hamburger {
-  width: rem(35);
-  position: relative;
-  display: block;
-  cursor: pointer;
-  appearance: none;
-  background: none;
-  outline: none;
-  border: none;
-  margin-right: 5%;
-  margin-left: auto;
-
-  .bar, &:after, &:before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: $hamburger-bar-height;
-    background-color: $color-white;
-    margin: 6px;
-    @include transition(all);
-  }
-
-  &.is-active {
-    &:before {
-      transform: rotate(-45deg) translate(-8px, 6px);
-    }
-
-    &:after {
-      transform: rotate(45deg) translate(-9px, -8px);
-    }
-
-    .bar {
-      opacity: 0;
-    }
-  }
+  @include hamburger;
 }
 
 header {
@@ -47,7 +11,7 @@ header {
     max-width: 100%;
     margin: 0 !important;
     padding: 0;
-    color: $color-white;
+    color: $nav-color-white;
     z-index: 100;
 
     img {
@@ -63,6 +27,7 @@ header {
       font-weight: 900;
       width: fit-content;
       top: 50%;
+
     }
 
     nav {
@@ -82,11 +47,11 @@ header {
         min-height: 100svh;
         display: block;
         z-index: 40;
-        background-color: $background-color-dark;
+        background-color: $nav-background-color-dark;
         margin-top: rem(50);
         padding-top: rem(20);
-        transition: $transition-duration;
-        transition-timing-function: $timing;
+        transition: $nav-transition-duration;
+        transition-timing-function: $nav-timing;
 
         &.is-active {
           left: 0;
@@ -94,7 +59,7 @@ header {
 
         a {
           text-decoration: none;
-          color: $color-white;
+          color: $nav-color-white;
         }
 
         li {
@@ -108,14 +73,14 @@ header {
             width: fit-content;
             max-width: rem(200);
             padding: rem(12) rem(16);
-            color: $color-white;
+            color: $nav-color-white;
             text-decoration: none;
           }
 
           ul {
             width: fit-content + rem(60);
-            transition: $transition-duration;
-            transition-timing-function: $timing;
+            transition: $nav-transition-duration;
+            transition-timing-function: $nav-timing;
 
             li:first-child {
               cursor: pointer;
@@ -138,7 +103,7 @@ header {
   }
 }
 
-@include media-breakpoint-up(md) {
+@include media-breakpoint-up(lg) {
   header {
     .hamburger {
       display: none;
@@ -152,7 +117,6 @@ header {
 
       h2 {
         @include flex-center;
-        margin: 0 0 0 rem(10);
       }
 
       nav {
@@ -182,7 +146,7 @@ header {
               padding: rem(15) rem(20);
 
               &:hover {
-                background-color: $background-color-dark-hover;
+                @include hover-effect;
               }
             }
 
@@ -195,8 +159,7 @@ header {
               left: 0;
               z-index: 50;
               margin: 0;
-              background-color: $background-color-dark-hover;
-              backdrop-filter: $blur;
+              @include background-blur;
 
               li:first-child {
                 display: none;
@@ -205,8 +168,7 @@ header {
 
             &:hover {
               > a {
-                background-color: $background-color-dark-hover;
-                backdrop-filter: $blur;
+                @include background-hover-blur;
               }
 
               > ul {
