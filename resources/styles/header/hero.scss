@@ -2,7 +2,7 @@
 @import '../variables';
 
 main {
-  .hero-banner {
+  section {
     position: relative;
     min-height: 100.1svh;
     display: flex;
@@ -24,7 +24,7 @@ main {
       opacity: 1;
     }
 
-    .container {
+    div {
       position: relative;
       z-index: 1;
       max-width: rem(1200);
@@ -33,7 +33,7 @@ main {
       text-align: center;
 
       h1 {
-        font-size: rem(48);
+        font-size: rem(65);
         font-weight: 700;
         margin-bottom: rem(20);
         opacity: 0;
@@ -41,8 +41,9 @@ main {
         animation: fadeInUp 0.8s forwards;
       }
 
-      .hero-subtitle {
-        font-size: rem(24);
+      p {
+        font-size: rem(30);
+        font-weight: 350;
         line-height: 1.5;
         margin-bottom: rem(40);
         opacity: 0;
@@ -53,7 +54,7 @@ main {
   }
 }
 
-// Original button styles
+// scroll button style
 .scroll-button {
   position: fixed;
   bottom: 20px;

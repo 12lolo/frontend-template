@@ -12042,9 +12042,10 @@ header #navigation nav ul li ul li:first-child a::before {
     top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
+    pointer-events: none; /* Makes the element non-interactive */
   }
 }
-main .hero-banner {
+main section {
   position: relative;
   min-height: 100.1svh;
   display: flex;
@@ -12052,7 +12053,7 @@ main .hero-banner {
   color: #FFF;
   overflow: hidden;
 }
-main .hero-banner::after {
+main section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -12062,7 +12063,7 @@ main .hero-banner::after {
   background-position: center;
   opacity: 1;
 }
-main .hero-banner .container {
+main section div {
   position: relative;
   z-index: 1;
   max-width: 75rem;
@@ -12070,16 +12071,17 @@ main .hero-banner .container {
   padding: 1.25rem;
   text-align: center;
 }
-main .hero-banner .container h1, main .hero-banner .container .h1 {
-  font-size: 3rem;
+main section div h1, main section div .h1 {
+  font-size: 4.0625rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s forwards;
 }
-main .hero-banner .container .hero-subtitle {
-  font-size: 1.5rem;
+main section div p {
+  font-size: 1.875rem;
+  font-weight: 350;
   line-height: 1.5;
   margin-bottom: 2.5rem;
   opacity: 0;
@@ -12271,7 +12273,7 @@ footer .footer nav .footer-col {
   padding: 0 0.9375rem;
 }
 footer .footer nav .footer-col h4, footer .footer nav .footer-col .h4 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: #ffffff;
   text-transform: capitalize;
   margin-left: 0.625rem;
@@ -12298,7 +12300,7 @@ footer .footer nav .footer-col ul li:not(:last-child) {
 }
 footer .footer nav .footer-col ul a {
   width: fit-content;
-  font-size: 1rem;
+  font-size: 1.125rem;
   text-transform: capitalize;
   color: #bbbbbb;
   text-decoration: none;
@@ -12326,10 +12328,10 @@ footer .footer nav .footer-col .social-links a:hover {
   color: #24262b;
   background-color: #ffffff;
 }
-footer .footer nav .footer-col .social-links a:hover .social-icon {
+footer .footer nav .footer-col .social-links a:hover img {
   filter: brightness(0) invert(0.4);
 }
-footer .footer nav .footer-col .social-links a .social-icon {
+footer .footer nav .footer-col .social-links a img {
   width: 70%;
   height: auto;
   object-fit: contain;

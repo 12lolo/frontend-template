@@ -19,7 +19,7 @@ footer {
         padding: $column-padding;
 
         h4 {
-          font-size: rem(18);
+          font-size: rem(20);
           color: $footer-text-color;
           text-transform: capitalize;
           margin-left: rem(10);
@@ -42,7 +42,7 @@ footer {
 
           a {
             width: fit-content;
-            font-size: rem(16);
+            font-size: rem(18);
             text-transform: capitalize;
             color: $footer-link-color;
             text-decoration: none;
@@ -65,12 +65,12 @@ footer {
               color: $footer-bg-color;
               background-color: $footer-text-color;
 
-              .social-icon {
+              img {
                 filter: brightness(0) invert(0.4);
               }
             }
 
-            .social-icon {
+            img {
               width: 70%;
               height: auto;
               object-fit: contain;

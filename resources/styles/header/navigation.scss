@@ -227,6 +227,7 @@ header {
                 top: 90%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                pointer-events: none;  /* Makes the element non-interactive */
               }
             }
           }
