@@ -15,8 +15,8 @@ header {
     z-index: 100;
 
     img {
-      max-width: rem(50);
-      height: rem(40);
+      max-width: rem(60);
+      height: rem(60);
       margin: rem(5);
     }
 
@@ -30,22 +30,31 @@ header {
     }
 
     nav {
+      padding-right: 10%;
+      margin-left: auto; // This will push the nav to the right
+
       ul {
         position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
+        top: rem(6);
+        @include adaptive-nav-width;
+        left: auto;
         min-height: 100vh;
         min-height: 100svh;
         display: block;
         z-index: 40;
         background-color: $nav-background-color-dark;
+
         margin-top: rem(50);
         padding-top: rem(20);
         transition: $nav-transition-duration $nav-timing;
+        text-align: right;
 
         &.is-active {
-          left: 0;
+          right: 0;
+        }
+
+        &.is-active {
+          right: 0;
         }
 
         li {
@@ -53,6 +62,7 @@ header {
           list-style-type: none;
           margin: 0;
           padding: 0;
+          justify-content: flex-end; // Align items to the right
 
           a {
             text-decoration: none;
@@ -61,6 +71,7 @@ header {
             width: fit-content;
             max-width: rem(200);
             padding: rem(12) rem(16);
+            margin-right: rem(16); // Add some right margin
           }
 
           &:has(ul) > a::after {
@@ -80,6 +91,7 @@ header {
               font-size: rem(18);
               font-weight: bold;
               @include flex-center;
+              justify-content: flex-end; // Align to the right
 
               a::before {
                 content: url('../resources/images/left.svg');
@@ -102,10 +114,12 @@ header {
     }
 
     #navigation {
+      background-color: $navbar-background-color-dark;
       z-index: 20;
       padding: rem(10) rem(20);
       height: $nav-height;
       margin: rem(10);
+
 
       h2 {
         @include flex-center;
@@ -113,14 +127,15 @@ header {
 
       nav {
         height: $nav-height;
-
+        margin-left: auto;
         ul {
+          margin: 0 0 0 auto;
           height: $nav-height;
           position: static;
           min-height: fit-content;
           display: flex;
           background-color: transparent;
-          margin: 0 0 0 rem(10);
+          //margin: 0 0 0 rem(10);
           padding: 0;
           list-style: none;
 

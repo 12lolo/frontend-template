@@ -45,9 +45,34 @@
   }
 }
 
+// First, create a mixin for the nav width
+@mixin adaptive-nav-width($max-percentage: 60%) {
+  width: min(100%, 450px);
+  right: calc(-1 * min(100%, 450px));
+}
+
+@mixin responsive-margins(
+  $mobile-margin: 10,
+  $desktop-margin: 200,
+  $viewport-min: 320,
+  $viewport-max: 1920
+) {
+  margin-left: clamp(
+          #{$mobile-margin}px,
+          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
+          #{$desktop-margin}px
+  );
+  margin-right: clamp(
+          #{$mobile-margin}px,
+          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
+          #{$desktop-margin}px
+  );
+}
+
 @mixin flex-center {
   display: flex;
   align-items: center;
+
 }
 
 @mixin background-blur {

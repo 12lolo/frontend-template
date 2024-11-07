@@ -6,17 +6,12 @@ main {
     color: $hero-text-color;
     overflow: hidden;
 
-    // Background overlay
     &::after {
       content: '';
       position: absolute;
       inset: 0;
       z-index: 0;
-      background: {
-        image: $hero-background-image;
-        size: cover;
-        position: center;
-      }
+      background-color: #13172c;
       opacity: 1;
     }
 
@@ -24,95 +19,64 @@ main {
       position: relative;
       z-index: 1;
       max-width: rem(1200);
-      margin: 0 auto;
-      padding: rem(20);
-      text-align: center;
+      @include responsive-margins;
 
-      h1 {
-        @include title-font;
-        margin-bottom: rem(20);
-        opacity: 0;
-        transform: translateY(rem(20));
-        animation: fadeInUp 0.8s forwards;
-      }
 
-      p {
-        @include subtitle-font;
-        margin-bottom: rem(40);
-        opacity: 0;
-        transform: translateY(rem(20));
-        animation: fadeInUp 0.8s 0.2s forwards;
+      .text-container {
+        @include flex-center;
+        min-height: 100vh;
+        width: 100%; // Ensure full width
+
+        .main-text {
+          font-size: 12vw; // This will make the font size 12% of the viewport width
+          font-weight: bold;
+          font-family: Arial, sans-serif;
+          position: relative;
+          white-space: nowrap;
+
+          // Optionally, set a min and max font size
+          font-size: clamp(5rem, 12vw, 15rem);
+
+          .static-text {
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+          }
+
+          .animated-u {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            animation: slideIn 1s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-200px);
+            color: #5eaed2;
+          }
+        }
       }
     }
   }
 }
 
-// scroll button style
-.scroll-button {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: rem(10) rem(20);
-  font-size: rem(30);
-  font-weight: 600;
-  background-color: transparent;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
-  animation: bounce 1.7s infinite;
-
-  &::after {
-    content: url('../resources/images/single-down.svg');
-    filter: brightness(0) invert(1);
-    position: absolute;
-    left: 52%;
-    top: 100%;
-    transform: translate(-50%, -50%) scale(1.5);
-  }
-
-  // Hover state
-  &:hover {
-    animation: none;
-    transform: translateX(-50%) scale(1.2);
-    &::after {
-      content: url('../resources/images/single-down-big.svg');
-      top: 70%;
-      animation: bounce 1.7s infinite;
-    }
-  }
-}
-
-// Original bounce animation
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0) scale(1);
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
   }
   40% {
-    transform: translateX(-50%) translateY(-10px) scale(1.5);
+    opacity: 1;
   }
-  60% {
-    transform: translateX(-50%) translateY(-5px) scale(1.2);
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-// Fade animation for hero content
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 // Section Banner styles
 .banner {
   position: relative;
-  text-align: center;
   padding: rem(40) rem(20);
   background: linear-gradient(to bottom, #333, #555);
   color: $nav-color-white;
@@ -127,3 +91,29 @@ main {
     animation: fadeInUp 0.8s forwards;
   }
 }
+
+
+//.hero-gif {
+//  width: 100%;
+//  max-width: rem(600);
+//  height: auto;
+//  max-height: rem(200);
+//  margin-bottom: rem(20);
+//  opacity: 0;
+//  transform: translateY(rem(20));
+//  animation: fadeInUp 0.8s forwards;
+//}
+//
+//@keyframes fadeInUp {
+//  to {
+//    opacity: 1;
+//    transform: translateY(0);
+//  }
+//}
+//p {
+//  @include subtitle-font;
+//  margin-bottom: rem(40);
+//  opacity: 0;
+//  transform: translateY(rem(20));
+//  animation: fadeInUp 0.8s 0.2s forwards;
+//}
