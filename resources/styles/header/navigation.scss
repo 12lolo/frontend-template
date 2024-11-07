@@ -27,17 +27,9 @@ header {
       font-weight: 900;
       width: fit-content;
       top: 50%;
-
     }
 
     nav {
-      ul > li:has(ul) > a::after {
-        content: url('../resources/images/right.svg');
-        filter: brightness(0) invert(1);
-        padding-left: rem(10);
-        z-index: 1000;
-      }
-
       ul {
         position: fixed;
         top: 0;
@@ -50,16 +42,10 @@ header {
         background-color: $nav-background-color-dark;
         margin-top: rem(50);
         padding-top: rem(20);
-        transition: $nav-transition-duration;
-        transition-timing-function: $nav-timing;
+        transition: $nav-transition-duration $nav-timing;
 
         &.is-active {
           left: 0;
-        }
-
-        a {
-          text-decoration: none;
-          color: $nav-color-white;
         }
 
         li {
@@ -69,18 +55,24 @@ header {
           padding: 0;
 
           a {
+            text-decoration: none;
+            color: $nav-color-white;
             display: block;
             width: fit-content;
             max-width: rem(200);
             padding: rem(12) rem(16);
-            color: $nav-color-white;
-            text-decoration: none;
+          }
+
+          &:has(ul) > a::after {
+            content: url('../resources/images/right.svg');
+            filter: brightness(0) invert(1);
+            padding-left: rem(10);
+            z-index: 1000;
           }
 
           ul {
             width: fit-content + rem(60);
-            transition: $nav-transition-duration;
-            transition-timing-function: $nav-timing;
+            transition: $nav-transition-duration $nav-timing;
 
             li:first-child {
               cursor: pointer;

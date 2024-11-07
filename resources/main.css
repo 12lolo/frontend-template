@@ -11901,12 +11901,6 @@ header #navigation h2, header #navigation .h2 {
   width: fit-content;
   top: 50%;
 }
-header #navigation nav ul > li:has(ul) > a::after {
-  content: url("../resources/images/right.svg");
-  filter: brightness(0) invert(1);
-  padding-left: 0.625rem;
-  z-index: 1000;
-}
 header #navigation nav ul {
   position: fixed;
   top: 0;
@@ -11919,15 +11913,10 @@ header #navigation nav ul {
   background-color: rgba(0, 0, 0, 0.4);
   margin-top: 3.125rem;
   padding-top: 1.25rem;
-  transition: 0.6s;
-  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  transition: 0.6s cubic-bezier(0.5, 0, 0.5, 1);
 }
 header #navigation nav ul.is-active {
   left: 0;
-}
-header #navigation nav ul a {
-  text-decoration: none;
-  color: #FFF;
 }
 header #navigation nav ul li {
   display: flex;
@@ -11936,17 +11925,22 @@ header #navigation nav ul li {
   padding: 0;
 }
 header #navigation nav ul li a {
+  text-decoration: none;
+  color: #FFF;
   display: block;
   width: fit-content;
   max-width: 12.5rem;
   padding: 0.75rem 1rem;
-  color: #FFF;
-  text-decoration: none;
+}
+header #navigation nav ul li:has(ul) > a::after {
+  content: url("../resources/images/right.svg");
+  filter: brightness(0) invert(1);
+  padding-left: 0.625rem;
+  z-index: 1000;
 }
 header #navigation nav ul li ul {
   width: fit-content3.75rem;
-  transition: 0.6s;
-  transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  transition: 0.6s cubic-bezier(0.5, 0, 0.5, 1);
 }
 header #navigation nav ul li ul li:first-child {
   cursor: pointer;
