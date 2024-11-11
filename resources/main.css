@@ -12322,13 +12322,14 @@ main section div .text-container .hero-button-container .hero-btn-2:hover {
 .about-us .content .custom-carousel-section .custom-carousel-viewport {
   width: 100%;
   overflow: hidden;
+  border: lightgray solid 13px;
 }
-.about-us .content .custom-carousel-section .custom-carousel-images {
+.about-us .content .custom-carousel-section .custom-carousel-viewport .custom-carousel-images {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
-.about-us .content .custom-carousel-section .custom-carousel-images img {
+.about-us .content .custom-carousel-section .custom-carousel-viewport .custom-carousel-images img {
   flex: 0 0 100%;
   width: 100%;
   object-fit: cover;

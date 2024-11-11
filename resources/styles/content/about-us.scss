@@ -72,17 +72,17 @@
       .custom-carousel-viewport {
         width: 100%;
         overflow: hidden;
-      }
-
-      .custom-carousel-images {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 100%;
-
-        img {
-          flex: 0 0 100%;
+        border: lightgray solid 13px;
+        .custom-carousel-images {
+          display: flex;
+          transition: transform 0.5s ease-in-out;
           width: 100%;
-          object-fit: cover;
+
+          img {
+            flex: 0 0 100%;
+            width: 100%;
+            object-fit: cover;
+          }
         }
       }
 
