@@ -32,58 +32,49 @@ class Carousel {
     }
 
     handleTouchStart(e) {
-        // Record the starting X position
         this.startX = e.touches[0].clientX;
-        // Optional: Add visual feedback
         this.carouselImages.style.transition = 'none';
     }
 
     handleTouchMove(e) {
-        // Prevent default to stop scrolling
         e.preventDefault();
-        // Calculate the distance moved
         const currentX = e.touches[0].clientX;
         const diffX = this.startX - currentX;
-        // Move the carousel slightly with touch
         this.carouselImages.style.transform = `translateX(-${this.currentIndex * 100 + (diffX / this.carousel.offsetWidth) * 100}%)`;
     }
 
     handleTouchEnd(e) {
-        // Calculate the distance moved
         const currentX = e.changedTouches[0].clientX;
         const diffX = this.startX - currentX;
 
-        // Determine if swipe is significant enough to change slide
         if (Math.abs(diffX) > this.carousel.offsetWidth / 4) {
-            if (diffX > 0 && this.currentIndex < this.totalImages - 1) {
-                // Swipe left, go to next slide
-                this.currentIndex++;
-            } else if (diffX < 0 && this.currentIndex > 0) {
-                // Swipe right, go to previous slide
-                this.currentIndex--;
+            if (diffX > 0) {
+                // Swipe left
+                this.nextImage();
+            } else {
+                // Swipe right
+                this.prevImage();
             }
+        } else {
+            // Snap back to current image
+            this.updateCarousel();
         }
-
-        // Reset carousel position
-        this.carouselImages.style.transition = 'transform 0.5s ease';
-        this.carouselImages.style.transform = `translateX(-${this.currentIndex * 100}%)`;
     }
 
     nextImage() {
-        if (this.currentIndex < this.totalImages - 1) {
-            this.currentIndex++;
-            this.updateCarousel();
-        }
+        // If at the last image, loop back to the first
+        this.currentIndex = (this.currentIndex + 1) % this.totalImages;
+        this.updateCarousel();
     }
 
     prevImage() {
-        if (this.currentIndex > 0) {
-            this.currentIndex--;
-            this.updateCarousel();
-        }
+        // If at the first image, loop to the last
+        this.currentIndex = (this.currentIndex - 1 + this.totalImages) % this.totalImages;
+        this.updateCarousel();
     }
 
     updateCarousel() {
+        // Ensure smooth transition
         this.carouselImages.style.transition = 'transform 0.5s ease';
         this.carouselImages.style.transform = `translateX(-${this.currentIndex * 100}%)`;
     }

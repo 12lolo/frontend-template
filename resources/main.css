@@ -12088,7 +12088,7 @@ main section div .text-container {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
-  top: 20vh;
+  top: 16vh;
 }
 main section div .text-container h1, main section div .text-container .h1 {
   font-weight: bold;
@@ -12124,15 +12124,16 @@ main section div .text-container p {
   animation: fadeInUp 0.8s 0.2s forwards;
 }
 main section div .text-container .hero-button-container {
+  font-size: clamp(1rem, 2vw, 1.3rem);
   display: flex;
   gap: 20px;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 2vw;
   opacity: 0;
   transform: translateX(-20px) translateY(5px);
   animation: fadeInUp 0.8s 0.2s forwards;
 }
 main section div .text-container .hero-button-container .hero-btn-1 {
-  width: 140px;
+  width: fit-content;
   padding: 10px 20px;
   border: none;
   border-radius: 50px;
@@ -12147,7 +12148,6 @@ main section div .text-container .hero-button-container .hero-btn-1 {
   cursor: pointer;
   transition-duration: 1s;
   overflow: hidden;
-  cursor: pointer;
 }
 main section div .text-container .hero-button-container .hero-btn-1::before {
   position: absolute;
@@ -12186,6 +12186,7 @@ main section div .text-container .hero-button-container .hero-btn-1:hover::befor
   transition-duration: 1s;
 }
 main section div .text-container .hero-button-container .hero-btn-2 {
+  width: fit-content;
   background-color: #339da4;
   border: 2px solid #339da4;
   border-radius: 50px;
@@ -12276,6 +12277,7 @@ main section div .text-container .hero-button-container .hero-btn-2:hover {
   object-fit: contain;
 }
 .about-us .content {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
