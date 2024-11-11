@@ -51,9 +51,27 @@
   right: calc(-1 * min(100%, 450px));
 }
 
-@mixin responsive-margins(
+@mixin responsive-content-margins(
   $mobile-margin: 10,
-  $desktop-margin: 200,
+  $desktop-margin: 100,
+  $viewport-min: 320,
+  $viewport-max: 1920
+) {
+  margin-left: clamp(
+          #{$mobile-margin}px,
+          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
+          #{$desktop-margin}px
+  );
+  margin-right: clamp(
+          #{$mobile-margin}px,
+          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
+          #{$desktop-margin}px
+  );
+}
+
+@mixin responsive-margins(
+  $mobile-margin: 10,    // Increased from 10
+  $desktop-margin: 150,  // Increased from 200
   $viewport-min: 320,
   $viewport-max: 1920
 ) {
@@ -76,11 +94,6 @@
 }
 
 @mixin background-blur {
-  background-color: $nav-background-color-dark;
-  backdrop-filter: $nav-blur;
-}
-
-@mixin background-hover-blur {
   background-color: $nav-background-color-dark;
   backdrop-filter: $nav-blur;
 }

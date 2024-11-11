@@ -11,7 +11,9 @@
 <body>
 <header>
     <div id="navigation">
-        <img src="resources/images/buuut-logo.svg" alt="Company Logo" class="logo" />
+        <a href="index.html">
+            <img src="resources/images/buuut-logo.svg" alt="Company Logo" class="logo" />
+        </a>
 <!--        <h2>website</h2>-->
         <nav>
             <ul>
@@ -49,22 +51,73 @@
 <main role="main">
     <section aria-label="Welcome">
         <div>
-<!--            <img src="resources/images/buuut.gif" alt="Main Page Heading" class="hero-gif">-->
-<!--            <p>Supporting information about the page</p>-->
             <div class="text-container">
-                <h1 class="main-text">
-                    <span class="static-text">buu</span><!--
-                    --><span class="animated-u">ú</span><!--
-                    --><span class="static-text">t</span>
+                <h1>
+                    <span>buu</span><span>ú</span><span>t</span>
                 </h1>
+                <p>
+                    Wij leveren doordachte & creatieve digitale diensten,<br>
+                    voor bedrijven die willen innoveren.
+                </p>
+                <div class="hero-button-container">
+                    <button class="hero-btn-1">Ons werk</button>
+                    <button class="hero-btn-2">Contact</button>
+                </div>
             </div>
         </div>
+
     </section>
+    <div class="image-banner">
+        <img src="resources/images/buuut-banner.svg" alt="buuut logo banner">
+        <div class="background-fill"></div>
+    </div>
 </main>
+
+
+
+<section class="about-us">
+<div class="logo-banner">
+    <img src="resources/images/monsterboard.png" alt="Company logo 1">
+    <img src="resources/images/Bos-Incasso.png" alt="Company logo 2">
+    <img src="resources/images/equinox.png" alt="Company logo 3">
+    <img src="resources/images/acadin.png" alt="Company logo 4">
+    <img src="resources/images/Vrest.png" alt="Company logo 5">
+    <img src="resources/images/parkeer-garages.png" alt="Company logo 6">
+</div>
+
+    <div class="content">
+        <div class="text-section">
+            <h1>Wij zijn jouw <br>digitale partner</h1>
+            <p>Waarom? Omdat we een goede band belangrijk vinden. Buuut denkt mee, is creatief en beschikt over een multidisciplinair team om jouw organisatie blijvend te ondersteunen. Dat doen we met vele klanten, waarmee we ook al vele jaren werken. Niet op zoek naar een one-night stand, maar een vaste evenwaardige relatie.</p>
+            <button>Wat wil jij bereiken?</button>
+        </div>
+
+        <div class="custom-carousel-section">
+            <div class="custom-carousel-viewport">
+                <div class="custom-carousel-images">
+                    <img src="resources/images/website-ph.png" alt="Platform Screenshot">
+                    <img src="resources/images/website-ph.png" alt="Platform Screenshot">
+                    <img src="resources/images/website-ph.png" alt="Platform Screenshot">
+                    <img src="resources/images/website-ph.png" alt="Platform Screenshot">
+                    <img src="resources/images/website-ph.png" alt="Platform Screenshot">
+                </div>
+            </div>
+            <div class="custom-carousel-controls">
+                <button class="custom-carousel-btn prev" onclick="prevImage()">&#10094;</button>
+                <button class="custom-carousel-btn next" onclick="nextImage()">&#10095;</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="resources/js/Carousel.js"></script>
+
+
 
 <div class="banner" id="target-section">
     <h1>Grid</h1>
 </div>
+
 <section class="grid">
     <div class="flex-container">
         <div>

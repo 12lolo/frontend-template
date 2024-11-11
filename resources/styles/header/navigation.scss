@@ -13,13 +13,13 @@ header {
     padding: 0;
     color: $nav-color-white;
     z-index: 100;
-
-    img {
-      max-width: rem(60);
-      height: rem(60);
-      margin: rem(5);
+    a {
+      img {
+        max-width: rem(60);
+        height: rem(60);
+        margin: rem(5);
+      }
     }
-
     h2 {
       color: inherit;
       text-transform: uppercase;
@@ -126,17 +126,19 @@ header {
       }
 
       nav {
+        @include flex-center;
         height: $nav-height;
-        margin-left: auto;
+        margin-right: 0;
+        padding: 0;
         ul {
-          margin: 0 0 0 auto;
+          margin: 0 0 0 0;
           height: $nav-height;
           position: static;
           min-height: fit-content;
           display: flex;
           background-color: transparent;
           //margin: 0 0 0 rem(10);
-          padding: 0;
+          padding: 0 !important;
           list-style: none;
 
           li {
@@ -152,8 +154,11 @@ header {
               width: fit-content;
               padding: rem(15) rem(20);
 
+                margin-right: 0px;
+
+
               &:hover {
-                @include hover-effect;
+                @include background-blur;
               }
             }
 
@@ -171,11 +176,16 @@ header {
               li:first-child {
                 display: none;
               }
+              li {
+                a {
+                  margin-right: 0px;
+                }
+              }
             }
 
             &:hover {
               > a {
-                @include background-hover-blur;
+                @include background-blur;
               }
 
               > ul {

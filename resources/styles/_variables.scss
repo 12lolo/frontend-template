@@ -22,7 +22,7 @@ $hero-background-image: url('../resources/placeholders/ph38.jpg');
 }
 
 @mixin subtitle-font {
-  font-size: rem(30);
+  font-size: clamp(1.12rem, 2.88vw, 2.50rem);
   font-weight: 350;
   line-height: 1.5;
   //text-transform: uppercase;

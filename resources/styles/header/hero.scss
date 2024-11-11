@@ -23,34 +23,126 @@ main {
 
 
       .text-container {
-        @include flex-center;
+        display: flex;
+        flex-direction: column;
         min-height: 100vh;
         width: 100%; // Ensure full width
+        top: 20vh;
 
-        .main-text {
-          font-size: 12vw; // This will make the font size 12% of the viewport width
+        h1 {
           font-weight: bold;
           font-family: Arial, sans-serif;
           position: relative;
           white-space: nowrap;
+          font-size: clamp(5rem, 10vw, 10rem);
+          line-height: 1; // Adjust line-height to minimize gaps
 
-          // Optionally, set a min and max font size
-          font-size: clamp(5rem, 12vw, 15rem);
-
-          .static-text {
-            display: inline-block;
+          span {
+            display: inline;
             position: relative;
             z-index: 2;
+            padding: 0;
+            margin: 0;
+
+            &:nth-child(2) {
+              display: inline-block;
+              position: relative;
+              z-index: 1;
+              animation: slideIn 1s ease-out forwards;
+              opacity: 0;
+              transform: translateX(-200px);
+              color: #5eaed2;
+              margin: 0;
+            }
+          }
+        }
+        p {
+          @include subtitle-font;
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeInUp 0.8s 0.2s forwards;
+        }
+        .hero-button-container {
+          display: flex;
+          gap: 20px;
+          margin: 0 0 0 20px;
+          opacity: 0;
+          transform: translateX(-20px) translateY(5px);
+          animation: fadeInUp 0.8s 0.2s forwards;
+
+          .hero-btn-1 {
+
+            width: 140px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(to right,#0e678b, #1fa0b4,#0e678b,#0e678b,#1fa0b4,#0e678b);
+            background-size: 250%;
+            background-position: left;
+            color: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition-duration: 1s;
+            overflow: hidden;
+
+            cursor: pointer;
           }
 
-          .animated-u {
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            animation: slideIn 1s ease-out forwards;
-            opacity: 0;
-            transform: translateX(-200px);
-            color: #5eaed2;
+          .hero-btn-1::before {
+            position: absolute;
+            content: "Over ons";
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            height: 87%;
+            border-radius: 50px;
+            transition-duration: 1s;
+            background-color: #13172c;
+            background-size: 200%;
+          }
+
+          .hero-btn-1:hover {
+            background-position: right;
+            transition-duration: 1s;
+
+            .hero-btn-1::before {
+              position: absolute;
+              content: "Over ons";
+              color: white;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 95%;
+              height: 87%;
+              border-radius: 50px;
+              transition-duration: 1s;
+              background-color: #0029ff;
+              background-size: 200%;
+            }
+          }
+
+          .hero-btn-1:hover::before {
+            background-position: right;
+            transition-duration: 1s;
+          }
+
+          .hero-btn-2 {
+            background-color: #339da4;
+            border: 2px solid #339da4;
+            border-radius: 50px;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background-color: #2a8a91;
+            }
           }
         }
       }
@@ -58,20 +150,30 @@ main {
   }
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-300%);
-  }
-  40% {
-    opacity: 1;
+.image-banner {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 12vh;
+  left: 0;
+  width: 100%;
+  margin: 0;
+
+  img {
+    height: 25vh;
+    max-width: 100%;
+    display: block;
   }
 
-  100% {
-    opacity: 1;
-    transform: translateX(0);
+  .background-fill {
+    background-color: #31989e;
+    flex-grow: 1;
+    height: 25vh;
+    margin: 0;
   }
 }
+
+
 
 
 // Section Banner styles
@@ -92,24 +194,27 @@ main {
   }
 }
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-300%);
+  }
+  40% {
+    opacity: 1;
+  }
 
-//.hero-gif {
-//  width: 100%;
-//  max-width: rem(600);
-//  height: auto;
-//  max-height: rem(200);
-//  margin-bottom: rem(20);
-//  opacity: 0;
-//  transform: translateY(rem(20));
-//  animation: fadeInUp 0.8s forwards;
-//}
-//
-//@keyframes fadeInUp {
-//  to {
-//    opacity: 1;
-//    transform: translateY(0);
-//  }
-//}
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 //p {
 //  @include subtitle-font;
 //  margin-bottom: rem(40);

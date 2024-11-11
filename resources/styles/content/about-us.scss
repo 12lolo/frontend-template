@@ -1,0 +1,107 @@
+.about-us {
+  min-height: 100vh;
+  @include responsive-content-margins;
+  padding: 3vh 0 0 0;
+
+  .logo-banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #fff;
+    margin: 0 5vw 5vh ;
+    gap: 3.5vw;
+
+    img {
+      max-height: 40px;
+      max-width: 17vw;
+      object-fit: contain;
+
+    }
+
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 5vw;
+    background-color: #ffffff;
+    gap: 5vw;
+
+    .text-section {
+      flex-basis: calc(45% - 2.5vw);
+      max-width: 600px;
+      min-width: 300px;
+      width: max(300px, 45vw);
+      text-align: left;
+
+      h1 {
+        font-size: min(2.5em, 4vw);
+        color: #0d1c51;
+        margin: 0 0 2vh;
+      }
+
+      p {
+        color: #555;
+        line-height: 1.6;
+        font-size: min(1em, 3vw);
+        margin-bottom: 3vh;
+      }
+
+      button {
+        background-color: #3ac5b9;
+        color: #fff;
+        padding: min(10px, 2vw) min(20px, 4vw);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: min(1em, 3vw);
+      }
+    }
+
+    .custom-carousel-section {
+      flex-basis: calc(45% - 2.5vw);
+      max-width: 600px;
+      min-width: 300px;
+      width: max(300px, 45vw);
+
+      .custom-carousel-viewport {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .custom-carousel-images {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+
+        img {
+          flex: 0 0 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .custom-carousel-controls {
+        display: flex;
+        justify-content: center;
+        gap: 2vw;
+        margin-top: 2vh;
+      }
+
+      .custom-carousel-btn {
+        width: min(40px, 8vw);
+        height: min(40px, 8vw);
+        background: #333;
+        color: white;
+        border: none;
+        border-radius: 100%;
+        padding: min(10px, 2vw);
+        cursor: pointer;
+      }
+    }
+  }
+}
