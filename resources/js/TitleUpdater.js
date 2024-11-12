@@ -1,6 +1,6 @@
 // Map page names to their respective titles
 const pageTitles = {
-    "index": "Home Page",
+    "index": "buuút",
     "about": "About Us",
     "contact": "Contact Us"
 };
