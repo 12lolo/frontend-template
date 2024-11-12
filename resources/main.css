@@ -12060,6 +12060,19 @@ header #navigation nav ul li ul li:first-child a::before {
     pointer-events: none; /* Makes the element non-interactive */
   }
 }
+@media only screen and (orientation: landscape) {
+  header #navigation {
+    height: 5vw;
+  }
+  header #navigation a img {
+    max-width: 3.75rem;
+    height: 5vw;
+    margin: 0.3125rem;
+  }
+  header #navigation h2, header #navigation .h2 {
+    font-size: 2.125rem;
+  }
+}
 main section {
   position: relative;
   min-height: 100svh;
@@ -12132,22 +12145,25 @@ main section div .text-container .hero-button-container {
   transform: translateX(-20px) translateY(5px);
   animation: fadeInUp 0.8s 0.2s forwards;
 }
-main section div .text-container .hero-button-container .hero-btn-1 {
+main section div .text-container .hero-button-container button {
   width: fit-content;
   padding: 10px 20px;
   border: none;
   border-radius: 50px;
-  background: linear-gradient(to right, #0e678b, #1fa0b4, #0e678b, #0e678b, #1fa0b4, #0e678b);
-  background-size: 250%;
   background-position: left;
   color: white;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   cursor: pointer;
   transition-duration: 1s;
   overflow: hidden;
+}
+main section div .text-container .hero-button-container .hero-btn-1 {
+  background: linear-gradient(to right, #0e678b, #1fa0b4, #0e678b, #0e678b, #1fa0b4, #0e678b);
+  background-size: 250%;
 }
 main section div .text-container .hero-button-container .hero-btn-1::before {
   position: absolute;
@@ -12186,13 +12202,8 @@ main section div .text-container .hero-button-container .hero-btn-1:hover::befor
   transition-duration: 1s;
 }
 main section div .text-container .hero-button-container .hero-btn-2 {
-  width: fit-content;
   background-color: #339da4;
   border: 2px solid #339da4;
-  border-radius: 50px;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 main section div .text-container .hero-button-container .hero-btn-2:hover {
@@ -12220,6 +12231,18 @@ main section div .text-container .hero-button-container .hero-btn-2:hover {
   margin: 0;
 }
 
+@media only screen and (orientation: landscape) {
+  main section div .text-container h1, main section div .text-container .h1 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 1;
+  }
+  main section div .text-container p {
+    font-size: clamp(0.9rem, 1.8vw, 1.7rem);
+  }
+  main section div .text-container .hero-button-container button {
+    padding: 0 0.3125rem;
+  }
+}
 .banner {
   position: relative;
   padding: 2.5rem 1.25rem;

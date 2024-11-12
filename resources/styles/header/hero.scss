@@ -71,23 +71,26 @@ main {
           transform: translateX(-20px) translateY(5px);
           animation: fadeInUp 0.8s 0.2s forwards;
 
-          .hero-btn-1 {
-
+          button {
             width: fit-content;
             padding: 10px 20px;
             border: none;
             border-radius: 50px;
-            background: linear-gradient(to right,#0e678b, #1fa0b4,#0e678b,#0e678b,#1fa0b4,#0e678b);
-            background-size: 250%;
             background-position: left;
             color: white;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            white-space: nowrap;
             cursor: pointer;
             transition-duration: 1s;
             overflow: hidden;
+          }
+
+          .hero-btn-1 {
+            background: linear-gradient(to right,#0e678b, #1fa0b4,#0e678b,#0e678b,#1fa0b4,#0e678b);
+            background-size: 250%;
           }
 
           .hero-btn-1::before {
@@ -131,13 +134,8 @@ main {
           }
 
           .hero-btn-2 {
-            width: fit-content;
             background-color: #339da4;
             border: 2px solid #339da4;
-            border-radius: 50px;
-            color: white;
-            padding: 10px 20px;
-            cursor: pointer;
             transition: all 0.3s ease;
 
             &:hover {
@@ -172,6 +170,29 @@ main {
     margin: 0;
   }
 }
+@media only screen and (orientation: landscape) {
+  main {
+    section {
+      div {
+        .text-container {
+          h1 {
+              font-size: clamp(4rem, 8vw, 8rem);
+              line-height: 1;
+          }
+          p {
+            font-size: clamp(0.9rem, 1.8vw, 1.7rem);
+          }
+          .hero-button-container {
+            button {
+              padding: 0 rem(5);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 

@@ -215,3 +215,22 @@ header {
     }
   }
 }
+
+
+@media only screen and (orientation: landscape) {
+  header {
+    #navigation {
+height: 5vw;
+      a {
+        img {
+          max-width: rem(60);
+          height: 5vw;
+          margin: rem(5);
+        }
+      }
+      h2 {
+        font-size: rem(34);
+      }
+    }
+  }
+}
