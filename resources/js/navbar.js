@@ -55,7 +55,23 @@ function handleBackButtonClick(event) {
     event.stopPropagation();
 }
 
+// Close menu if clicked outside
+function handleClickOutside(event) {
+    if (isMenuOpen && !mainNav.contains(event.target) && !hamburger.contains(event.target)) {
+        toggleMainMenu();
+    }
+}
+
+// Close menu on scroll
+function handleScroll() {
+    if (isMenuOpen) {
+        toggleMainMenu();
+    }
+}
+
 // Event Listeners
 hamburger.addEventListener('click', toggleMainMenu);
 navLinks.forEach(link => link.addEventListener('click', handleSubnavClick));
 backButtons.forEach(button => button.addEventListener('click', handleBackButtonClick));
+document.addEventListener('click', handleClickOutside);
+window.addEventListener('scroll', handleScroll);

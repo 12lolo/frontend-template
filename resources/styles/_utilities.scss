@@ -8,8 +8,16 @@
   }
 }
 
+$hamburger-size: 5.625rem; // Hamburger size (90px)
+$bar-height: 0.625rem; // Height of each bar (10px)
+$bar-spacing: 1.5rem; // Spacing between bars (12px)
+
+
 @mixin hamburger {
-  width: rem(45);
+$scale-factor: .9;
+
+
+  width: $hamburger-size * $scale-factor; // Scale the hamburger size
   position: relative;
   display: block;
   cursor: pointer;
@@ -24,25 +32,28 @@
     content: '';
     display: block;
     width: 100%;
-    height: rem(5);
+    height: $bar-height * $scale-factor; // Scale the height of each bar
     background-color: white;
-    margin: 6px;
+    margin: ($bar-spacing / 2) * $scale-factor; // Scale the spacing
     transition: 0.5s;
   }
 
   &.is-active {
     &:before {
-      transform: rotate(-45deg) translate(-8px, 6px);
+      transform: rotate(-45deg) translate(-1.2rem * $scale-factor, 0.75rem * $scale-factor);
     }
 
     &:after {
-      transform: rotate(45deg) translate(-9px, -8px);
+      transform: rotate(45deg) translate(-1.2rem * $scale-factor, -0.75rem * $scale-factor);
     }
 
     .bar {
       opacity: 0;
     }
   }
+
+  // Apply scaling to the entire hamburger menu
+  transform: scale($scale-factor);
 }
 
 // First, create a mixin for the nav width

@@ -11845,7 +11845,7 @@ textarea.form-control-lg {
   }
 }
 .hamburger {
-  width: 2.8125rem;
+  width: 5.0625rem;
   position: relative;
   display: block;
   cursor: pointer;
@@ -11855,31 +11855,35 @@ textarea.form-control-lg {
   border: none;
   margin-right: 5%;
   margin-left: auto;
+  transform: scale(0.9);
+  position: fixed;
+  z-index: 1000;
+  top: 20px;
+  right: 20px;
 }
 .hamburger .bar, .hamburger:after, .hamburger:before {
   content: "";
   display: block;
   width: 100%;
-  height: 0.3125rem;
+  height: 0.5625rem;
   background-color: white;
-  margin: 6px;
+  margin: 0.675rem;
   transition: 0.5s;
 }
 .hamburger.is-active:before {
-  transform: rotate(-45deg) translate(-8px, 6px);
+  transform: rotate(-45deg) translate(-1.08rem, 0.675rem);
 }
 .hamburger.is-active:after {
-  transform: rotate(45deg) translate(-9px, -8px);
+  transform: rotate(45deg) translate(-1.08rem, -0.675rem);
 }
 .hamburger.is-active .bar {
   opacity: 0;
 }
 
 header #navigation {
+  background: transparent;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(5px);
   position: fixed;
   width: 100%;
   max-width: 100%;
@@ -11888,51 +11892,36 @@ header #navigation {
   color: #FFF;
   z-index: 100;
 }
-header #navigation a img {
-  max-width: 3.75rem;
-  height: 3.75rem;
-  margin: 0.3125rem;
-}
-header #navigation h2, header #navigation .h2 {
-  color: inherit;
-  text-transform: uppercase;
-  font-size: 2.625rem;
-  font-weight: 900;
-  width: fit-content;
-  top: 50%;
-}
 header #navigation nav {
+  background-color: transparent;
   padding-right: 10%;
   margin-left: auto;
 }
 header #navigation nav ul {
+  top: 0;
   position: fixed;
-  top: 1.21875rem;
   width: min(100%, 450px);
   right: calc(-1 * min(100%, 450px));
-  left: auto;
+  left: -100%;
   min-height: 100vh;
   min-height: 100svh;
   display: block;
   z-index: 40;
   background-color: rgba(0, 0, 0, 0.4);
-  margin-top: 3.125rem;
+  margin-top: 0;
   padding-top: 1.25rem;
-  transition: 0.6s cubic-bezier(0.5, 0, 0.5, 1);
-  text-align: right;
+  transition: left 0.6s cubic-bezier(0.5, 0, 0.5, 1);
+  text-align: left;
 }
 header #navigation nav ul.is-active {
-  right: 0;
-}
-header #navigation nav ul.is-active {
-  right: 0;
+  left: 0;
 }
 header #navigation nav ul li {
   display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 header #navigation nav ul li a {
   text-decoration: none;
@@ -11941,7 +11930,7 @@ header #navigation nav ul li a {
   width: fit-content;
   max-width: 12.5rem;
   padding: 0.75rem 1rem;
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 header #navigation nav ul li:has(ul) > a::after {
   content: url("../resources/images/right.svg");
@@ -11950,6 +11939,7 @@ header #navigation nav ul li:has(ul) > a::after {
   z-index: 1000;
 }
 header #navigation nav ul li ul {
+  top: 0;
   width: fit-content3.75rem;
   transition: 0.6s cubic-bezier(0.5, 0, 0.5, 1);
 }
@@ -11960,7 +11950,7 @@ header #navigation nav ul li ul li:first-child {
   font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 header #navigation nav ul li ul li:first-child a::before {
   content: url("../resources/images/left.svg");
@@ -11969,97 +11959,6 @@ header #navigation nav ul li ul li:first-child a::before {
   z-index: 1000;
 }
 
-@media (min-width: 992px) {
-  header .hamburger {
-    display: none;
-  }
-  header #navigation {
-    background-color: transparent;
-    z-index: 20;
-    padding: 0.625rem 1.25rem;
-    height: 3.75rem;
-    margin: 0.625rem;
-  }
-  header #navigation h2, header #navigation .h2 {
-    display: flex;
-    align-items: center;
-  }
-  header #navigation nav {
-    display: flex;
-    align-items: center;
-    height: 3.75rem;
-    margin-right: 0;
-    padding: 0;
-  }
-  header #navigation nav ul {
-    margin: 0 0 0 0;
-    height: 3.75rem;
-    position: static;
-    min-height: fit-content;
-    display: flex;
-    background-color: transparent;
-    padding: 0 !important;
-    list-style: none;
-  }
-  header #navigation nav ul li {
-    width: fit-content;
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-  }
-  header #navigation nav ul li a {
-    font-size: 1.25rem;
-    height: 3.75rem;
-    white-space: nowrap;
-    width: fit-content;
-    padding: 0.9375rem 1.25rem;
-    margin-right: 0px;
-  }
-  header #navigation nav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-  }
-  header #navigation nav ul li ul {
-    width: fit-content;
-    height: fit-content;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 50;
-    margin: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-  }
-  header #navigation nav ul li ul li:first-child {
-    display: none;
-  }
-  header #navigation nav ul li ul li a {
-    margin-right: 0px;
-  }
-  header #navigation nav ul li:hover > a {
-    background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-  }
-  header #navigation nav ul li:hover > ul {
-    display: block;
-    opacity: 1;
-  }
-  header #navigation nav ul li:has(ul) > a {
-    position: relative;
-  }
-  header #navigation nav ul li:has(ul) > a::after {
-    content: url("../resources/images/single-down.svg");
-    filter: brightness(0) invert(1);
-    padding: 0;
-    display: block;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none; /* Makes the element non-interactive */
-  }
-}
 @media only screen and (orientation: landscape) {
   header #navigation {
     height: 5vw;
@@ -12073,15 +11972,15 @@ header #navigation nav ul li ul li:first-child a::before {
     font-size: 2.125rem;
   }
 }
-main section {
+#hero section {
   position: relative;
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   color: #ffffff;
   overflow: hidden;
 }
-main section::after {
+#hero section::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -12089,21 +11988,21 @@ main section::after {
   background-color: #13172c;
   opacity: 1;
 }
-main section div {
+#hero section div {
   position: relative;
   z-index: 1;
   max-width: 75rem;
   margin-left: clamp(10px, 10px + (150 - 10) * (100vw - 320px) / (1920 - 320), 150px);
   margin-right: clamp(10px, 10px + (150 - 10) * (100vw - 320px) / (1920 - 320), 150px);
 }
-main section div .text-container {
+#hero section div .text-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
   top: 16vh;
 }
-main section div .text-container h1, main section div .text-container .h1 {
+#hero section div .text-container h1, #hero section div .text-container .h1 {
   font-weight: bold;
   font-family: Arial, sans-serif;
   position: relative;
@@ -12111,32 +12010,34 @@ main section div .text-container h1, main section div .text-container .h1 {
   font-size: clamp(5rem, 10vw, 10rem);
   line-height: 1;
 }
-main section div .text-container h1 span, main section div .text-container .h1 span {
+#hero section div .text-container h1 span, #hero section div .text-container .h1 span {
   display: inline;
   position: relative;
   z-index: 2;
   padding: 0;
   margin: 0;
 }
-main section div .text-container h1 span:nth-child(2), main section div .text-container .h1 span:nth-child(2) {
+#hero section div .text-container h1 span:nth-child(2), #hero section div .text-container .h1 span:nth-child(2) {
   display: inline-block;
   position: relative;
   z-index: 1;
   animation: slideIn 1s ease-out forwards;
+  animation-delay: 0s;
   opacity: 0;
   transform: translateX(-200px);
-  color: #5eaed2;
+  color: rgb(49, 151, 158);
   margin: 0;
 }
-main section div .text-container p {
+#hero section div .text-container p {
   font-size: clamp(1.12rem, 2.88vw, 2.5rem);
   font-weight: 350;
   line-height: 1.5;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.8s 0.2s forwards;
+  animation-delay: 0.2s;
 }
-main section div .text-container .hero-button-container {
+#hero section div .text-container .hero-button-container {
   font-size: clamp(1rem, 2vw, 1.8rem);
   display: flex;
   gap: 20px;
@@ -12144,8 +12045,9 @@ main section div .text-container .hero-button-container {
   opacity: 0;
   transform: translateX(-20px) translateY(5px);
   animation: fadeInUp 0.8s 0.2s forwards;
+  animation-delay: 0.5s;
 }
-main section div .text-container .hero-button-container button {
+#hero section div .text-container .hero-button-container button {
   width: fit-content;
   padding: 10px 20px;
   border: none;
@@ -12161,11 +12063,11 @@ main section div .text-container .hero-button-container button {
   transition-duration: 1s;
   overflow: hidden;
 }
-main section div .text-container .hero-button-container .hero-btn-1 {
+#hero section div .text-container .hero-button-container .hero-btn-1 {
   background: linear-gradient(to right, #0e678b, #1fa0b4, #0e678b, #0e678b, #1fa0b4, #0e678b);
   background-size: 250%;
 }
-main section div .text-container .hero-button-container .hero-btn-1::before {
+#hero section div .text-container .hero-button-container .hero-btn-1::before {
   position: absolute;
   content: "Over ons";
   color: white;
@@ -12179,11 +12081,11 @@ main section div .text-container .hero-button-container .hero-btn-1::before {
   background-color: #13172c;
   background-size: 200%;
 }
-main section div .text-container .hero-button-container .hero-btn-1:hover {
+#hero section div .text-container .hero-button-container .hero-btn-1:hover {
   background-position: right;
   transition-duration: 1s;
 }
-main section div .text-container .hero-button-container .hero-btn-1:hover .hero-btn-1::before {
+#hero section div .text-container .hero-button-container .hero-btn-1:hover .hero-btn-1::before {
   position: absolute;
   content: "Over ons";
   color: white;
@@ -12197,16 +12099,16 @@ main section div .text-container .hero-button-container .hero-btn-1:hover .hero-
   background-color: #0029ff;
   background-size: 200%;
 }
-main section div .text-container .hero-button-container .hero-btn-1:hover::before {
+#hero section div .text-container .hero-button-container .hero-btn-1:hover::before {
   background-position: right;
   transition-duration: 1s;
 }
-main section div .text-container .hero-button-container .hero-btn-2 {
+#hero section div .text-container .hero-button-container .hero-btn-2 {
   background-color: #31989e;
   border: 2px solid #31989e;
   transition: all 0.3s ease;
 }
-main section div .text-container .hero-button-container .hero-btn-2:hover {
+#hero section div .text-container .hero-button-container .hero-btn-2:hover {
   background-color: #2a8a91;
 }
 
@@ -12225,7 +12127,8 @@ main section div .text-container .hero-button-container .hero-btn-2:hover {
   display: block;
 }
 .image-banner .background-fill {
-  background-color: #31989e;
+  background: rgb(49, 151, 158);
+  background: linear-gradient(90deg, rgb(49, 151, 158) 0%, rgb(56, 134, 143) 100%);
   flex-grow: 1;
   height: 25vh;
   margin: 0;

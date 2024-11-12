@@ -1,11 +1,15 @@
 .hamburger {
-  @include hamburger;
+  @include hamburger; // Assuming you have a mixin for styling the hamburger
+  position: fixed;
+  z-index: 1000;
+  top: 20px; // Adjust as needed for vertical spacing
+  right: 20px; // Adjust as needed for horizontal spacing
 }
 
 header {
   #navigation {
+    background: transparent;
     @include flex-center;
-    @include background-blur;
     position: fixed;
     width: 100%;
     max-width: 100%;
@@ -13,48 +17,30 @@ header {
     padding: 0;
     color: $nav-color-white;
     z-index: 100;
-    a {
-      img {
-        max-width: rem(60);
-        height: rem(60);
-        margin: rem(5);
-      }
-    }
-    h2 {
-      color: inherit;
-      text-transform: uppercase;
-      font-size: rem(42);
-      font-weight: 900;
-      width: fit-content;
-      top: 50%;
-    }
 
     nav {
+      background-color: transparent;
       padding-right: 10%;
-      margin-left: auto; // This will push the nav to the right
+      margin-left: auto;
 
       ul {
+        top: 0;
+
         position: fixed;
-        top: rem(19.5);
         @include adaptive-nav-width;
-        left: auto;
+        left: -100%; // Start off-screen to the left
         min-height: 100vh;
         min-height: 100svh;
         display: block;
         z-index: 40;
         background-color: $nav-background-color-dark;
-
-        margin-top: rem(50);
+        margin-top: 0;
         padding-top: rem(20);
-        transition: $nav-transition-duration $nav-timing;
-        text-align: right;
+        transition: left $nav-transition-duration $nav-timing;
+        text-align: left;
 
         &.is-active {
-          right: 0;
-        }
-
-        &.is-active {
-          right: 0;
+          left: 0; // Slide in to the viewport
         }
 
         li {
@@ -62,7 +48,7 @@ header {
           list-style-type: none;
           margin: 0;
           padding: 0;
-          justify-content: flex-end; // Align items to the right
+          justify-content: flex-start;
 
           a {
             text-decoration: none;
@@ -71,7 +57,7 @@ header {
             width: fit-content;
             max-width: rem(200);
             padding: rem(12) rem(16);
-            margin-right: rem(16); // Add some right margin
+            margin-left: rem(16); // Change to left margin
           }
 
           &:has(ul) > a::after {
@@ -82,6 +68,7 @@ header {
           }
 
           ul {
+            top: 0;
             width: fit-content + rem(60);
             transition: $nav-transition-duration $nav-timing;
 
@@ -91,7 +78,7 @@ header {
               font-size: rem(18);
               font-weight: bold;
               @include flex-center;
-              justify-content: flex-end; // Align to the right
+              justify-content: flex-start; // Align to the left
 
               a::before {
                 content: url('../resources/images/left.svg');
@@ -107,120 +94,12 @@ header {
   }
 }
 
-@include media-breakpoint-up(lg) {
-  header {
-    .hamburger {
-      display: none;
-    }
-
-    #navigation {
-      background-color: $navbar-background-color-dark;
-      z-index: 20;
-      padding: rem(10) rem(20);
-      height: $nav-height;
-      margin: rem(10);
-
-
-      h2 {
-        @include flex-center;
-      }
-
-      nav {
-        @include flex-center;
-        height: $nav-height;
-        margin-right: 0;
-        padding: 0;
-        ul {
-          margin: 0 0 0 0;
-          height: $nav-height;
-          position: static;
-          min-height: fit-content;
-          display: flex;
-          background-color: transparent;
-          //margin: 0 0 0 rem(10);
-          padding: 0 !important;
-          list-style: none;
-
-          li {
-            width: fit-content;
-            display: flex;
-            align-items: flex-end;
-            position: relative;
-
-            a {
-              font-size: rem(20);
-              height: $nav-height;
-              white-space: nowrap;
-              width: fit-content;
-              padding: rem(15) rem(20);
-
-                margin-right: 0px;
-
-
-              &:hover {
-                @include background-blur;
-              }
-            }
-
-            ul {
-              width: fit-content;
-              height: fit-content;
-              display: none;
-              position: absolute;
-              top: 100%;
-              left: 0;
-              z-index: 50;
-              margin: 0;
-              @include background-blur;
-
-              li:first-child {
-                display: none;
-              }
-              li {
-                a {
-                  margin-right: 0px;
-                }
-              }
-            }
-
-            &:hover {
-              > a {
-                @include background-blur;
-              }
-
-              > ul {
-                display: block;
-                opacity: 1;
-              }
-            }
-
-            &:has(ul) > a {
-              position: relative;
-
-              &::after {
-                content: url('../resources/images/single-down.svg');
-                filter: brightness(0) invert(1);
-                padding: 0;
-                display: block;
-                position: absolute;
-                top: 90%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                pointer-events: none;  /* Makes the element non-interactive */
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
+// Media query adjustments remain the same
 
 @media only screen and (orientation: landscape) {
   header {
     #navigation {
-height: 5vw;
+      height: 5vw;
       a {
         img {
           max-width: rem(60);

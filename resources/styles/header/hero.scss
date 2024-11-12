@@ -1,7 +1,7 @@
-main {
+#hero {
   section {
     position: relative;
-    min-height: 100svh;
+    min-height: 100vh;
     @include flex-center;
     color: $hero-text-color;
     overflow: hidden;
@@ -37,6 +37,7 @@ main {
           font-size: clamp(5rem, 10vw, 10rem);
           line-height: 1; // Adjust line-height to minimize gaps
 
+
           span {
             display: inline;
             position: relative;
@@ -49,10 +50,12 @@ main {
               position: relative;
               z-index: 1;
               animation: slideIn 1s ease-out forwards;
+              animation-delay: 0s;
               opacity: 0;
               transform: translateX(-200px);
-              color: #5eaed2;
+              color: rgba(49,151,158,1);
               margin: 0;
+              
             }
           }
         }
@@ -61,6 +64,7 @@ main {
           opacity: 0;
           transform: translateY(20px);
           animation: fadeInUp 0.8s 0.2s forwards;
+          animation-delay: 0.2s;
         }
         .hero-button-container {
           font-size: clamp(1rem, 2vw, 1.8rem);
@@ -70,6 +74,7 @@ main {
           opacity: 0;
           transform: translateX(-20px) translateY(5px);
           animation: fadeInUp 0.8s 0.2s forwards;
+          animation-delay: 0.5s;
 
           button {
             width: fit-content;
@@ -164,7 +169,8 @@ main {
   }
 
   .background-fill {
-    background-color: #31989e;
+    background: rgb(49,151,158);
+    background: linear-gradient(90deg, rgba(49,151,158,1) 0%, rgba(56,134,143,1) 100%);
     flex-grow: 1;
     height: 25vh;
     margin: 0;
