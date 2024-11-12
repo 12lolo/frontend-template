@@ -12202,8 +12202,8 @@ main section div .text-container .hero-button-container .hero-btn-1:hover::befor
   transition-duration: 1s;
 }
 main section div .text-container .hero-button-container .hero-btn-2 {
-  background-color: #339da4;
-  border: 2px solid #339da4;
+  background-color: #31989e;
+  border: 2px solid #31989e;
   transition: all 0.3s ease;
 }
 main section div .text-container .hero-button-container .hero-btn-2:hover {
@@ -12232,6 +12232,9 @@ main section div .text-container .hero-button-container .hero-btn-2:hover {
 }
 
 @media only screen and (orientation: landscape) {
+  main section div .text-container {
+    top: 11vh;
+  }
   main section div .text-container h1, main section div .text-container .h1 {
     font-size: clamp(4rem, 8vw, 8rem);
     line-height: 1;
@@ -12241,6 +12244,10 @@ main section div .text-container .hero-button-container .hero-btn-2:hover {
   }
   main section div .text-container .hero-button-container button {
     padding: 0 0.3125rem;
+  }
+  .image-banner {
+    position: relative;
+    bottom: 30vh;
   }
 }
 .banner {
