@@ -11844,10 +11844,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-* {
-  border: #ff4460 solid 1px;
-}
-
 .hamburger {
   width: 5.0625rem;
   position: relative;
@@ -12031,7 +12027,7 @@ header #navigation nav ul li ul li:first-child a::before {
   font-family: Arial, sans-serif;
   position: relative;
   white-space: nowrap;
-  font-size: clamp(5rem, 10vw, 10rem);
+  font-size: clamp(5rem, 12vw, 10rem);
   line-height: 1;
 }
 #hero section div .text-container h1 span, #hero section div .text-container .h1 span {
@@ -12158,25 +12154,6 @@ header #navigation nav ul li ul li:first-child a::before {
   margin: 0;
 }
 
-@media only screen and (orientation: landscape) {
-  main section div .text-container {
-    top: 11vh;
-  }
-  main section div .text-container h1, main section div .text-container .h1 {
-    font-size: clamp(4rem, 8vw, 8rem);
-    line-height: 1;
-  }
-  main section div .text-container p {
-    font-size: clamp(0.9rem, 1.8vw, 1.7rem);
-  }
-  main section div .text-container .hero-button-container button {
-    padding: 0 0.3125rem;
-  }
-  .image-banner {
-    position: relative;
-    bottom: 30vh;
-  }
-}
 .banner {
   position: relative;
   padding: 2.5rem 1.25rem;

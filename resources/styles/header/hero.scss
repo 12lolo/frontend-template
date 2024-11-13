@@ -34,7 +34,7 @@
           font-family: Arial, sans-serif;
           position: relative;
           white-space: nowrap;
-          font-size: clamp(5rem, 10vw, 10rem);
+          font-size: clamp(5rem, 12vw, 10rem);
           line-height: 1; // Adjust line-height to minimize gaps
 
 
@@ -174,33 +174,6 @@
     flex-grow: 1;
     height: 25vh;
     margin: 0;
-  }
-}
-@media only screen and (orientation: landscape) {
-  main {
-    section {
-      div {
-        .text-container {
-          top: 11vh;
-          h1 {
-              font-size: clamp(4rem, 8vw, 8rem);
-              line-height: 1;
-          }
-          p {
-            font-size: clamp(0.9rem, 1.8vw, 1.7rem);
-          }
-          .hero-button-container {
-            button {
-              padding: 0 rem(5);
-            }
-          }
-        }
-      }
-    }
-  }
-  .image-banner {
-    position: relative;
-    bottom: 30vh;
   }
 }
 
