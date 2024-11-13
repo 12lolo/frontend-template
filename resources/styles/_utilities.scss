@@ -14,10 +14,10 @@ $bar-spacing: 1.5rem; // Spacing between bars (12px)
 
 
 @mixin hamburger {
-$scale-factor: .9;
+$hamburger-scale-factor: .9;
 
 
-  width: $hamburger-size * $scale-factor; // Scale the hamburger size
+  width: $hamburger-size * $hamburger-scale-factor; // Scale the hamburger size
   position: relative;
   display: block;
   cursor: pointer;
@@ -32,19 +32,19 @@ $scale-factor: .9;
     content: '';
     display: block;
     width: 100%;
-    height: $bar-height * $scale-factor; // Scale the height of each bar
+    height: $bar-height * $hamburger-scale-factor; // Scale the height of each bar
     background-color: white;
-    margin: ($bar-spacing / 2) * $scale-factor; // Scale the spacing
+    margin: ($bar-spacing / 2) * $hamburger-scale-factor; // Scale the spacing
     transition: 0.5s;
   }
 
   &.is-active {
     &:before {
-      transform: rotate(-45deg) translate(-1.2rem * $scale-factor, 0.75rem * $scale-factor);
+      transform: rotate(-45deg) translate(-1.2rem * $hamburger-scale-factor, 0.75rem * $hamburger-scale-factor);
     }
 
     &:after {
-      transform: rotate(45deg) translate(-1.2rem * $scale-factor, -0.75rem * $scale-factor);
+      transform: rotate(45deg) translate(-1.2rem * $hamburger-scale-factor, -0.75rem * $hamburger-scale-factor);
     }
 
     .bar {
@@ -53,7 +53,7 @@ $scale-factor: .9;
   }
 
   // Apply scaling to the entire hamburger menu
-  transform: scale($scale-factor);
+  transform: scale($hamburger-scale-factor);
 }
 
 // First, create a mixin for the nav width

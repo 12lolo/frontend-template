@@ -4,9 +4,11 @@ const mainNav = document.querySelector('#navigation > nav > ul');
 const subnavs = document.querySelectorAll('.subnav');
 const navLinks = document.querySelectorAll('li > a');
 const backButtons = document.querySelectorAll('.subnav > li:first-child');
+const backdrop = document.querySelector('.backdrop');
 
 // State
 let isMenuOpen = false;
+let backdropTimeout;
 
 // Utility Functions
 function toggleElement(element, force) {
@@ -21,11 +23,21 @@ function toggleElement(element, force) {
 
 // Navigation Functions
 function toggleMainMenu() {
+    // Clear any existing backdrop timeout
+    clearTimeout(backdropTimeout);
+
     isMenuOpen = !isMenuOpen;
     toggleElement(hamburger, isMenuOpen);
     toggleElement(mainNav, isMenuOpen);
 
-    if (!isMenuOpen) {
+    if (isMenuOpen) {
+        // Set a timeout to add the backdrop after 0.4 seconds
+        backdropTimeout = setTimeout(() => {
+            toggleElement(backdrop, true); // Show backdrop after 0.4 seconds
+        }, 400);
+    } else {
+        // Close the backdrop immediately
+        toggleElement(backdrop, false);
         closeAllSubnavs();
     }
 }
@@ -55,9 +67,9 @@ function handleBackButtonClick(event) {
     event.stopPropagation();
 }
 
-// Close menu if clicked outside
+// Close menu if clicked on the backdrop
 function handleClickOutside(event) {
-    if (isMenuOpen && !mainNav.contains(event.target) && !hamburger.contains(event.target)) {
+    if (isMenuOpen && backdrop.contains(event.target)) {
         toggleMainMenu();
     }
 }
@@ -73,5 +85,5 @@ function handleScroll() {
 hamburger.addEventListener('click', toggleMainMenu);
 navLinks.forEach(link => link.addEventListener('click', handleSubnavClick));
 backButtons.forEach(button => button.addEventListener('click', handleBackButtonClick));
-document.addEventListener('click', handleClickOutside);
+backdrop.addEventListener('click', handleClickOutside);
 window.addEventListener('scroll', handleScroll);
