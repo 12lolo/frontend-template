@@ -34,7 +34,7 @@ function toggleMainMenu() {
         // Set a timeout to add the backdrop after 0.4 seconds
         backdropTimeout = setTimeout(() => {
             toggleElement(backdrop, true); // Show backdrop after 0.4 seconds
-        }, 400);
+        }, 300);
     } else {
         // Close the backdrop immediately
         toggleElement(backdrop, false);

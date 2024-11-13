@@ -11957,11 +11957,16 @@ header #navigation nav ul li a {
   margin-left: 1rem;
 }
 header #navigation nav ul li:has(ul) > a::after {
-  content: url("../resources/images/single-down.svg");
-  transform: rotate(90);
+  content: ""; /* Empty content, as we'll use background-image */
+  background-image: url("../resources/images/single-down.svg");
   filter: brightness(0) invert(1);
-  padding-left: 0.625rem;
   z-index: 1000;
+  display: inline-block; /* Ensure the pseudo-element is a block */
+  width: 0.9375rem; /* Set the width of the pseudo-element */
+  height: 0.9375rem; /* Set the height of the pseudo-element */
+  background-repeat: no-repeat; /* Prevent repeating of the background image */
+  background-position: center; /* Center the image */
+  transform: rotate(-90deg) scale(1.5); /* Rotate the background image */
 }
 header #navigation nav ul li ul {
   top: 0;
@@ -12189,54 +12194,54 @@ header #navigation nav ul li ul li:first-child a::before {
     transform: translateY(0);
   }
 }
-.about-us {
-  min-height: 100vh;
+#about-us {
+  min-height: 70vh;
   padding: 3vh 0 0 0;
 }
-.about-us .logo-banner {
+#about-us .logo-banner {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
   background-color: #fff;
-  margin: 0 5vw 5vh;
+  margin: 0 5vw 3vh;
   gap: 3.5vw;
 }
-.about-us .logo-banner img {
+#about-us .logo-banner img {
   max-height: 40px;
   max-width: 17vw;
   object-fit: contain;
 }
-.about-us .content {
+#about-us .content {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 5vh 5vw;
+  padding: 0 5vw 0;
   background-color: #ffffff;
   gap: 5vw;
 }
-.about-us .content .text-section {
+#about-us .content .text-section {
   flex-basis: calc(45% - 2.5vw);
   max-width: 600px;
   min-width: 300px;
   width: max(300px, 45vw);
   text-align: left;
 }
-.about-us .content .text-section h1, .about-us .content .text-section .h1 {
+#about-us .content .text-section h1, #about-us .content .text-section .h1 {
   font-size: min(2.5em, 4vw);
   color: #0d1c51;
   margin: 0 0 2vh;
 }
-.about-us .content .text-section p {
+#about-us .content .text-section p {
   color: #555;
   line-height: 1.6;
   font-size: min(1em, 3vw);
   margin-bottom: 3vh;
 }
-.about-us .content .text-section button {
+#about-us .content .text-section button {
   background-color: #3ac5b9;
   color: #fff;
   padding: min(10px, 2vw) min(20px, 4vw);
@@ -12245,42 +12250,114 @@ header #navigation nav ul li ul li:first-child a::before {
   cursor: pointer;
   font-size: min(1em, 3vw);
 }
-.about-us .content .custom-carousel-section {
+#about-us .content .custom-carousel-section {
   flex-basis: calc(45% - 2.5vw);
   max-width: 600px;
   min-width: 300px;
   width: max(300px, 45vw);
 }
-.about-us .content .custom-carousel-section .custom-carousel-viewport {
-  width: 100%;
+#about-us .content .custom-carousel-section .custom-carousel-viewport {
+  width: 79%;
   overflow: hidden;
-  border: lightgray solid 13px;
+  border: lightgray solid 3px;
+  margin: 0 10% 0 10%;
+  border-bottom: none;
 }
-.about-us .content .custom-carousel-section .custom-carousel-viewport .custom-carousel-images {
+#about-us .content .custom-carousel-section .custom-carousel-viewport .custom-carousel-images {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
 }
-.about-us .content .custom-carousel-section .custom-carousel-viewport .custom-carousel-images img {
+#about-us .content .custom-carousel-section .custom-carousel-viewport .custom-carousel-images img {
   flex: 0 0 100%;
   width: 100%;
   object-fit: cover;
 }
-.about-us .content .custom-carousel-section .custom-carousel-controls {
+#about-us .content .custom-carousel-section .custom-carousel-controls {
+  border-top: black solid 14px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2vw;
-  margin-top: 2vh;
+  margin: 0;
+  padding-top: 20px;
 }
-.about-us .content .custom-carousel-section .custom-carousel-btn {
+#about-us .content .custom-carousel-section .custom-carousel-controls button {
   width: min(40px, 8vw);
   height: min(40px, 8vw);
-  background: #333;
+  background: #000000;
   color: white;
   border: none;
   border-radius: 100%;
   padding: min(10px, 2vw);
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#about-us .content .custom-carousel-section .custom-carousel-controls button.prev::after {
+  content: url("../resources/images/caret-left-fill.svg");
+  filter: brightness(0) invert(1);
+  display: block; /* Make the pseudo element a block */
+  width: 100%; /* Set width to button width */
+  height: 100%; /* Set height to button height */
+  transform: scale(1.8); /* Scale down to 60% */
+  background-size: contain; /* Make sure the image fits within the button */
+}
+#about-us .content .custom-carousel-section .custom-carousel-controls button.next::after {
+  content: url("../resources/images/caret-right-fill.svg");
+  filter: brightness(0) invert(1);
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.8);
+  background-size: contain;
+}
+
+#team {
+  min-height: 30vh;
+  margin: 0;
+}
+#team ul {
+  display: flex; /* Make the parent container a flex container */
+  flex-direction: row; /* Arrange items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line if necessary */
+  justify-content: center; /* Center the items */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+#team ul li {
+  text-decoration: none;
+  list-style: none; /* Remove list bullet points */
+  display: flex; /* Make the list items flex containers */
+  flex-direction: column; /* Arrange items vertically within each li */
+  align-items: flex-start; /* Align items to the start (left) */
+  gap: 10px; /* Add spacing between image and heading */
+  width: 20%; /* Set a fixed width for the list items (adjust as needed) */
+  min-width: 200px; /* Minimum width for each list item */
+  margin: 0; /* Add some margin around each list item */
+  padding: 0;
+}
+#team ul li img {
+  padding-top: 10px;
+  max-width: 100%;
+  object-fit: contain;
+}
+#team ul li h3, #team ul li .h3 {
+  display: flex;
+  align-items: flex-end; /* Align text and arrow vertically */
+  margin: 2vh 3vw 2vh 3vw; /* Push the h3 to the right side */
+  margin-left: auto;
+}
+#team ul li h3::after, #team ul li .h3::after {
+  content: ""; /* Empty content, as we'll use background-image */
+  background-image: url("../resources/images/single-down.svg");
+  top: 50%;
+  z-index: 1000;
+  display: inline-block; /* Ensure the pseudo-element is a block */
+  width: 0.9375rem; /* Set the width of the pseudo-element */
+  height: 0.9375rem; /* Set the height of the pseudo-element */
+  background-repeat: no-repeat; /* Prevent repeating of the background image */
+  background-position: center; /* Center the image */
+  transform: rotate(-90deg) scale(1.5); /* Rotate the background image */
 }
 
 section.grid {
