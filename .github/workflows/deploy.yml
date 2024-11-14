@@ -21,4 +21,6 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            **/.idea*
+            **/.idea*/**
             **/node_modules/**
