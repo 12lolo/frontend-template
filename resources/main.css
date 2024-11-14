@@ -12195,8 +12195,8 @@ header #navigation nav ul li ul li:first-child a::before {
   }
 }
 #about-us {
-  min-height: 70vh;
-  padding: 3vh 0 0 0;
+  min-height: 80vh;
+  padding: 5vh 0 10vh 0;
 }
 #about-us .logo-banner {
   display: flex;
@@ -12205,7 +12205,7 @@ header #navigation nav ul li ul li:first-child a::before {
   align-items: center;
   padding: 20px 0;
   background-color: #fff;
-  margin: 0 5vw 3vh;
+  margin: 0 5vw 6vh;
   gap: 3.5vw;
 }
 #about-us .logo-banner img {
@@ -12317,23 +12317,23 @@ header #navigation nav ul li ul li:first-child a::before {
   margin: 0;
 }
 #team ul {
-  display: flex; /* Make the parent container a flex container */
-  flex-direction: row; /* Arrange items horizontally */
-  flex-wrap: wrap; /* Allow items to wrap onto the next line if necessary */
-  justify-content: center; /* Center the items */
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 #team ul li {
   text-decoration: none;
-  list-style: none; /* Remove list bullet points */
-  display: flex; /* Make the list items flex containers */
-  flex-direction: column; /* Arrange items vertically within each li */
-  align-items: flex-start; /* Align items to the start (left) */
-  gap: 10px; /* Add spacing between image and heading */
-  width: 20%; /* Set a fixed width for the list items (adjust as needed) */
-  min-width: 200px; /* Minimum width for each list item */
-  margin: 0; /* Add some margin around each list item */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 20%;
+  min-width: 200px;
+  margin: 0;
   padding: 0;
 }
 #team ul li img {
@@ -12343,21 +12343,231 @@ header #navigation nav ul li ul li:first-child a::before {
 }
 #team ul li h3, #team ul li .h3 {
   display: flex;
-  align-items: flex-end; /* Align text and arrow vertically */
-  margin: 2vh 3vw 2vh 3vw; /* Push the h3 to the right side */
+  align-items: flex-end;
+  margin: 2vh 3vw;
   margin-left: auto;
 }
 #team ul li h3::after, #team ul li .h3::after {
-  content: ""; /* Empty content, as we'll use background-image */
-  background-image: url("../resources/images/single-down.svg");
+  content: "";
+  background-image: url("../resources/images/arrow-right.svg");
   top: 50%;
   z-index: 1000;
-  display: inline-block; /* Ensure the pseudo-element is a block */
-  width: 0.9375rem; /* Set the width of the pseudo-element */
-  height: 0.9375rem; /* Set the height of the pseudo-element */
-  background-repeat: no-repeat; /* Prevent repeating of the background image */
-  background-position: center; /* Center the image */
-  transform: rotate(-90deg) scale(1.5); /* Rotate the background image */
+  display: inline-block;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(2);
+}
+
+#services {
+  font-family: "Roboto", sans-serif;
+  background-color: #13172c;
+  color: #ffffff;
+}
+#services .container {
+  max-width: 1100px;
+  margin-left: clamp(20pxpx, 20pxpx + (100px - 20px) * (100vw - 320px) / (1920 - 320), 100pxpx);
+  margin-right: clamp(20pxpx, 20pxpx + (100px - 20px) * (100vw - 320px) / (1920 - 320), 100pxpx);
+  padding: 2rem;
+}
+#services .container header {
+  text-align: left;
+  color: #ffffff;
+}
+#services .container header h1, #services .container header .h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+#services .container header p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  color: #b0c4d4;
+}
+#services .container header button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: radial-gradient(#45a0a9, #398890);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+#services .container header button:hover {
+  background: radial-gradient(#41b6c2, #398890);
+}
+#services .container ul {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+#services .container ul li {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+#services .container ul li span {
+  color: #b0c4d4;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+#services .container ul li img {
+  height: 2rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+#services .container ul li h3, #services .container ul li .h3 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 15vw;
+  margin: 0;
+}
+#services .container ul li p {
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: #b0c4d4;
+  line-height: 1.6;
+  margin: 0;
+}
+#services .container ul li:not(:last-child) {
+  border-bottom: 2px solid #1c2b3a;
+  padding-bottom: 1.5rem;
+}
+#services .container ul li:first-child {
+  border-top: 2px solid #1c2b3a;
+}
+@media (max-width: 900px) {
+  #services .container ul li {
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "span img h2" "p p p";
+  }
+  #services .container ul li span {
+    grid-area: span;
+  }
+  #services .container ul li img {
+    grid-area: img;
+    height: 2rem;
+  }
+  #services .container ul li h2, #services .container ul li .h2 {
+    grid-area: h2;
+    margin: 0;
+  }
+  #services .container ul li p {
+    grid-area: p;
+    margin-top: 0.5rem;
+  }
+}
+
+#video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  background-color: #fff;
+  position: relative;
+}
+#video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5vw;
+  width: 17vw;
+  height: 100%;
+  background-color: #2F7F83;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  #video::after {
+    width: 30% !important;
+  }
+}
+#video::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: #13172c;
+  z-index: 0;
+}
+@media (min-width: 768px) {
+  #video {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+#video .background {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  #video .background {
+    width: 50%;
+    padding-right: 2rem;
+  }
+}
+#video .background .video-container {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  #video .background .video-container {
+    max-width: 75%;
+    height: 500px;
+  }
+}
+#video .background .video-container iframe {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+}
+#video .content {
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  #video .content {
+    width: 50%;
+    text-align: left;
+    margin-top: 0;
+  }
+}
+#video .content h2, #video .content .h2 {
+  font-size: 1.875rem;
+  color: #0F213E;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  #video .content h2, #video .content .h2 {
+    font-size: 2.25rem;
+  }
+}
+#video .content p {
+  font-size: 1.125rem;
+  color: #4A5568;
 }
 
 section.grid {

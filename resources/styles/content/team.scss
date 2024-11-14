@@ -1,23 +1,25 @@
 #team {
   min-height: 30vh;
   margin: 0;
+
   ul {
-    display: flex; /* Make the parent container a flex container */
-    flex-direction: row; /* Arrange items horizontally */
-    flex-wrap: wrap; /* Allow items to wrap onto the next line if necessary */
-    justify-content: center; /* Center the items */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+
     li {
       text-decoration: none;
-      list-style: none; /* Remove list bullet points */
-      display: flex; /* Make the list items flex containers */
-      flex-direction: column; /* Arrange items vertically within each li */
-      align-items: flex-start; /* Align items to the start (left) */
-      gap: 10px; /* Add spacing between image and heading */
-      width: 20%; /* Set a fixed width for the list items (adjust as needed) */
-      min-width: 200px; /* Minimum width for each list item */
-      margin: 0; /* Add some margin around each list item */
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      width: 20%;
+      min-width: 200px;
+      margin: 0;
       padding: 0;
 
       img {
@@ -28,24 +30,23 @@
 
       h3 {
         display: flex;
-        align-items: flex-end; /* Align text and arrow vertically */
-        margin:2vh 3vw 2vh 3vw; /* Push the h3 to the right side */
+        align-items: flex-end;
+        margin: 2vh 3vw;
         margin-left: auto;
 
         &::after {
-          content: ''; /* Empty content, as we'll use background-image */
-          background-image: url('../resources/images/single-down.svg');
+          content: '';
+          background-image: url('../resources/images/arrow-right.svg');
           top: 50%;
           z-index: 1000;
-          display: inline-block; /* Ensure the pseudo-element is a block */
-          width: rem(15); /* Set the width of the pseudo-element */
-          height: rem(15); /* Set the height of the pseudo-element */
-          background-repeat: no-repeat; /* Prevent repeating of the background image */
-          background-position: center; /* Center the image */
-          transform: rotate(-90deg) scale(1.5); /* Rotate the background image */
+          display: inline-block;
+          width: rem(15);
+          height: rem(15);
+          background-repeat: no-repeat;
+          background-position: center;
+          transform: scale(2);
         }
       }
     }
   }
 }
-
