@@ -14,10 +14,19 @@ $bar-spacing: 1.5rem; // Spacing between bars (12px)
 
 
 @mixin hamburger {
-$hamburger-scale-factor: .9;
+  $hamburger-scale-factor: .9;
 
+  // Bar color variable
+  $bar-color: #f1f1f1;
 
-  width: $hamburger-size * $hamburger-scale-factor; // Scale the hamburger size
+  // Box shadow variables
+  $bar-shadow-color: rgba(0,0,0,0.3);
+  $bar-shadow-h-offset: 0;
+  $bar-shadow-v-offset: 1px;
+  $bar-shadow-blur: 3px;
+  $bar-shadow-spread: 1px;
+
+  width: $hamburger-size * $hamburger-scale-factor;
   position: relative;
   display: block;
   cursor: pointer;
@@ -32,10 +41,18 @@ $hamburger-scale-factor: .9;
     content: '';
     display: block;
     width: 100%;
-    height: $bar-height * $hamburger-scale-factor; // Scale the height of each bar
-    background-color: white;
-    margin: ($bar-spacing / 2) * $hamburger-scale-factor; // Scale the spacing
+    height: $bar-height * $hamburger-scale-factor;
+    background-color: $bar-color;
+    margin: ($bar-spacing / 2) * $hamburger-scale-factor;
     transition: 0.5s;
+
+    // Add box shadow to each bar
+    box-shadow:
+            $bar-shadow-h-offset
+            $bar-shadow-v-offset
+            $bar-shadow-blur
+            $bar-shadow-spread
+            $bar-shadow-color;
   }
 
   &.is-active {
@@ -52,7 +69,6 @@ $hamburger-scale-factor: .9;
     }
   }
 
-  // Apply scaling to the entire hamburger menu
   transform: scale($hamburger-scale-factor);
 }
 
