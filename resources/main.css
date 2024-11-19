@@ -12735,11 +12735,13 @@ header #navigation nav ul li ul li:first-child a::before {
   font-size: 0.75rem;
   color: #aaa;
   margin-top: 2rem;
-  border-top: #3d969e solid 2px;
+  height: 15vh;
   background: linear-gradient(90deg, rgb(49, 151, 158) 0%, rgb(56, 134, 143) 100%);
 }
 #footer .legal p {
+  border-top: #3d969e solid 2px;
   margin: 0.5rem 0;
+  margin-top: auto;
 }
 @media (max-width: 768px) {
   #footer .top {
