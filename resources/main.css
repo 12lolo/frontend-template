@@ -12572,28 +12572,30 @@ header #navigation nav ul li ul li:first-child a::before {
 }
 
 #changelog {
+  background-color: #ebeaed;
+}
+#changelog div {
   margin: 0 auto;
   max-width: 1200px;
   padding: 2rem;
   font-family: "Inter", sans-serif;
-  background-color: #ebeaed;
 }
-#changelog h1, #changelog .h1 {
+#changelog div h1, #changelog div .h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
   color: #13172c;
 }
-#changelog p {
+#changelog div p {
   font-size: 1rem;
   color: #13172c;
   margin-bottom: 2rem;
 }
-#changelog div {
+#changelog div div {
   display: flex;
   gap: 1.5rem;
 }
-#changelog div article {
+#changelog div div article {
   background-color: #37a0ab;
   padding: 3vh;
   flex: 1;
@@ -12602,7 +12604,7 @@ header #navigation nav ul li ul li:first-child a::before {
   flex-direction: column;
   justify-content: space-between;
 }
-#changelog div article h3, #changelog div article .h3 {
+#changelog div div article h3, #changelog div div article .h3 {
   background-color: #13172c;
   color: #fff;
   font-size: 1rem;
@@ -12610,37 +12612,37 @@ header #navigation nav ul li ul li:first-child a::before {
   padding: 0.8rem 0.8rem;
   align-self: flex-start;
 }
-#changelog div article h2, #changelog div article .h2 {
+#changelog div div article h2, #changelog div div article .h2 {
   font-size: 1rem;
   color: #13172c;
   margin-top: auto;
 }
-#changelog div article p {
+#changelog div div article p {
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #13172c;
   margin: 0;
 }
 @media (max-width: 1000px) {
-  #changelog div {
+  #changelog div div {
     margin: 3vh 15vh;
     flex-direction: column;
   }
-  #changelog div article {
+  #changelog div div article {
     margin-bottom: 1rem;
     aspect-ratio: 1/0.6;
   }
 }
 @media (max-width: 700px) {
-  #changelog div {
+  #changelog div div {
     margin: 3vh 5vh;
   }
-  #changelog div article {
+  #changelog div div article {
     aspect-ratio: 1/0.7;
   }
 }
 @media (max-width: 450px) {
-  #changelog div {
+  #changelog div div {
     margin: 3vh 2vh;
   }
 }
