@@ -163,9 +163,11 @@
   margin: 0;
 
   img {
-    height: 25vh;
+    height: 30vh;
     max-width: 100%;
     display: block;
+    position: absolute;
+    bottom: 0;
   }
 
   .background-fill {
@@ -174,6 +176,7 @@
     flex-grow: 1;
     height: 25vh;
     margin: 0;
+    bottom: 0;
   }
 }
 

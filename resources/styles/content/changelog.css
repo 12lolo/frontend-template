@@ -1,0 +1,59 @@
+#changelog {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+#changelog h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+#changelog p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+#changelog div {
+  display: flex;
+  gap: 1.5rem;
+}
+#changelog div article {
+  background-color: #37a0ab;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#changelog div article button {
+  background-color: #111;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+#changelog div article h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+#changelog div article p {
+  font-size: 0.875rem;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  #changelog div {
+    flex-direction: column;
+  }
+  #changelog div article {
+    margin-bottom: 1rem;
+  }
+}
+
+/*# sourceMappingURL=changelog.css.map */

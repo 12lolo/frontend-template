@@ -12148,9 +12148,11 @@ header #navigation nav ul li ul li:first-child a::before {
   margin: 0;
 }
 .image-banner img {
-  height: 25vh;
+  height: 30vh;
   max-width: 100%;
   display: block;
+  position: absolute;
+  bottom: 0;
 }
 .image-banner .background-fill {
   background: rgb(49, 151, 158);
@@ -12158,6 +12160,7 @@ header #navigation nav ul li ul li:first-child a::before {
   flex-grow: 1;
   height: 25vh;
   margin: 0;
+  bottom: 0;
 }
 
 .banner {
@@ -12568,117 +12571,223 @@ header #navigation nav ul li ul li:first-child a::before {
   color: #4A5568;
 }
 
-footer {
-  background-color: #24262b;
-  padding: 4.375rem 0;
+#changelog {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+  background-color: #ebeaed;
 }
-footer .footer {
-  max-width: 73.125rem;
-  margin: auto;
+#changelog h1, #changelog .h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #13172c;
 }
-footer .footer nav {
+#changelog p {
+  font-size: 1rem;
+  color: #13172c;
+  margin-bottom: 2rem;
+}
+#changelog div {
   display: flex;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+#changelog div article {
+  background-color: #37a0ab;
+  padding: 3vh;
+  flex: 1;
+  aspect-ratio: 1/1; /* Makes the article a perfect square */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#changelog div article h3, #changelog div article .h3 {
+  background-color: #13172c;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.8rem 0.8rem;
+  align-self: flex-start;
+}
+#changelog div article h2, #changelog div article .h2 {
+  font-size: 1rem;
+  color: #13172c;
+  margin-top: auto;
+}
+#changelog div article p {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #13172c;
   margin: 0;
 }
-footer .footer nav .footer-col {
-  width: 25%;
-  padding: 0 0.9375rem;
-}
-footer .footer nav .footer-col h4, footer .footer nav .footer-col .h4 {
-  font-size: 1.25rem;
-  color: #ffffff;
-  text-transform: capitalize;
-  margin-left: 0.625rem;
-  margin-bottom: 2.1875rem;
-  font-weight: 500;
-  position: relative;
-}
-footer .footer nav .footer-col h4::before, footer .footer nav .footer-col .h4::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.625rem;
-  background-color: #e91e63;
-  height: 0.125rem;
-  width: 3.125rem;
-  box-sizing: border-box;
-}
-footer .footer nav .footer-col ul {
-  list-style: none;
-  padding: 0;
-}
-footer .footer nav .footer-col ul li:not(:last-child) {
-  margin-bottom: 0.625rem;
-}
-footer .footer nav .footer-col ul a {
-  width: fit-content;
-  font-size: 1.125rem;
-  text-transform: capitalize;
-  color: #bbbbbb;
-  text-decoration: none;
-  font-weight: 300;
-  display: block;
-  transition: all 0.3s ease;
-}
-footer .footer nav .footer-col ul a:hover {
-  color: #ffffff;
-  padding-left: 0.5rem;
-}
-footer .footer nav .footer-col .social-links a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 2.5rem;
-  width: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0.625rem 1.25rem 0.625rem 0;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-footer .footer nav .footer-col .social-links a:hover {
-  color: #24262b;
-  background-color: #ffffff;
-}
-footer .footer nav .footer-col .social-links a:hover img {
-  filter: brightness(0) invert(0.4);
-}
-footer .footer nav .footer-col .social-links a img {
-  width: 70%;
-  height: auto;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-footer .footer nav .footer-col .social-links a .tooltip {
-  visibility: hidden;
-  width: 7.5rem;
-  background-color: #333;
-  color: #ffffff;
-  text-align: center;
-  border-radius: 5px;
-  padding: 5px;
-  position: absolute;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 1;
-}
-footer .footer nav .footer-col .social-links a:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-}
-@media (max-width: 47.9375rem) {
-  footer .footer-col {
-    width: 50% !important;
-    margin-bottom: 1.875rem;
+@media (max-width: 1000px) {
+  #changelog div {
+    margin: 3vh 15vh;
+    flex-direction: column;
+  }
+  #changelog div article {
+    margin-bottom: 1rem;
+    aspect-ratio: 1/0.6;
   }
 }
-@media (max-width: 35.875rem) {
-  footer .footer-col {
-    width: 100% !important;
+@media (max-width: 700px) {
+  #changelog div {
+    margin: 3vh 5vh;
+  }
+  #changelog div article {
+    aspect-ratio: 1/0.7;
+  }
+}
+@media (max-width: 450px) {
+  #changelog div {
+    margin: 3vh 2vh;
+  }
+}
+
+#footer {
+  background-color: #13172c;
+  color: #fff;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+#footer .top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+#footer .top .branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+#footer .top .branding h1, #footer .top .branding .h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #37a0ab;
+  margin-bottom: 0.5rem;
+}
+#footer .top .branding .social {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+#footer .top .branding .social span {
+  cursor: pointer;
+}
+#footer .top .branding .social span:hover {
+  text-decoration: underline;
+}
+#footer .top .info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 2rem;
+  flex: 1;
+  margin-left: 2rem;
+}
+#footer .top .info .column h3, #footer .top .info .column .h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #37a0ab;
+  margin-bottom: 1rem;
+}
+#footer .top .info .column p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+#footer .top .info .column a {
+  color: #fff;
+  text-decoration: underline;
+}
+#footer .top .info .column a:hover {
+  color: #37a0ab;
+}
+#footer .top .links {
+  grid-column: span 3; /* Full width */
+  margin-top: 2rem;
+  text-align: left; /* Align everything to the left */
+}
+#footer .top .links h3, #footer .top .links .h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #37a0ab;
+  margin-bottom: 1rem;
+}
+#footer .top .links ul {
+  list-style: none; /* Remove bullet points */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns on larger screens */
+  gap: 1rem; /* Gap between items */
+  padding: 0;
+}
+#footer .top .links ul li {
+  cursor: pointer;
+  text-align: left; /* Align text to the left */
+}
+#footer .top .links ul li:hover {
+  text-decoration: underline;
+}
+#footer .legal {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-top: 2rem;
+  border-top: #3d969e solid 2px;
+  background: linear-gradient(90deg, rgb(49, 151, 158) 0%, rgb(56, 134, 143) 100%);
+}
+#footer .legal p {
+  margin: 0.5rem 0;
+}
+@media (max-width: 768px) {
+  #footer .top {
+    flex-direction: column;
+    align-items: center;
+  }
+  #footer .top .branding {
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+  #footer .top .branding .social {
+    justify-content: center;
+  }
+  #footer .top .info {
+    grid-template-columns: 1fr; /* Stack all info sections in one column */
+    text-align: center;
+  }
+  #footer .top .links {
+    width: 30vw;
+    grid-column: span 3; /* Full width */
+    margin-top: 2rem;
+    text-align: left; /* Align everything to the left */
+  }
+  #footer .top .links h3, #footer .top .links .h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #37a0ab;
+    margin-bottom: 1rem;
+  }
+  #footer .top .links ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 1rem; /* Gap between items */
+    padding: 0;
+  }
+  #footer .top .links ul li {
+    cursor: pointer;
+    text-align: left; /* Align text to the left */
+    flex: 0 1 auto; /* Allow items to take only their necessary width */
+  }
+  #footer .top .links ul li:hover {
+    text-decoration: underline;
+  }
+}
+@media (max-width: 1024px) {
+  #footer .info {
+    grid-template-columns: 1fr; /* Fully stacked layout for tablets */
   }
 }
 

@@ -8,16 +8,15 @@
   }
 }
 
-$hamburger-size: 5.625rem; // Hamburger size (90px)
-$bar-height: 0.625rem; // Height of each bar (10px)
-$bar-spacing: 1.5rem; // Spacing between bars (12px)
 
 
+$hamburger-scale-factor: .9;
+$bar-color: #f1f1f1;
 @mixin hamburger {
-  $hamburger-scale-factor: .9;
 
-  // Bar color variable
-  $bar-color: #f1f1f1;
+  $hamburger-size: 5.625rem;
+  $bar-height: 0.625rem;
+  $bar-spacing: 1.5rem;
 
   // Box shadow variables
   $bar-shadow-color: rgba(0,0,0,0.3);
