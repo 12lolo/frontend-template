@@ -77,6 +77,41 @@ $bar-color: #f1f1f1;
   right: calc(-1 * min(100%, 450px));
 }
 
+@mixin u-slidein {
+  display: inline;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+
+  &:nth-child(2) {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0s;
+    opacity: 0;
+    transform: translateX(-200px);
+    color: rgba(49, 151, 158, 1);
+    margin: 0;
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-300%);
+    }
+    40% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
 @mixin responsive-content-margins(
   $mobile-margin: 10,
   $desktop-margin: 100,

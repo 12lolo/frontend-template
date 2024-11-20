@@ -39,24 +39,7 @@
 
 
           span {
-            display: inline;
-            position: relative;
-            z-index: 2;
-            padding: 0;
-            margin: 0;
-
-            &:nth-child(2) {
-              display: inline-block;
-              position: relative;
-              z-index: 1;
-              animation: slideIn 1s ease-out forwards;
-              animation-delay: 0s;
-              opacity: 0;
-              transform: translateX(-200px);
-              color: rgba(49,151,158,1);
-              margin: 0;
-              
-            }
+            @include u-slidein;
           }
         }
         p {
@@ -202,20 +185,6 @@
   }
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-300%);
-  }
-  40% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 @keyframes fadeInUp {
   to {
