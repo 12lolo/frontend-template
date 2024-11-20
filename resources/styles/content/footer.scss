@@ -1,8 +1,18 @@
+// Variables for colors and fonts
+$primary-color: #37a0ab;
+$background-color: #13172c;
+$text-color: #fff;
+$secondary-text-color: #aaa;
+$font-family: 'Inter', sans-serif;
+
+// Slide-in animation
+
+
 #footer {
-  background-color: #13172c;
-  color: #fff;
+  background-color: $background-color;
+  color: $text-color;
   padding: 2rem;
-  font-family: 'Inter', sans-serif;
+  font-family: $font-family;
 
   .top {
     display: flex;
@@ -18,12 +28,13 @@
       height: 25vh;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 700;
+        color: $text-color;
         margin-bottom: 0.5rem;
 
-        span{
-          @include u-slidein;
+        span {
+          animation: slidein 0.5s forwards;
         }
       }
 
@@ -45,32 +56,32 @@
 
     .info {
       display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
-      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
       flex: 1;
 
       .column {
-        width: 15vw;
+        width: 20vw;
         height: 15vh;
 
         h3 {
           font-size: 1rem;
           font-weight: 700;
-          color: #37a0ab;
+          color: $primary-color;
           margin-bottom: 1rem;
         }
 
         p {
+          //white-space: nowrap;
           font-size: 0.875rem;
           line-height: 1.5;
         }
 
         a {
-          color: #fff;
+          color: $text-color;
           text-decoration: underline;
 
           &:hover {
-            color: #37a0ab;
+            color: $primary-color;
           }
         }
       }
@@ -81,25 +92,25 @@
       margin-top: 2rem;
       text-align: left;
       height: 10vh;
-
+      width: fit-content;
 
       h3 {
         font-size: 1rem;
         font-weight: 700;
-        color: #37a0ab;
+        color: $primary-color;
         margin-bottom: 1rem;
       }
 
       ul {
-        list-style: none; /* Remove bullet points */
+        list-style: none;
         display: grid;
-        grid-template-columns: repeat(6, 1fr); /* 6 columns on larger screens */
-        gap: 1rem; /* Gap between items */
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1rem;
         padding: 0;
 
         li {
           cursor: pointer;
-          text-align: left; /* Align text to the left */
+          text-align: left;
           padding: 2px;
 
           &:hover {
@@ -114,11 +125,10 @@
   .legal {
     text-align: center;
     font-size: 0.75rem;
-    color: #aaa;
+    color: $secondary-text-color;
     margin-top: 2rem;
     height: 15vh;
     background: linear-gradient(90deg, rgba(49,151,158,1) 0%, rgba(56,134,143,1) 100%);
-
 
     p {
       border-top: #3d969e solid 2px;
@@ -135,53 +145,35 @@
       .branding {
         margin-bottom: 1.5rem;
         height: fit-content;
-
-        .social {
-        }
       }
 
       .info {
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr;
         grid-auto-flow: row;
+        gap: 2rem;
+        width: 80vw;
       }
 
-    }
-    .links {
-      width: 30vw;
-      grid-column: span 3;
-      margin-top: 2rem;
-      text-align: left;
+      .links {
+        width: fit-content;
+        margin-top: 2rem;
+        height: fit-content;
 
-      h3 {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #37a0ab;
-        margin-bottom: 1rem;
-      }
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
 
-      ul {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        padding: 0;
+          li {
+            flex: 0 1 auto;
+            white-space: nowrap;
 
-        li {
-          cursor: pointer;
-          text-align: left;
-          flex: 0 1 auto;
-
-          &:hover {
-            text-decoration: underline;
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .info {
-      grid-template-columns: 1fr;
     }
   }
 }
