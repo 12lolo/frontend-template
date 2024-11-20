@@ -107,6 +107,7 @@ $font-family: 'Inter', sans-serif;
         grid-template-columns: repeat(6, 1fr);
         gap: 1rem;
         padding: 0;
+        width: fit-content;
 
         li {
           cursor: pointer;

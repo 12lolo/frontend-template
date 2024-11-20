@@ -12733,6 +12733,7 @@ header #navigation nav ul li ul li:first-child a::before {
   grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
   padding: 0;
+  width: fit-content;
 }
 #footer .top .links ul li {
   cursor: pointer;
