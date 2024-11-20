@@ -12719,7 +12719,7 @@ header #navigation nav ul li ul li:first-child a::before {
   margin-top: 2rem;
   text-align: left;
   height: 10vh;
-  width: fit-content;
+  width: fit-content !important;
 }
 #footer .top .links h3, #footer .top .links .h3 {
   font-size: 1rem;
