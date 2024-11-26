@@ -5,47 +5,33 @@
   padding: 4rem 2rem;
   background-color: #fff;
   position: relative;
+  height: 90vh;
+  min-height: fit-content;
+
   &::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 5vw;
-    width: 17vw;
-    height: 100%;
-    background-color: #2F7F83;
+    bottom: 0;
+    left: 10vw;
+    width: 23.5vw;
+    height: 100vh;
+    background: radial-gradient(#2a9da6, #278e96);
     z-index: 1;
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       width: 30% !important;
     }
   }
-  &::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    right: 0;
-    width: 100%;
-    height: 5vh;
-    background-color: #13172c;
-    z-index: 0;
 
-
-  }
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 
   .background {
     position: relative;
-    width: 100%;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       width: 50%;
       padding-right: 2rem;
     }
@@ -53,22 +39,23 @@
     .video-container {
       z-index: 2;
       position: relative;
-      width: 100%;
-      max-width: 400px;
-      height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
 
-      @media (min-width: 768px) {
-        max-width: 75%;
-        height: 500px;
+      @media (min-width: 900px) {
+        max-width: 100%;
+        width: 70vw;
       }
 
       iframe {
-        width: 100%;
-        height: 35vh;
+        $video-size: 35vh;
+        $min-video-size: 200px;
+        width: calc($video-size * (16 / 9));
+        height: $video-size;
+        min-width: calc($min-video-size * (16 / 9));
+        min-height: $min-video-size;
         object-fit: cover;
 
       }
@@ -82,7 +69,7 @@
     text-align: center;
     margin-top: 2rem;
 
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
       width: 50%;
       text-align: left;
       margin-top: 0;
@@ -93,7 +80,7 @@
       color: #0F213E;
       margin-bottom: 1rem;
 
-      @media (min-width: 768px) {
+      @media (min-width: 900px) {
         font-size: 2.25rem;
       }
     }
@@ -102,5 +89,9 @@
       font-size: 1.125rem;
       color: #4A5568;
     }
+  }
+  @media (min-width: 900px) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

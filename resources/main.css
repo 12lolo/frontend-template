@@ -12373,7 +12373,7 @@ header #navigation nav ul li ul li:first-child a::before {
   max-width: 1100px;
   margin-left: clamp(20pxpx, 20pxpx + (100px - 20px) * (100vw - 320px) / (1920 - 320), 100pxpx);
   margin-right: clamp(20pxpx, 20pxpx + (100px - 20px) * (100vw - 320px) / (1920 - 320), 100pxpx);
-  padding: 2rem;
+  padding: 10vh 2vw;
 }
 #services .container header {
   text-align: left;
@@ -12474,47 +12474,32 @@ header #navigation nav ul li ul li:first-child a::before {
   padding: 4rem 2rem;
   background-color: #fff;
   position: relative;
+  height: 90vh;
+  min-height: fit-content;
 }
 #video::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 5vw;
-  width: 17vw;
-  height: 100%;
-  background-color: #2F7F83;
+  bottom: 0;
+  left: 10vw;
+  width: 23.5vw;
+  height: 100vh;
+  background: radial-gradient(#2a9da6, #278e96);
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   #video::after {
     width: 30% !important;
   }
 }
-#video::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: 0;
-  width: 100%;
-  height: 5vh;
-  background-color: #13172c;
-  z-index: 0;
-}
-@media (min-width: 768px) {
-  #video {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
 #video .background {
   position: relative;
-  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   #video .background {
     width: 50%;
     padding-right: 2rem;
@@ -12523,23 +12508,22 @@ header #navigation nav ul li ul li:first-child a::before {
 #video .background .video-container {
   z-index: 2;
   position: relative;
-  width: 100%;
-  max-width: 400px;
-  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   #video .background .video-container {
-    max-width: 75%;
-    height: 500px;
+    max-width: 100%;
+    width: 70vw;
   }
 }
 #video .background .video-container iframe {
-  width: 100%;
+  width: 62.2222222222vh;
   height: 35vh;
+  min-width: 355.5555555556px;
+  min-height: 200px;
   object-fit: cover;
 }
 #video .content {
@@ -12549,7 +12533,7 @@ header #navigation nav ul li ul li:first-child a::before {
   text-align: center;
   margin-top: 2rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   #video .content {
     width: 50%;
     text-align: left;
@@ -12561,7 +12545,7 @@ header #navigation nav ul li ul li:first-child a::before {
   color: #0F213E;
   margin-bottom: 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   #video .content h2, #video .content .h2 {
     font-size: 2.25rem;
   }
@@ -12570,39 +12554,50 @@ header #navigation nav ul li ul li:first-child a::before {
   font-size: 1.125rem;
   color: #4A5568;
 }
+@media (min-width: 900px) {
+  #video {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 
 #changelog {
   background-color: #ebeaed;
 }
 #changelog div {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 2rem;
+  margin: 0 8vw;
+  padding: 10vh 2vw;
   font-family: "Inter", sans-serif;
 }
 #changelog div h1, #changelog div .h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   color: #13172c;
 }
 #changelog div p {
-  font-size: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
   color: #13172c;
   margin-bottom: 2rem;
 }
 #changelog div div {
   display: flex;
-  gap: 1.5rem;
+  gap: 4vw;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
 }
 #changelog div div article {
   background-color: #37a0ab;
-  padding: 3vh;
+  padding: 4rem;
   flex: 1;
-  aspect-ratio: 1/1; /* Makes the article a perfect square */
+  width: 20vw;
+  aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 }
 #changelog div div article h3, #changelog div div article .h3 {
   background-color: #13172c;
@@ -12631,6 +12626,7 @@ header #navigation nav ul li ul li:first-child a::before {
   #changelog div div article {
     margin-bottom: 1rem;
     aspect-ratio: 1/0.6;
+    width: 70vw;
   }
 }
 @media (max-width: 700px) {
@@ -12639,6 +12635,7 @@ header #navigation nav ul li ul li:first-child a::before {
   }
   #changelog div div article {
     aspect-ratio: 1/0.7;
+    width: 58vw;
   }
 }
 @media (max-width: 450px) {
@@ -12650,10 +12647,10 @@ header #navigation nav ul li ul li:first-child a::before {
 #footer {
   background-color: #13172c;
   color: #fff;
-  padding: 2rem;
   font-family: "Inter", sans-serif;
 }
 #footer .top {
+  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -12744,18 +12741,49 @@ header #navigation nav ul li ul li:first-child a::before {
   text-decoration: underline;
   text-decoration-style: dashed;
 }
-#footer .legal {
-  text-align: center;
-  font-size: 0.75rem;
-  color: #aaa;
-  margin-top: 2rem;
+#footer .footer-banner {
+  position: relative;
+  width: 100%;
   height: 15vh;
+  min-height: 9rem;
   background: linear-gradient(90deg, rgb(49, 151, 158) 0%, rgb(56, 134, 143) 100%);
+  padding: 0;
 }
-#footer .legal p {
-  border-top: #3d969e solid 2px;
-  margin: 0.5rem 0;
-  margin-top: auto;
+#footer .footer-banner .legal {
+  margin: 0 0 2rem 4rem;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  display: flex;
+  gap: 5vw;
+}
+#footer .footer-banner .legal::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 50vw;
+  height: 2px;
+  background-color: #1a7a7f;
+}
+#footer .footer-banner .legal a {
+  color: #1a7a7f;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+#footer .footer-banner .legal a:hover {
+  text-decoration: underline;
+}
+#footer .footer-banner img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 19vh;
+  min-height: 11rem;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
 }
 @media (max-width: 768px) {
   #footer .top {

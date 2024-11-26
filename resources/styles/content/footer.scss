@@ -11,10 +11,10 @@ $font-family: 'Inter', sans-serif;
 #footer {
   background-color: $background-color;
   color: $text-color;
-  padding: 2rem;
   font-family: $font-family;
 
   .top {
+    padding: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -123,18 +123,53 @@ $font-family: 'Inter', sans-serif;
     }
   }
 
-  .legal {
-    text-align: center;
-    font-size: 0.75rem;
-    color: $secondary-text-color;
-    margin-top: 2rem;
+  .footer-banner {
+    position: relative;
+    width: 100%;
     height: 15vh;
+    min-height: 9rem;
     background: linear-gradient(90deg, rgba(49,151,158,1) 0%, rgba(56,134,143,1) 100%);
+    padding: 0;
 
-    p {
-      border-top: #3d969e solid 2px;
-      margin: 0.5rem 0;
-      margin-top: auto;
+    .legal {
+      margin: 0 0 2rem 4rem;
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      display: flex;
+      gap: 5vw;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 50vw;
+        height: 2px;
+        background-color: #1a7a7f;
+      }
+
+      a {
+        color: #1a7a7f;
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 19vh;
+      min-height: 11rem;
+      object-fit: contain;
+      margin: 0;
+      padding: 0;
     }
   }
 
