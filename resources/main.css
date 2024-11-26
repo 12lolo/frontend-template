@@ -12371,8 +12371,6 @@ header #navigation nav ul li ul li:first-child a::before {
 }
 #services .container {
   max-width: 1100px;
-  margin-left: clamp(20pxpx, 20pxpx + (100px - 20px) * (100vw - 320px) / (1920 - 320), 100pxpx);
-  margin-right: clamp(20pxpx, 20pxpx + (100px - 20px) * (100vw - 320px) / (1920 - 320), 100pxpx);
   padding: 10vh 2vw;
 }
 #services .container header {
@@ -12487,23 +12485,12 @@ header #navigation nav ul li ul li:first-child a::before {
   background: radial-gradient(#2a9da6, #278e96);
   z-index: 1;
 }
-@media (max-width: 900px) {
-  #video::after {
-    width: 30% !important;
-  }
-}
 #video .background {
   position: relative;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-@media (min-width: 900px) {
-  #video .background {
-    width: 50%;
-    padding-right: 2rem;
-  }
 }
 #video .background .video-container {
   z-index: 2;
@@ -12512,12 +12499,6 @@ header #navigation nav ul li ul li:first-child a::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-}
-@media (min-width: 900px) {
-  #video .background .video-container {
-    max-width: 100%;
-    width: 70vw;
-  }
 }
 #video .background .video-container iframe {
   width: 62.2222222222vh;
@@ -12532,23 +12513,12 @@ header #navigation nav ul li ul li:first-child a::before {
   width: 100%;
   text-align: center;
   margin-top: 2rem;
-}
-@media (min-width: 900px) {
-  #video .content {
-    width: 50%;
-    text-align: left;
-    margin-top: 0;
-  }
+  height: fit-content;
 }
 #video .content h2, #video .content .h2 {
   font-size: 1.875rem;
   color: #0F213E;
   margin-bottom: 1rem;
-}
-@media (min-width: 900px) {
-  #video .content h2, #video .content .h2 {
-    font-size: 2.25rem;
-  }
 }
 #video .content p {
   font-size: 1.125rem;
@@ -12558,6 +12528,22 @@ header #navigation nav ul li ul li:first-child a::before {
   #video {
     flex-direction: row;
     justify-content: space-between;
+  }
+  #video::after {
+    width: 30% !important;
+  }
+  #video .background {
+    width: 50%;
+    padding-right: 2rem;
+  }
+  #video .background .video-container {
+    max-width: 100%;
+    width: 70vw;
+  }
+  #video .content {
+    width: 50%;
+    text-align: left;
+    margin-top: 0;
   }
 }
 
@@ -12755,7 +12741,7 @@ header #navigation nav ul li ul li:first-child a::before {
   bottom: 0;
   left: 20px;
   display: flex;
-  gap: 5vw;
+  gap: 3.5vw;
 }
 #footer .footer-banner .legal::before {
   content: "";
@@ -12815,6 +12801,14 @@ header #navigation nav ul li ul li:first-child a::before {
   }
   #footer .top .links ul li:hover {
     text-decoration: underline;
+  }
+  #footer .footer-banner .legal {
+    margin: 0 0 1rem 0;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  #footer .footer-banner .legal a {
+    font-size: 0.8rem;
   }
 }
 
