@@ -7,41 +7,41 @@ $font-family: 'Inter', sans-serif;
 
 // Slide-in animation
 
-
 #footer {
   background-color: $background-color;
   color: $text-color;
   font-family: $font-family;
 
   .top {
+    flex-direction: column; // Mobile first
     padding: 2rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: flex-start;
 
     .branding {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 20vw;
-      height: 25vh;
+      width: 100%; // Full width on mobile
+      height: fit-content; // Adjust height for content
+      margin-bottom: 4vh;
 
       h1 {
-        font-size: 3rem;
+        font-size: 3rem; // Smaller font size for mobile
         font-weight: 700;
         color: $text-color;
         margin-bottom: 0.5rem;
 
         span {
-          animation: slidein 0.5s forwards;
+          @include u-slidein;
+
         }
       }
 
       div {
         display: flex;
         gap: 1rem;
-        font-size: 1.25rem;
+        font-size: 1rem; // Smaller font size for mobile
         font-weight: 500;
         margin-top: auto;
 
@@ -56,12 +56,13 @@ $font-family: 'Inter', sans-serif;
 
     .info {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      flex: 1;
+      grid-auto-flow: row; // Stack columns on mobile
+      gap: 2rem;
+      width: 100%;
 
       .column {
-        width: 20vw;
-        height: 15vh;
+        width: 100%; // Full width on mobile
+        height: fit-content; // Adjust height for content
 
         h3 {
           font-size: 1rem;
@@ -71,7 +72,6 @@ $font-family: 'Inter', sans-serif;
         }
 
         p {
-          //white-space: nowrap;
           font-size: 0.875rem;
           line-height: 1.5;
         }
@@ -88,11 +88,9 @@ $font-family: 'Inter', sans-serif;
     }
 
     .links {
-      grid-column: span 3;
       margin-top: 2rem;
       text-align: left;
-      height: 10vh;
-      width: fit-content !important;
+      width: fit-content;
 
       h3 {
         font-size: 1rem;
@@ -103,8 +101,8 @@ $font-family: 'Inter', sans-serif;
 
       ul {
         list-style: none;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        display: flex;
+        flex-wrap: wrap;
         gap: 1rem;
         padding: 0;
         width: fit-content;
@@ -126,22 +124,21 @@ $font-family: 'Inter', sans-serif;
   .footer-banner {
     position: relative;
     width: 100%;
-    height: 15vh;
+    height: fit-content; // Adjust height for content
     min-height: 9rem;
-    background: linear-gradient(
-      90deg,
-      rgba(49,151,158,1) 0%,
-      rgba(56,134,143,1) 100%)
-    ;
+    background: linear-gradient(90deg,
+            rgba(49,151,158,1) 0%,
+            rgba(56,134,143,1) 100%);
     padding: 0;
 
     .legal {
-      margin: 0 0 2rem 4rem;
+      margin: 0 0 1rem 0;
       position: absolute;
       bottom: 0;
       left: 20px;
       display: flex;
-      gap: 3.5vw;
+      flex-direction: column; // Stack items
+      gap: 0.4rem;
 
       &::before {
         content: '';
@@ -177,51 +174,32 @@ $font-family: 'Inter', sans-serif;
     }
   }
 
-  // Responsive design
-  @media (max-width: 768px) {
+  // Media queries for larger screens
+  @media (min-width: 769px) {
     .top {
-      flex-direction: column;
+      flex-direction: row; // Change back to row for larger screens
+      justify-content: space-between;
 
       .branding {
-        margin-bottom: 1.5rem;
-        height: fit-content;
+        width: 20vw; // Set width for larger screens
+        height: 25vh; // Set height for larger screens
+        margin-bottom: 1.5rem; // Add margin for spacing
       }
 
       .info {
-        grid-template-columns: 2fr;
-        grid-auto-flow: row;
-        gap: 2rem;
-        width: 80vw;
+        grid-template-columns: repeat(3, 1fr); // Three columns for larger screens
       }
 
       .links {
-        width: fit-content;
-        margin-top: 2rem;
-        height: fit-content;
-
-        ul {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-
-          li {
-            flex: 0 1 auto;
-            white-space: nowrap;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
+        grid-column: span 3; // Span all columns for larger screens
+        height: 10vh; // Set height for larger screens
       }
     }
+
     .footer-banner {
       .legal {
-        margin: 0 0 1rem 0;
-        flex-direction: column;
-        gap: .4rem;
         a {
-          font-size: 0.8rem;
+          font-size: 0.8rem; // Adjust font size for larger screens
         }
       }
     }

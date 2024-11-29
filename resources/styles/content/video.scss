@@ -1,11 +1,14 @@
+@use "sass:math";
+
 #video {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  gap: 3vh;
+  padding: 4vh 2vw 0;
   background-color: #fff;
   position: relative;
-  height: 90vh;
+  height: 70vh;
   min-height: fit-content;
 
   &::after {
@@ -14,61 +17,43 @@
     bottom: 0;
     left: 10vw;
     width: 23.5vw;
-    height: 100vh;
+    height: 70vh;
     background: radial-gradient(#2a9da6, #278e96);
     z-index: 1;
-
-
   }
-
-
-  .background {
+  .video-container {
+    z-index: 2;
     position: relative;
-    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    width: fit-content;
 
-
-    .video-container {
-      z-index: 2;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-
-
-
-      iframe {
-        $video-size: 35vh;
-        $min-video-size: 200px;
-        width: calc($video-size * (16 / 9));
-        height: $video-size;
-        min-width: calc($min-video-size * (16 / 9));
-        min-height: $min-video-size;
-        object-fit: cover;
-
-      }
+    iframe {
+      $video-size: 70vw;
+      $min-video-size: 200px;
+      width: $video-size;
+      height: calc($video-size * (9 / 16));
+      min-width: $min-video-size;
+      min-height: calc($min-video-size * (9 / 16));
+      //object-fit: cover;
     }
   }
 
   .content {
     z-index: 2;
     position: relative;
-    width: 100%;
+    width: fit-content;
     text-align: center;
-    margin-top: 2rem;
+    margin: 0 0 0 33.5vw;
     height: fit-content;
 
-
-
     h2 {
-      font-size: 1.875rem;
+      font-size: 2.2rem;
+      font-weight: 650;
       color: #0F213E;
       margin-bottom: 1rem;
-
-
     }
 
     p {
@@ -78,31 +63,43 @@
   }
 
   @media (min-width: 900px) {
+    padding: 5vh 13vw;
     flex-direction: row;
     justify-content: space-between;
+    height: 90vh;
 
     &::after {
-        width: 30% !important;
+      width: 24vw;
+      height: 100vh;
     }
 
-    .background {
-      width: 50%;
-      padding-right: 2rem;
+    .video-container {
+      $video-size: 500px;
+      $min-video-size: 10px;
+      width: $video-size;
+      height: calc($video-size * (9 / 16));
+      min-width: $min-video-size;
+      min-height: calc($min-video-size * (9 / 16));
 
-      .video-container {
-        max-width: 100%;
-        width: 70vw;
-
-        iframe {
-
-        }
+      iframe {
+        $video-size: 500px;
+        $min-video-size: 10px;
+        width: $video-size;
+        height: calc($video-size * (9 / 16));
+        min-width: $min-video-size;
+        min-height: calc($min-video-size * (9 / 16));
       }
     }
 
     .content {
-        width: 50%;
-        text-align: left;
-        margin-top: 0;
+      width: fit-content;
+      text-align: left;
+      margin: 5vw;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
     }
   }
 }

@@ -71,7 +71,6 @@ $bar-color: #f1f1f1;
   transform: scale($hamburger-scale-factor);
 }
 
-// First, create a mixin for the nav width
 @mixin adaptive-nav-width($max-percentage: 60%) {
   width: min(100%, 450px);
   right: calc(-1 * min(100%, 450px));
@@ -119,14 +118,14 @@ $bar-color: #f1f1f1;
   $viewport-max: 1920
 ) {
   margin-left: clamp(
-          #{$mobile-margin}px,
-          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
-          #{$desktop-margin}px
+    #{$mobile-margin}px,
+    calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
+    #{$desktop-margin}px
   );
   margin-right: clamp(
-          #{$mobile-margin}px,
-          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
-          #{$desktop-margin}px
+    #{$mobile-margin}px,
+    calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
+    #{$desktop-margin}px
   );
 }
 
