@@ -11844,10 +11844,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-* {
-  border: #ff4460 solid 1px;
-}
-
 .hamburger {
   width: 5.0625rem;
   position: relative;
@@ -12498,6 +12494,7 @@ header #navigation nav ul li ul li:first-child a::before {
   justify-content: center;
   overflow: hidden;
   width: fit-content;
+  flex-shrink: 0;
 }
 #video .video-container iframe {
   width: 70vw;

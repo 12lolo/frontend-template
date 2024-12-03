@@ -29,6 +29,7 @@
     justify-content: center;
     overflow: hidden;
     width: fit-content;
+    flex-shrink: 0;
 
     iframe {
       $video-size: 70vw;
