@@ -13,7 +13,7 @@ $font-family: 'Inter', sans-serif;
   font-family: $font-family;
 
   .top {
-    flex-direction: column; // Mobile first
+    flex-direction: column;
     padding: 2rem;
     display: flex;
     align-items: flex-start;
@@ -22,12 +22,12 @@ $font-family: 'Inter', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      width: 100%; // Full width on mobile
-      height: fit-content; // Adjust height for content
+      width: 100%;
+      height: fit-content;
       margin-bottom: 4vh;
 
       h1 {
-        font-size: 3rem; // Smaller font size for mobile
+        font-size: 3rem;
         font-weight: 700;
         color: $text-color;
         margin-bottom: 0.5rem;
@@ -41,7 +41,7 @@ $font-family: 'Inter', sans-serif;
       div {
         display: flex;
         gap: 1rem;
-        font-size: 1rem; // Smaller font size for mobile
+        font-size: 1rem;
         font-weight: 500;
         margin-top: auto;
 
@@ -56,13 +56,13 @@ $font-family: 'Inter', sans-serif;
 
     .info {
       display: grid;
-      grid-auto-flow: row; // Stack columns on mobile
+      grid-auto-flow: row;
       gap: 2rem;
       width: 100%;
 
       .column {
-        width: 100%; // Full width on mobile
-        height: fit-content; // Adjust height for content
+        width: 100%;
+        height: fit-content;
 
         h3 {
           font-size: 1rem;
@@ -124,7 +124,7 @@ $font-family: 'Inter', sans-serif;
   .footer-banner {
     position: relative;
     width: 100%;
-    height: fit-content; // Adjust height for content
+    height: fit-content;
     min-height: 9rem;
     background: linear-gradient(90deg,
             rgba(49,151,158,1) 0%,
@@ -137,7 +137,7 @@ $font-family: 'Inter', sans-serif;
       bottom: 0;
       left: 20px;
       display: flex;
-      flex-direction: column; // Stack items
+      flex-direction: column;
       gap: 0.4rem;
 
       &::before {
@@ -175,31 +175,31 @@ $font-family: 'Inter', sans-serif;
   }
 
   // Media queries for larger screens
-  @media (min-width: 769px) {
+  @media (min-width: $screen-md) {
     .top {
-      flex-direction: row; // Change back to row for larger screens
+      flex-direction: row;
       justify-content: space-between;
 
       .branding {
-        width: 20vw; // Set width for larger screens
-        height: 25vh; // Set height for larger screens
-        margin-bottom: 1.5rem; // Add margin for spacing
+        width: 20vw;
+        height: 25vh;
+        margin-bottom: 1.5rem;
       }
 
       .info {
-        grid-template-columns: repeat(3, 1fr); // Three columns for larger screens
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .links {
-        grid-column: span 3; // Span all columns for larger screens
-        height: 10vh; // Set height for larger screens
+        grid-column: span 3;
+        height: 10vh;
       }
     }
 
     .footer-banner {
       .legal {
         a {
-          font-size: 0.8rem; // Adjust font size for larger screens
+          font-size: 0.8rem;
         }
       }
     }

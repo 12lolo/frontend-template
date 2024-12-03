@@ -12432,7 +12432,7 @@ header #navigation nav ul li ul li:first-child a::before {
 #services .container ul li h3, #services .container ul li .h3 {
   font-weight: 700;
   font-size: 1.1rem;
-  width: 15vw;
+  width: 18vw;
   margin: 0;
   white-space: nowrap;
 }
@@ -12522,7 +12522,7 @@ header #navigation nav ul li ul li:first-child a::before {
   font-size: 1.125rem;
   color: #4A5568;
 }
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   #video {
     padding: 5vh 13vw;
     flex-direction: row;
@@ -12533,17 +12533,11 @@ header #navigation nav ul li ul li:first-child a::before {
     width: 24vw;
     height: 100vh;
   }
-  #video .video-container {
-    width: 500px;
-    height: 281.25px;
-    min-width: 10px;
-    min-height: 5.625px;
-  }
   #video .video-container iframe {
     width: 500px;
     height: 281.25px;
-    min-width: 10px;
-    min-height: 5.625px;
+    min-width: 200px;
+    min-height: 112.5px;
   }
   #video .content {
     width: fit-content;
@@ -12808,7 +12802,7 @@ header #navigation nav ul li ul li:first-child a::before {
   margin: 0;
   padding: 0;
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   #footer .top {
     flex-direction: row;
     justify-content: space-between;

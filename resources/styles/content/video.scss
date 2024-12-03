@@ -63,7 +63,7 @@
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: $screen-lg) {
     padding: 5vh 13vw;
     flex-direction: row;
     justify-content: space-between;
@@ -75,20 +75,8 @@
     }
 
     .video-container {
-      $video-size: 500px;
-      $min-video-size: 10px;
-      width: $video-size;
-      height: calc($video-size * (9 / 16));
-      min-width: $min-video-size;
-      min-height: calc($min-video-size * (9 / 16));
-
       iframe {
-        $video-size: 500px;
-        $min-video-size: 10px;
-        width: $video-size;
-        height: calc($video-size * (9 / 16));
-        min-width: $min-video-size;
-        min-height: calc($min-video-size * (9 / 16));
+        @include yt-iframe-size-calculations;
       }
     }
 

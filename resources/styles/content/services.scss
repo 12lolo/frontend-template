@@ -1,17 +1,3 @@
-@mixin flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@mixin gradient-background {
-  background: radial-gradient(#45a0a9, #398890);
-
-  &:hover {
-    background: radial-gradient(#41b6c2, #398890);
-  }
-}
-
 #services {
   font-family: 'Roboto', sans-serif;
   background-color: #13172c;
@@ -41,7 +27,7 @@
         display: inline-block;
         margin-top: 1.5rem;
         padding: 0.8rem 1.5rem;
-        @include gradient-background;
+        @include btn-gradient-background;
         color: #fff;
         font-weight: 700;
         text-decoration: none;
@@ -84,7 +70,7 @@
         h3 {
           font-weight: 700;
           font-size: 1.1rem;
-          width: 15vw;
+          width: 18vw;
           margin: 0;
           white-space: nowrap;
         }

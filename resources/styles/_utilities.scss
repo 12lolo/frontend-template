@@ -76,6 +76,15 @@ $bar-color: #f1f1f1;
   right: calc(-1 * min(100%, 450px));
 }
 
+@mixin yt-iframe-size-calculations {
+  $video-size: 500px;
+  $min-video-size: 200px;
+  width: $video-size;
+  height: calc($video-size * (9 / 16));
+  min-width: $min-video-size;
+  min-height: calc($min-video-size * (9 / 16));
+}
+
 @mixin u-slidein {
   display: inline;
   position: relative;
@@ -162,6 +171,14 @@ $bar-color: #f1f1f1;
   &:hover {
     background-color: $nav-background-color-dark-hover;
     backdrop-filter: $nav-blur;
+  }
+}
+
+@mixin btn-gradient-background {
+  background: radial-gradient(#45a0a9, #398890);
+
+  &:hover {
+    background: radial-gradient(#41b6c2, #398890);
   }
 }
 
