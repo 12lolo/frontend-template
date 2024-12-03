@@ -8,14 +8,14 @@
   padding: 4vh 2vw 0;
   background-color: #fff;
   position: relative;
-  height: 70vh;
+  height: 60vh;
   min-height: fit-content;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 10vw;
+    left: clamp(10px, 10vw, 150px);
     width: 23.5vw;
     height: 70vh;
     background: radial-gradient(#2a9da6, #278e96);
@@ -32,13 +32,7 @@
     flex-shrink: 0;
 
     iframe {
-      $video-size: 70vw;
-      $min-video-size: 200px;
-      width: $video-size;
-      height: calc($video-size * (9 / 16));
-      min-width: $min-video-size;
-      min-height: calc($min-video-size * (9 / 16));
-      //object-fit: cover;
+      @include yt-iframe-size-calculations;
     }
   }
 
@@ -70,11 +64,12 @@
     height: 90vh;
 
     &::after {
-      width: 24vw;
       height: 100vh;
     }
 
-    .video-container {
+    .video-container{
+    max-width: 40vw;
+      
       iframe {
         @include yt-iframe-size-calculations;
       }
@@ -82,8 +77,9 @@
 
     .content {
       width: fit-content;
+      max-width: 40vw;
       text-align: left;
-      margin: 5vw;
+      margin-left: 5vw;
 
       h2 {
         font-size: 2.5rem;

@@ -3,8 +3,9 @@
     position: relative;
     min-height: 100vh;
     @include flex-center;
-    color: $hero-text-color;
+    color: $text-color;
     overflow: hidden;
+    @include site-padding;
 
     &::after {
       content: '';
@@ -18,9 +19,7 @@
     div {
       position: relative;
       z-index: 1;
-      max-width: rem(1200);
-      @include responsive-margins;
-
+      max-width: 75rem;
 
       .text-container {
         display: flex;
@@ -35,11 +34,10 @@
           position: relative;
           white-space: nowrap;
           font-size: clamp(5rem, 12vw, 10rem);
-          line-height: 1; // Adjust line-height to minimize gaps
-
+          line-height: 1;
 
           span {
-            @include u-slidein;
+            @include u-slide-in;
           }
         }
         p {
@@ -163,20 +161,16 @@
   }
 }
 
-
-
-
-
 // Section Banner styles
 .banner {
   position: relative;
-  padding: rem(40) rem(20);
+  padding: 0.625rem 1.25rem;
   background: linear-gradient(to bottom, #333, #555);
-  color: $nav-color-white;
-  box-shadow: 0 0 rem(10) rgba(0, 0, 0, 0.2);
+  color: $text-color;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
 
   h2 {
-    font-size: rem(36);
+    font-size: 2.25rem;
     font-weight: 700;
     margin: 0;
     opacity: 0;
@@ -192,10 +186,3 @@
     transform: translateY(0);
   }
 }
-//p {
-//  @include subtitle-font;
-//  margin-bottom: rem(40);
-//  opacity: 0;
-//  transform: translateY(rem(20));
-//  animation: fadeInUp 0.8s 0.2s forwards;
-//}

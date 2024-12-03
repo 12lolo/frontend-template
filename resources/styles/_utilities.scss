@@ -1,14 +1,5 @@
 // _utilities.scss
-
-@function rem($pixel) {
-  @if math.is-unitless($pixel) {
-    @return math.div($pixel, 16) + rem;
-  } @else {
-    @error 'Don\'t use units when using the rem() function; only numbers.';
-  }
-}
-
-
+@use "sass:math";
 
 $hamburger-scale-factor: .9;
 $bar-color: #f1f1f1;
@@ -71,6 +62,10 @@ $bar-color: #f1f1f1;
   transform: scale($hamburger-scale-factor);
 }
 
+@mixin site-padding {
+  padding: 0 clamp(10px, 10vw, 150px);
+}
+
 @mixin adaptive-nav-width($max-percentage: 60%) {
   width: min(100%, 450px);
   right: calc(-1 * min(100%, 450px));
@@ -78,14 +73,17 @@ $bar-color: #f1f1f1;
 
 @mixin yt-iframe-size-calculations {
   $video-size: 500px;
-  $min-video-size: 200px;
+  $min-video-size: 400px;
+  $max-video-size: 500px;
   width: $video-size;
   height: calc($video-size * (9 / 16));
   min-width: $min-video-size;
   min-height: calc($min-video-size * (9 / 16));
+  max-width: $min-video-size;
+  max-height: calc($min-video-size * (9 / 16));
 }
 
-@mixin u-slidein {
+@mixin u-slide-in {
   display: inline;
   position: relative;
   z-index: 2;
@@ -120,46 +118,9 @@ $bar-color: #f1f1f1;
   }
 }
 
-@mixin responsive-content-margins(
-  $mobile-margin: 10,
-  $desktop-margin: 100,
-  $viewport-min: 320,
-  $viewport-max: 1920
-) {
-  margin-left: clamp(
-    #{$mobile-margin}px,
-    calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
-    #{$desktop-margin}px
-  );
-  margin-right: clamp(
-    #{$mobile-margin}px,
-    calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
-    #{$desktop-margin}px
-  );
-}
-
-@mixin responsive-margins(
-  $mobile-margin: 10,    // Increased from 10
-  $desktop-margin: 150,  // Increased from 200
-  $viewport-min: 320,
-  $viewport-max: 1920
-) {
-  margin-left: clamp(
-          #{$mobile-margin}px,
-          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
-          #{$desktop-margin}px
-  );
-  margin-right: clamp(
-          #{$mobile-margin}px,
-          calc(#{$mobile-margin}px + (#{$desktop-margin} - #{$mobile-margin}) * ((100vw - #{$viewport-min}px) / (#{$viewport-max} - #{$viewport-min}))),
-          #{$desktop-margin}px
-  );
-}
-
 @mixin flex-center {
   display: flex;
   align-items: center;
-
 }
 
 @mixin background-blur {

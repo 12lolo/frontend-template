@@ -1,7 +1,7 @@
 
 #about-us {
   min-height: 80vh;
-  padding: 5vh 0 10vh 0;
+  @include site-padding;
   .logo-banner {
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +9,7 @@
     align-items: center;
     padding: 20px 0;
     background-color: #fff;
-    margin: 0 5vw 6vh ;
+    margin: 0 0 6vh ;
     gap: 3.5vw;
 
     img {
@@ -27,7 +27,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0 5vw 0;
+    padding: 0;
     background-color: #ffffff;
     gap: 5vw;
 

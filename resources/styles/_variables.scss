@@ -1,3 +1,11 @@
+//global.variables
+
+$text-color: #fff;
+$font-family: 'Inter', sans-serif;
+$secondary-text-color: #aaa;
+$background-color: #13172c;
+$primary-color: #37a0ab;
+
 // Screen width breakpoints
 $screen-xs: 480px;   // Mobile devices
 $screen-sm: 640px;   // Extra small devices
@@ -6,25 +14,22 @@ $screen-lg: 1024px;  // Medium devices
 $screen-xl: 1280px;  // Large devices
 $screen-xxl: 1536px; // Extra large devices
 
+
 // nav.variables
 $nav-transition-duration: .6s;
 $nav-timing: cubic-bezier(0.5, 0, 0.5, 1);
 $navbar-background-color-dark: transparent;
 $nav-background-color-dark: rgb(0, 12, 33);
-$nav-blur: blur(5px);
 $nav-background-color-dark-hover: rgba(0, 0, 0, 0.5);
-$nav-color-white: #FFF;
-$nav-height: rem(60);
-
-$nav-padding: rem(10) rem(20);
-$nav-link-padding: rem(15) rem(20);
+$nav-height: 3.75rem;
+$nav-padding: 0.6rem 1.2rem;
+$nav-link-padding: 1rem 1.2rem;
 
 //hero.variables
-$hero-text-color: #ffffff;
 $hero-background-image: url('../resources/placeholders/ph38.jpg');
 
 @mixin title-font {
-  font-size: rem(65);
+  font-size: 4rem;
   font-weight: 700;
   //text-transform: uppercase;
 }
@@ -36,19 +41,12 @@ $hero-background-image: url('../resources/placeholders/ph38.jpg');
   //text-transform: uppercase;
 }
 
-
-
 //footer.variables
-
 $footer-bg-color: #24262b;
 $footer-text-color: #ffffff;
 $footer-link-color: #bbbbbb;
 $footer-accent-color: #e91e63;
-$footer-max-width: rem(1170);
-$footer-padding: rem(70) 0;
-$footer-column-padding: 0 rem(15);
+$footer-max-width: 73.125rem;
+$footer-padding: 4.375rem 0;
+$footer-column-padding: 0 1rem;
 $footer-transition-duration: 0.3s;
-
-// Breakpoints
-$footer-breakpoint-medium: rem(767);
-$footer-breakpoint-small: rem(574);

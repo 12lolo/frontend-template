@@ -11907,7 +11907,7 @@ header #navigation {
   max-width: 100%;
   margin: 0 !important;
   padding: 0;
-  color: #FFF;
+  color: #fff;
   z-index: 1000;
 }
 header #navigation nav {
@@ -11930,7 +11930,7 @@ header #navigation nav ul {
   z-index: 40;
   background-color: rgb(0, 12, 33);
   margin-top: 0;
-  padding-top: 1.25rem;
+  padding-top: 1.2rem;
   transition: left 0.6s cubic-bezier(0.5, 0, 0.5, 1);
   text-align: left;
 }
@@ -11950,24 +11950,24 @@ header #navigation nav ul li a {
   font-size: clamp(1.2rem, 1.5vw + 0.5rem, 2rem);
   font-weight: 400;
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   display: block;
   width: fit-content;
   max-width: 12.5rem;
-  padding: 0.75rem 1rem;
+  padding: 0.8rem 1rem;
   margin-left: 1rem;
 }
 header #navigation nav ul li:has(ul) > a::after {
-  content: ""; /* Empty content, as we'll use background-image */
+  content: "";
   background-image: url("../resources/images/single-down.svg");
   filter: brightness(0) invert(1);
   z-index: 1000;
-  display: inline-block; /* Ensure the pseudo-element is a block */
-  width: 0.9375rem; /* Set the width of the pseudo-element */
-  height: 0.9375rem; /* Set the height of the pseudo-element */
-  background-repeat: no-repeat; /* Prevent repeating of the background image */
-  background-position: center; /* Center the image */
-  transform: rotate(-90deg) scale(1.5); /* Rotate the background image */
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(-90deg) scale(1.5);
 }
 header #navigation nav ul li ul {
   top: 0;
@@ -12003,8 +12003,9 @@ header #navigation nav ul li ul li:first-child a::before {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  color: #ffffff;
+  color: #fff;
   overflow: hidden;
+  padding: 0 clamp(10px, 10vw, 150px);
 }
 #hero section::after {
   content: "";
@@ -12018,8 +12019,6 @@ header #navigation nav ul li ul li:first-child a::before {
   position: relative;
   z-index: 1;
   max-width: 75rem;
-  margin-left: clamp(10px, 10px + (150 - 10) * (100vw - 320px) / (1920 - 320), 150px);
-  margin-right: clamp(10px, 10px + (150 - 10) * (100vw - 320px) / (1920 - 320), 150px);
 }
 #hero section div .text-container {
   display: flex;
@@ -12178,9 +12177,9 @@ header #navigation nav ul li ul li:first-child a::before {
 
 .banner {
   position: relative;
-  padding: 2.5rem 1.25rem;
+  padding: 0.625rem 1.25rem;
   background: linear-gradient(to bottom, #333, #555);
-  color: #FFF;
+  color: #fff;
   box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
 }
 .banner h2, .banner .h2 {
@@ -12200,7 +12199,7 @@ header #navigation nav ul li ul li:first-child a::before {
 }
 #about-us {
   min-height: 80vh;
-  padding: 5vh 0 10vh 0;
+  padding: 0 clamp(10px, 10vw, 150px);
 }
 #about-us .logo-banner {
   display: flex;
@@ -12209,7 +12208,7 @@ header #navigation nav ul li ul li:first-child a::before {
   align-items: center;
   padding: 20px 0;
   background-color: #fff;
-  margin: 0 5vw 6vh;
+  margin: 0 0 6vh;
   gap: 3.5vw;
 }
 #about-us .logo-banner img {
@@ -12223,7 +12222,7 @@ header #navigation nav ul li ul li:first-child a::before {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 0 5vw 0;
+  padding: 0;
   background-color: #ffffff;
   gap: 5vw;
 }
@@ -12357,8 +12356,8 @@ header #navigation nav ul li ul li:first-child a::before {
   top: 50%;
   z-index: 1000;
   display: inline-block;
-  width: 0.9375rem;
-  height: 0.9375rem;
+  width: 1rem;
+  height: 1rem;
   background-repeat: no-repeat;
   background-position: center;
   transform: scale(2);
@@ -12475,14 +12474,14 @@ header #navigation nav ul li ul li:first-child a::before {
   padding: 4vh 2vw 0;
   background-color: #fff;
   position: relative;
-  height: 70vh;
+  height: 60vh;
   min-height: fit-content;
 }
 #video::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 10vw;
+  left: clamp(10px, 10vw, 150px);
   width: 23.5vw;
   height: 70vh;
   background: radial-gradient(#2a9da6, #278e96);
@@ -12499,10 +12498,12 @@ header #navigation nav ul li ul li:first-child a::before {
   flex-shrink: 0;
 }
 #video .video-container iframe {
-  width: 70vw;
-  height: 39.375vw;
-  min-width: 200px;
-  min-height: 112.5px;
+  width: 500px;
+  height: 281.25px;
+  min-width: 400px;
+  min-height: 225px;
+  max-width: 400px;
+  max-height: 225px;
 }
 #video .content {
   z-index: 2;
@@ -12530,19 +12531,24 @@ header #navigation nav ul li ul li:first-child a::before {
     height: 90vh;
   }
   #video::after {
-    width: 24vw;
     height: 100vh;
+  }
+  #video .video-container {
+    max-width: 40vw;
   }
   #video .video-container iframe {
     width: 500px;
     height: 281.25px;
-    min-width: 200px;
-    min-height: 112.5px;
+    min-width: 400px;
+    min-height: 225px;
+    max-width: 400px;
+    max-height: 225px;
   }
   #video .content {
     width: fit-content;
+    max-width: 40vw;
     text-align: left;
-    margin: 5vw;
+    margin-left: 5vw;
   }
   #video .content h2, #video .content .h2 {
     font-size: 2.5rem;
