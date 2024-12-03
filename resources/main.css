@@ -12407,7 +12407,6 @@ header #navigation nav ul li ul li:first-child a::before {
   margin-top: 3rem;
   display: grid;
   gap: 1.5rem;
-  flex-wrap: nowrap;
 }
 #services .container ul li {
   display: grid;
@@ -12435,6 +12434,7 @@ header #navigation nav ul li ul li:first-child a::before {
   font-size: 1.1rem;
   width: 15vw;
   margin: 0;
+  white-space: nowrap;
 }
 #services .container ul li p {
   font-weight: 400;
@@ -12443,25 +12443,27 @@ header #navigation nav ul li ul li:first-child a::before {
   line-height: 1.6;
   margin: 0;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  #services .container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
   #services .container ul li {
-    grid-template-columns: auto auto auto;
-    grid-template-areas: "span img h2" "p p p";
+    display: block;
+    padding: 1.5rem;
+    border-bottom: 2px solid #1c2b3a;
   }
-  #services .container ul li span {
-    grid-area: span;
+  #services .container ul li:first-child {
+    border-top: 2px solid #1c2b3a;
   }
-  #services .container ul li img {
-    grid-area: img;
-    height: 2rem;
-  }
-  #services .container ul li h2, #services .container ul li .h2 {
-    grid-area: h2;
-    margin: 0;
+  #services .container ul li span, #services .container ul li img, #services .container ul li h3, #services .container ul li .h3 {
+    display: inline-block;
+    margin-right: 3vw;
   }
   #services .container ul li p {
-    grid-area: p;
     margin-top: 0.5rem;
+    width: 100%;
   }
 }
 
