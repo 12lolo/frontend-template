@@ -2,8 +2,8 @@
   @include hamburger; // Assuming you have a mixin for styling the hamburger
   position: fixed;
   z-index: 1000;
-  top: 20px; // Adjust as needed for vertical spacing
-  right: 20px; // Adjust as needed for horizontal spacing
+  top: 1.5vw; // Adjust as needed for vertical spacing
+  right: 3vw; // Adjust as needed for horizontal spacing
 }
 
 .backdrop {

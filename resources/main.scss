@@ -1,12 +1,13 @@
 // main.scss
+@use "sass:math";
 @import "node_modules/bootstrap/scss/bootstrap";
 
 //* {
 //  border: #ff4460 solid 1px;
 //}
 
-@import 'styles/utilities';
 @import 'styles/variables';
+@import 'styles/utilities';
 
 @import 'styles/header/navigation';
 @import "styles/header/hero";

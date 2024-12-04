@@ -11853,13 +11853,12 @@ textarea.form-control-lg {
   background: none;
   outline: none;
   border: none;
-  margin-right: 5%;
   margin-left: auto;
   transform: scale(0.9);
   position: fixed;
   z-index: 1000;
-  top: 20px;
-  right: 20px;
+  top: 1.5vw;
+  right: 3vw;
 }
 .hamburger .bar, .hamburger:after, .hamburger:before {
   content: "";
@@ -12494,24 +12493,24 @@ header #navigation nav ul li ul li:first-child a::before {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  width: fit-content;
   flex-shrink: 0;
 }
 #video .video-container iframe {
-  width: 500px;
-  height: 281.25px;
-  min-width: 400px;
-  min-height: 225px;
-  max-width: 400px;
-  max-height: 225px;
+  width: 35vw;
+  height: 19.6875vw;
+  min-width: 35vw;
+  min-height: 19.6875vw;
+  max-width: 35vw;
+  max-height: 19.6875vw;
 }
 #video .content {
   z-index: 2;
   position: relative;
   width: fit-content;
-  text-align: center;
+  text-align: left;
   margin: 0 0 0 33.5vw;
   height: fit-content;
+  flex-shrink: 0;
 }
 #video .content h2, #video .content .h2 {
   font-size: 2.2rem;
@@ -12522,6 +12521,7 @@ header #navigation nav ul li ul li:first-child a::before {
 #video .content p {
   font-size: 1.125rem;
   color: #4A5568;
+  margin: 0;
 }
 @media (min-width: 1024px) {
   #video {
@@ -12529,6 +12529,7 @@ header #navigation nav ul li ul li:first-child a::before {
     flex-direction: row;
     justify-content: space-between;
     height: 90vh;
+    gap: 0;
   }
   #video::after {
     height: 100vh;
@@ -12537,25 +12538,24 @@ header #navigation nav ul li ul li:first-child a::before {
     max-width: 40vw;
   }
   #video .video-container iframe {
-    width: 500px;
-    height: 281.25px;
-    min-width: 400px;
-    min-height: 225px;
-    max-width: 400px;
-    max-height: 225px;
+    width: 35vw;
+    height: 19.6875vw;
+    min-width: 35vw;
+    min-height: 19.6875vw;
+    max-width: 35vw;
+    max-height: 19.6875vw;
   }
   #video .content {
-    width: fit-content;
-    max-width: 40vw;
+    max-width: 23.5vw;
     text-align: left;
-    margin-left: 5vw;
+    margin-left: 1px;
+    width: fit-content;
   }
   #video .content h2, #video .content .h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
 }
-
 #changelog {
   background-color: #ebeaed;
 }
@@ -12824,6 +12824,9 @@ header #navigation nav ul li ul li:first-child a::before {
   #footer .top .links {
     grid-column: span 3;
     height: 10vh;
+  }
+  #footer .footer-banner .legal {
+    flex-direction: row;
   }
   #footer .footer-banner .legal a {
     font-size: 0.8rem;

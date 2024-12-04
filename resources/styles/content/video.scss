@@ -1,4 +1,4 @@
-@use "sass:math";
+
 
 #video {
   display: flex;
@@ -28,10 +28,12 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    width: fit-content;
     flex-shrink: 0;
 
     iframe {
+      $video-size: 500px;
+      $min-video-size: 300px;
+      $max-video-size: 600px;
       @include yt-iframe-size-calculations;
     }
   }
@@ -40,9 +42,11 @@
     z-index: 2;
     position: relative;
     width: fit-content;
-    text-align: center;
+    text-align: left;
     margin: 0 0 0 33.5vw;
     height: fit-content;
+    flex-shrink: 0;
+
 
     h2 {
       font-size: 2.2rem;
@@ -54,6 +58,7 @@
     p {
       font-size: 1.125rem;
       color: #4A5568;
+      margin: 0;
     }
   }
 
@@ -62,13 +67,14 @@
     flex-direction: row;
     justify-content: space-between;
     height: 90vh;
+    gap: 0;
 
     &::after {
       height: 100vh;
     }
 
     .video-container{
-    max-width: 40vw;
+      max-width: 40vw;
       
       iframe {
         @include yt-iframe-size-calculations;
@@ -76,12 +82,13 @@
     }
 
     .content {
-      width: fit-content;
-      max-width: 40vw;
+      max-width: 23.5vw;
       text-align: left;
-      margin-left: 5vw;
+      margin-left: 1px;
+      width: fit-content;
 
       h2 {
+
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
       }

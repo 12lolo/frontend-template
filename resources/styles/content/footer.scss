@@ -191,6 +191,8 @@
 
     .footer-banner {
       .legal {
+        flex-direction: row;
+        
         a {
           font-size: 0.8rem;
         }

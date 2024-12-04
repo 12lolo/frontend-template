@@ -1,13 +1,12 @@
 // _utilities.scss
-@use "sass:math";
 
-$hamburger-scale-factor: .9;
-$bar-color: #f1f1f1;
+
 @mixin hamburger {
-
-  $hamburger-size: 5.625rem;
-  $bar-height: 0.625rem;
-  $bar-spacing: 1.5rem;
+  $hamburger-scale-factor: .9;
+  $bar-color: #f1f1f1;
+  $hamburger-size: 5.625rem; //dont touch, only change $hamburger-scale-factor
+  $bar-height: 0.625rem; //dont touch, only change $hamburger-scale-factor
+  $bar-spacing: 1.5rem; //dont touch, only change $hamburger-scale-factor
 
   // Box shadow variables
   $bar-shadow-color: rgba(0,0,0,0.3);
@@ -24,7 +23,6 @@ $bar-color: #f1f1f1;
   background: none;
   outline: none;
   border: none;
-  margin-right: 5%;
   margin-left: auto;
 
   .bar, &:after, &:before {
@@ -36,13 +34,13 @@ $bar-color: #f1f1f1;
     margin: ($bar-spacing / 2) * $hamburger-scale-factor;
     transition: 0.5s;
 
-    // Add box shadow to each bar
+    // Bar shadow
     box-shadow:
-            $bar-shadow-h-offset
-            $bar-shadow-v-offset
-            $bar-shadow-blur
-            $bar-shadow-spread
-            $bar-shadow-color;
+      $bar-shadow-h-offset
+      $bar-shadow-v-offset
+      $bar-shadow-blur
+      $bar-shadow-spread
+      $bar-shadow-color;
   }
 
   &.is-active {
@@ -62,6 +60,24 @@ $bar-color: #f1f1f1;
   transform: scale($hamburger-scale-factor);
 }
 
+@mixin yt-iframe-size-calculations {
+  $video-size: 35vw; //will be overruled by variable in .iframe
+  $min-video-size: 35vw; //will be overruled by variable in .iframe
+  $max-video-size: 40vw; //will be overruled by variable in .iframe
+  width: $video-size;
+  height: calc($video-size * (9 / 16));
+  min-width: $min-video-size;
+  min-height: calc($min-video-size * (9 / 16));
+  max-width: $min-video-size;
+  max-height: calc($min-video-size * (9 / 16));
+
+  @media (min-width: $screen-lg) {
+    $video-size: 70vw;
+    $min-video-size: 60vw;
+    $max-video-size: 80vw;
+  }
+}
+
 @mixin site-padding {
   padding: 0 clamp(10px, 10vw, 150px);
 }
@@ -71,17 +87,7 @@ $bar-color: #f1f1f1;
   right: calc(-1 * min(100%, 450px));
 }
 
-@mixin yt-iframe-size-calculations {
-  $video-size: 500px;
-  $min-video-size: 400px;
-  $max-video-size: 500px;
-  width: $video-size;
-  height: calc($video-size * (9 / 16));
-  min-width: $min-video-size;
-  min-height: calc($min-video-size * (9 / 16));
-  max-width: $min-video-size;
-  max-height: calc($min-video-size * (9 / 16));
-}
+
 
 @mixin u-slide-in {
   display: inline;
