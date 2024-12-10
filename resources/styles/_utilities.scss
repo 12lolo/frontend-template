@@ -135,17 +135,6 @@
   flex-wrap: wrap;
 }
 
-@mixin underline-pseudo-element {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: rem(-10);
-  background-color: $footer-accent-color;
-  height: rem(2);
-  width: rem(50);
-  box-sizing: border-box;
-}
-
 @mixin social-icon {
   display: inline-flex;
   justify-content: center;

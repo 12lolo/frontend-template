@@ -12377,6 +12377,7 @@ header #navigation nav ul li ul li:first-child a::before {
 #services .container header {
   text-align: left;
   color: #ffffff;
+  padding: 0 5vw;
 }
 #services .container header h1, #services .container header .h1 {
   font-size: 2rem;
