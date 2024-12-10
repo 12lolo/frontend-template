@@ -1,6 +1,4 @@
 // _utilities.scss
-
-
 @mixin hamburger {
   $hamburger-scale-factor: .9;
   $bar-color: #f1f1f1;
@@ -58,24 +56,6 @@
   }
 
   transform: scale($hamburger-scale-factor);
-}
-
-@mixin yt-iframe-size-calculations {
-  $video-size: 35vw; //will be overruled by variable in .iframe
-  $min-video-size: 35vw; //will be overruled by variable in .iframe
-  $max-video-size: 40vw; //will be overruled by variable in .iframe
-  width: $video-size;
-  height: calc($video-size * (9 / 16));
-  min-width: $min-video-size;
-  min-height: calc($min-video-size * (9 / 16));
-  max-width: $min-video-size;
-  max-height: calc($min-video-size * (9 / 16));
-
-  @media (min-width: $screen-lg) {
-    $video-size: 70vw;
-    $min-video-size: 60vw;
-    $max-video-size: 80vw;
-  }
 }
 
 @mixin site-padding {

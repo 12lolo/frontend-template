@@ -12470,10 +12470,10 @@ header #navigation nav ul li ul li:first-child a::before {
   flex-direction: column;
   align-items: center;
   gap: 3vh;
-  padding: 4vh 2vw 0;
+  padding: 9vh 2vw 0;
   background-color: #fff;
   position: relative;
-  height: 60vh;
+  height: 70vh;
   min-height: fit-content;
 }
 #video::after {
@@ -12496,12 +12496,8 @@ header #navigation nav ul li ul li:first-child a::before {
   flex-shrink: 0;
 }
 #video .video-container iframe {
-  width: 35vw;
-  height: 19.6875vw;
-  min-width: 35vw;
-  min-height: 19.6875vw;
-  max-width: 35vw;
-  max-height: 19.6875vw;
+  width: 65vw;
+  aspect-ratio: 16/9;
 }
 #video .content {
   z-index: 2;
@@ -12535,18 +12531,14 @@ header #navigation nav ul li ul li:first-child a::before {
     height: 100vh;
   }
   #video .video-container {
-    max-width: 40vw;
+    max-width: 50vw;
   }
   #video .video-container iframe {
     width: 35vw;
-    height: 19.6875vw;
-    min-width: 35vw;
-    min-height: 19.6875vw;
-    max-width: 35vw;
-    max-height: 19.6875vw;
+    aspect-ratio: 16/9;
   }
   #video .content {
-    max-width: 23.5vw;
+    max-width: 35vw;
     text-align: left;
     margin-left: 1px;
     width: fit-content;
@@ -12556,11 +12548,12 @@ header #navigation nav ul li ul li:first-child a::before {
     margin-bottom: 1.5rem;
   }
 }
+
 #changelog {
   background-color: #ebeaed;
 }
 #changelog div {
-  margin: 0vh 8vw 4vh;
+  margin: 0 8vw;
   padding: 6vh 2vw;
   font-family: "Inter", sans-serif;
 }
@@ -12601,6 +12594,7 @@ header #navigation nav ul li ul li:first-child a::before {
   font-weight: 500;
   padding: 0.8rem 0.8rem;
   align-self: flex-start;
+  white-space: nowrap;
 }
 #changelog div div article h2, #changelog div div article .h2 {
   font-size: 1rem;

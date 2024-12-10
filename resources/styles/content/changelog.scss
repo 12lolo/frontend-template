@@ -2,7 +2,7 @@
   background-color: #ebeaed;
 
   div {
-    margin: 0vh 8vw 4vh;
+    margin: 0 8vw ;
     padding: 6vh 2vw;
     font-family: 'Inter', sans-serif;
 
@@ -45,6 +45,7 @@
           font-weight: 500;
           padding: 0.8rem 0.8rem;
           align-self: flex-start;
+          white-space: nowrap;
         }
 
         h2 {

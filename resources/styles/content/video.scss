@@ -3,10 +3,10 @@
   flex-direction: column;
   align-items: center;
   gap: 3vh;
-  padding: 4vh 2vw 0;
+  padding: 9vh 2vw 0;
   background-color: #fff;
   position: relative;
-  height: 60vh;
+  height: 70vh;
   min-height: fit-content;
 
   &::after {
@@ -29,10 +29,8 @@
     flex-shrink: 0;
 
     iframe {
-      $video-size: 500px;
-      $min-video-size: 300px;
-      $max-video-size: 600px;
-      @include yt-iframe-size-calculations;
+      width: 65vw;
+      aspect-ratio: 16/9;
     }
   }
 
@@ -72,18 +70,20 @@
     }
 
     .video-container{
-      max-width: 40vw;
+      max-width: 50vw;
       
       iframe {
-        @include yt-iframe-size-calculations;
+        width: 35vw;
+        aspect-ratio: 16/9;
       }
     }
 
     .content {
-      max-width: 23.5vw;
+      max-width: 35vw;
       text-align: left;
       margin-left: 1px;
       width: fit-content;
+
 
       h2 {
 

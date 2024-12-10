@@ -201,11 +201,9 @@
     </div>
 </section>
 
-
-
 <?php include 'resources/include/footer.php'; ?>
-</body>
 
+</body>
 <script src="resources/js/navbar.js"></script>
 <script src="resources/js/Carousel.js"></script>
 
