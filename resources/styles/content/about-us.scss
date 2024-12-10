@@ -1,5 +1,5 @@
 #about-us {
-  min-height: 80vh;
+  min-height: fit-content;
   @include site-padding;
   .logo-banner {
     display: flex;
@@ -17,7 +17,6 @@
       object-fit: contain;
 
     }
-
   }
 
   .content {

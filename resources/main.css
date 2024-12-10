@@ -12197,7 +12197,7 @@ header #navigation nav ul li ul li:first-child a::before {
   }
 }
 #about-us {
-  min-height: 80vh;
+  min-height: fit-content;
   padding: 0 clamp(10px, 10vw, 150px);
 }
 #about-us .logo-banner {
@@ -12316,7 +12316,7 @@ header #navigation nav ul li ul li:first-child a::before {
 
 #team {
   min-height: 30vh;
-  margin: 0;
+  margin: 10vh 0 0;
 }
 #team ul {
   display: flex;
@@ -12637,6 +12637,35 @@ header #navigation nav ul li ul li:first-child a::before {
   #changelog div div {
     margin: 3vh 2vh;
   }
+}
+
+#work {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+#work div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#work div img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+#work div h3, #work div .h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #0d0d0d;
+}
+#work div p {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.5;
 }
 
 #footer {
