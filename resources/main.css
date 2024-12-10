@@ -12084,8 +12084,8 @@ header #navigation nav ul li ul li:first-child a::before {
   margin: 0 0 0 2vw;
   opacity: 0;
   transform: translateX(-20px) translateY(5px);
-  animation: fadeInUp 0.8s 0.2s forwards;
-  animation-delay: 0.5s;
+  animation: fadeInUp 0.8s 0.1s forwards;
+  animation-delay: 0.2s;
 }
 #hero section div .text-container .hero-button-container button {
   width: fit-content;
