@@ -37,10 +37,10 @@
         &::after {
           content: '';
           background-image: url('../resources/images/arrow-right.svg');
-          top: 50%;
+          top: 0%;
           z-index: 1000;
           display: inline-block;
-          width: 1rem;
+          width: rem;
           height: 1rem;
           background-repeat: no-repeat;
           background-position: center;

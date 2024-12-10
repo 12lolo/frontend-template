@@ -138,18 +138,34 @@
         left: 0;
         width: 50vw;
         height: 2px;
-        background-color: #1a7a7f;
+        background-color: $primary-accent-color;
       }
 
       a {
-        color: #1a7a7f;
+        color: $primary-accent-color;
         text-decoration: none;
         position: relative;
         z-index: 1;
+        text-underline: none;
 
-        &:hover {
-          text-decoration: underline;
+        &::after {
+          content: '';
+          position: absolute;
+          height: 1px;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          background: $primary-accent-color;
+          transition: width .4s;
         }
+
+        &:hover::after {
+          width: 100%;
+        }
+      &:not(:last-child) {
+        margin-right: 3vw;
+      }
+
       }
     }
 

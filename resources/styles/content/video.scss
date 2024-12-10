@@ -16,7 +16,7 @@
     left: clamp(10px, 10vw, 150px);
     width: 23.5vw;
     height: 70vh;
-    background: radial-gradient(#2a9da6, #278e96);
+    background: radial-gradient($primary-color, #278e96);
     z-index: 1;
   }
   .video-container {

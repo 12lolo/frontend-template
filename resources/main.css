@@ -12355,10 +12355,10 @@ header #navigation nav ul li ul li:first-child a::before {
 #team ul li h3::after, #team ul li .h3::after {
   content: "";
   background-image: url("../resources/images/arrow-right.svg");
-  top: 50%;
+  top: 0%;
   z-index: 1000;
   display: inline-block;
-  width: 1rem;
+  width: rem;
   height: 1rem;
   background-repeat: no-repeat;
   background-position: center;
@@ -12489,7 +12489,7 @@ header #navigation nav ul li ul li:first-child a::before {
   left: clamp(10px, 10vw, 150px);
   width: 23.5vw;
   height: 70vh;
-  background: radial-gradient(#2a9da6, #278e96);
+  background: radial-gradient(#37a0ab, #278e96);
   z-index: 1;
 }
 #video .video-container {
@@ -12823,9 +12823,23 @@ header #navigation nav ul li ul li:first-child a::before {
   text-decoration: none;
   position: relative;
   z-index: 1;
+  text-underline: none;
 }
-#footer .footer-banner .legal a:hover {
-  text-decoration: underline;
+#footer .footer-banner .legal a::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  background: #1a7a7f;
+  transition: width 0.4s;
+}
+#footer .footer-banner .legal a:hover::after {
+  width: 100%;
+}
+#footer .footer-banner .legal a:not(:last-child) {
+  margin-right: 3vw;
 }
 #footer .footer-banner img {
   position: absolute;
