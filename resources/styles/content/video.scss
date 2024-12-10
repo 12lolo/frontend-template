@@ -27,10 +27,12 @@
     justify-content: center;
     overflow: hidden;
     flex-shrink: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.9);
 
     iframe {
       width: 65vw;
       aspect-ratio: 16/9;
+
     }
   }
 

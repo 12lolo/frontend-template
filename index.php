@@ -119,7 +119,7 @@
             <li>
                 <span>01</span>
                 <img src="resources/images/code.svg" alt="Code icon" >
-                <h3>Webapplicaties op maat</h3>
+                <h3>Webapplicaties</h3>
                 <p>
                     Als je kijkt naar onze indrukwekkende portfolio, dan zie je dat we al vanaf dag 1 bezig zijn met online software. Dagelijks spijkeren we onze kennis bij en blijven wij op de hoogte. Wat is jouw vraagstuk?
                 </p>

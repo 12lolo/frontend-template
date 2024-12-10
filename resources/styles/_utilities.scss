@@ -91,6 +91,7 @@
       opacity: 0;
       transform: translateX(-300%);
     }
+
     40% {
       opacity: 1;
     }
@@ -105,6 +106,7 @@
 @mixin flex-center {
   display: flex;
   align-items: center;
+  align-content: center;
 }
 
 @mixin background-blur {

@@ -4,7 +4,7 @@
   color: #ffffff;
 
   .container {
-    max-width: 1100px;
+    max-width: 1300px;
     padding: 10vh 2vw;
 
     header {
@@ -41,14 +41,14 @@
     ul {
       margin-top: 3rem;
       display: grid;
-      gap: 1.5rem;
+      padding: 0 5vw;
 
       li {
         display: grid;
         grid-template-columns: auto auto auto 1fr;
         align-items: center;
-        gap: 1.5rem;
-        padding: 1.5rem;
+        gap: 4vw;
+        padding:  2.2rem 1.5rem;
         border-bottom: 2px solid #1c2b3a;
 
         &:first-child {
@@ -62,14 +62,14 @@
         }
 
         img {
-          height: 2rem;
+          height: 2.5rem;
           flex-shrink: 0;
           white-space: nowrap;
         }
 
         h3 {
-          font-weight: 700;
-          font-size: 1.1rem;
+          font-weight: 600;
+          font-size: 1.6rem;
           width: 18vw;
           margin: 0;
           white-space: nowrap;
@@ -81,6 +81,7 @@
           color: #b0c4d4;
           line-height: 1.6;
           margin: 0;
+          padding-left: 2vw;
         }
       }
     }
@@ -106,8 +107,9 @@
           }
 
           p {
-            margin-top: 0.5rem;
+            margin: 0.5rem 0 0 0;
             width: 100%;
+            padding: 0;
           }
         }
       }
