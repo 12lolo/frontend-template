@@ -16,7 +16,7 @@
     left: clamp(10px, 10vw, 150px);
     width: 23.5vw;
     height: 70vh;
-    background: radial-gradient($primary-color, #278e96);
+    background: radial-gradient($primary-color, lighten($primary-color, 10%));
     z-index: 1;
   }
 

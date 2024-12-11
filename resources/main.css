@@ -12489,7 +12489,7 @@ header #navigation nav ul li ul li:first-child a::before {
   left: clamp(10px, 10vw, 150px);
   width: 23.5vw;
   height: 70vh;
-  background: radial-gradient(#37a0ab, #278e96);
+  background: radial-gradient(#37a0ab, rgb(78.703539823, 186.9557522124, 198.296460177));
   z-index: 1;
 }
 #video .video-container {
